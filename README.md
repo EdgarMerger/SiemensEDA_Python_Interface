@@ -1,4 +1,4 @@
-# ECAD functions and utilities library
+I'm# ECAD functions and utilities library
 
 This library contains commonly used functions and tools with regard to ECAD Tool automation, here with Siemens Xpedition Designer.
 It also contains IntelliSense stub module generator which is used to assist development of Automation Scripts by means of code autocompletion.
@@ -50,7 +50,7 @@ Copy the generated file into this folder [here:](./designer_ifc.py).
 
 Example for autocompletion:
 ![autocompletion](images/VSCode_autocompletion_example.JPG)
-Aonnation in the code is required to get this to work. See designer_template.py for annotation examples (objApplalication and objComp).
+Annotation in the code is required to get this to work. See designer_template.py for annotation examples (objApplalication and objComp).
 
 ### 3. Use the designer_template.py as starting point for your code
 ```
