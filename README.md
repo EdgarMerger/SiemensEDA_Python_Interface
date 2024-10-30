@@ -56,3 +56,10 @@ Annation in the code is required to get this to work. See designer_template.py
 ```
 python designer_template.py
 ```
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
+"""
+
+
