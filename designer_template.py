@@ -54,7 +54,7 @@ def main():
     objProjectData = objApplication.GetProjectData()
     objActiveView = objApplication.ActiveView
         
-	# Here custom code can be entered
+    # Here custom code can be entered
     # e.g. Generate a list of all components from the design and retrieve name of the first component
     lstComponents = objApplication.DesignComponents("", strDesign, "-1", "STD", True)
     objComponent = lstComponents[1] 
