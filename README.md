@@ -50,7 +50,7 @@ Copy the generated file into this folder [here:](./designer_ifc.py).
 
 Example for autocompletion:
 ![autocompletion](images/VSCode_autocompletion_example.JPG)
-Annation in the code is required to get this to work. See designer_template.py
+Aonnation in the code is required to get this to work. See designer_template.py for annotation examples (objApplalication and objComp).
 
 ### 3. Use the designer_template.py as starting point for your code
 ```
