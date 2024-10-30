@@ -1,4 +1,3 @@
-readme_content = """
 # Python Script for Processing Class Files with Type Hinting
 
 This Python script automates the processing of a source file, extracts class information, and generates a new output file with additional information on properties, including type hints and accessibility attributes. It also provides utilities for file management, cleanup, and organized output.
