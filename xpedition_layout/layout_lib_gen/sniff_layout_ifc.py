@@ -101,10 +101,10 @@ def process_file(input_file: TextIO, output_file: TextIO) -> None:
 
 def generate_input() -> None:
     # first generate some input starting point
-    cmd: str = 'python makepy.py -o layout_orig.py -v ViewDraw'
+    cmd: str = 'python makepy.py -o layout_orig.py -v MGCPCB'
     result = subprocess.run(shlex.split(cmd), shell=True, capture_output=True, text=True)
-    #result = subprocess.run('python makepy.py -o layout_orig.py -v ViewDraw', shell=True, capture_output=True, text=True)
-    #result = subprocess.run(['python', 'makepy.py', '-o', 'layout_orig.py', '-v', 'ViewDraw'], capture_output=True, text=True)
+    #result = subprocess.run('python makepy.py -o layout_orig.py -v MGCPCB', shell=True, capture_output=True, text=True)
+    #result = subprocess.run(['python', 'makepy.py', '-o', 'layout_orig.py', '-v', 'MGCPCB'], capture_output=True, text=True)
     print(result)
 
 def generate_output() -> None:
@@ -120,7 +120,7 @@ def copy_result():
     # result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     # print(result)
     # result = subprocess.run(shlex.split(cmd), shell=True, capture_output=True, text=True)
-    # result = subprocess.run(['python', 'makepy.py', '-o', 'layout_orig.py', '-v', 'ViewDraw'], capture_output=True, text=True)
+    # result = subprocess.run(['python', 'makepy.py', '-o', 'layout_orig.py', '-v', 'MGCPCB'], capture_output=True, text=True)
     
 def cleanup():
     cmd: str = 'del layout_orig.py'

@@ -4,8 +4,8 @@ This toolbox contains commonly used functions and tools with regard to ECAD Tool
 
 Directory structure:
 
-* xpedition_designer - This library contains commonly used functions and tools with regard to ECAD Tool automation, here with Siemens Xpedition Designer. 
-* xpedition_layout - This library contains commonly used functions and tools with regard to ECAD Tool automation, here with Siemens Xpedition Layout.
+* xpedition_designer - This library contains commonly used functions and tools with regard to Siemens Xpedition Designer Tool automation. 
+* xpedition_layout - This library contains commonly used functions and tools with regard to Siemens Xpedition Layout Tool automation.
 
 
 ## License
