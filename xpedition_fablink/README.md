@@ -22,7 +22,7 @@ python -m pip install pywin32
 python mpy.py
 ```
 
-This is the tool to be used for Fablink (when makepy.py from within mp.py is passed with no arguments)
+This is the tool to be used for Fablink (when makepy.py from within mp.py is passed with no arguments). Xepedition Fablink uses same COM object classes as Xpedition Layout does.
 
 ![Fablink](images/COM-Library-Xpedition-Layout.jpg)
 
