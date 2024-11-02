@@ -45,7 +45,7 @@ def process_file(input_file: TextIO, output_file: TextIO) -> None:
                         delimiter: str = '; ' if len(t) > 0 else ' # ' 
                         ac: str = 'read_only'
                         if (map_put):
-                            if (props[members[1]] != None):
+                            if members[1] in props:
                                 ac = 'read/write'
                             else:
                                 # highly unlikely, but still

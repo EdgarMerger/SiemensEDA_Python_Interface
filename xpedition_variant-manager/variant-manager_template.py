@@ -1,7 +1,7 @@
 import win32com.client as win32
 import sys, os, subprocess
-#from variant-manager_ifc import constants as c
-#from variant-manager_ifc import *
+from variant-manager_ifc import constants as c
+from variant-manager_ifc import *
 
 WHERE_AM_I, WHO_AM_I=os.path.split(os.path.realpath(__file__))
 sys.path.append(WHERE_AM_I)
