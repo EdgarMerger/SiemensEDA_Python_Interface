@@ -18,16 +18,13 @@ python -m pip install pywin32
 ```
 ### 1. Generate COM interface classes
 ```
-# Generate the Python file containing COM interface classes (already creating .py file for 'ViewDraw' (=Xpedition Desinger))
+# Generate the Python file containing COM interface classes.
 python mpy.py
 ```
 
-This is the tool to be used for Fablink (when makepy.py from within mp.py is passed with no arguments). Xepedition Fablink uses same COM object classes as Xpedition Layout does.
+This is the tool to be used for Fablink (when makepy.py from within mp.py is passed with no arguments). Xpedition Fablink uses same COM object classes as Xpedition Layout does.
 
 ![Fablink](images/COM-Library-Xpedition-Layout.jpg)
-
-
-Similarly it works for Fablink, Constraint Management, etc.
 
 File containing library COM ifc classes will be generated:
 ![COM module](images/Generated_COM-Module.jpg)
@@ -46,7 +43,7 @@ Copy the generated file into this folder [here:](./fablink_ifc.py).
 
 Example for autocompletion:
 ![autocompletion](images/VSCode_autocompletion_example.JPG)
-Annotation in the code is required to get this to work. See layout_template.py for annotation examples (objApplalication and objComp).
+Annotation in the code is required to get this to work. See fablink_template.py for annotation examples (objApplalication and objComp).
 
 ### 3. Use the layout_template.py as starting point for your code
 ```
