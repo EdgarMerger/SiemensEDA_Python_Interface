@@ -6,7 +6,7 @@ Directory structure:
 
 * xpedition_designer - This library contains commonly used functions and tools with regard to Siemens Xpedition Designer Tool automation. 
 * xpedition_layout - This library contains commonly used functions and tools with regard to Siemens Xpedition Layout Tool automation.
-
+* xpedition_fablink - This library contains commonly used functions and tools with regard to Siemens Xpedition Fablink Tool automation.
 
 ## License
 

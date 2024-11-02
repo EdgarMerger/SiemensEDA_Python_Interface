@@ -113,7 +113,7 @@ def generate_output() -> None:
             process_file(in_file, out_file)
 
 def copy_result():
-    cmd: str = 'move layout.py ../layout.py'
+    cmd: str = 'move layout_ifc.py ../layout_ifc.py'
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     print(result)
     # cmd: str = 'move layout_orig.py ../layout_orig.py'
