@@ -9,7 +9,7 @@ Directory structure:
 * xpedition_fablink - This library contains commonly used functions and tools with regard to Siemens Xpedition Fablink Tool automation.
 * xpedition_variantmanager - This library contains commonly used functions and tools with regard to Siemens Xpedition Variant Management Tool automation.
 * xpedition_constraintmanager - This library contains commonly used functions and tools with regard to Siemens Xpedition Constraints Management Tool automation. (not tested)
-* 
+
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
