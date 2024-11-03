@@ -1,4 +1,4 @@
-# ECAD functions and utilities library
+# ECAD functions and utilities library for Xpedition Variant Management
 
 This toolbox contains commonly used functions and tools with regard to ECAD Tool automation, here with Siemens Xpedition Variant Manager.
 It also contains IntelliSense stub module generator which is used to assist development of Automation Scripts by means of code autocompletion.
