@@ -101,29 +101,29 @@ def process_file(input_file: TextIO, output_file: TextIO) -> None:
 
 def generate_input() -> None:
     # first generate some input starting point
-    cmd: str = 'python makepy.py -o variant-manager_orig.py -v MGCVariantMgr.Document'
+    cmd: str = 'python makepy.py -o variantmanager_orig.py -v MGCVariantMgr.Document'
     result = subprocess.run(shlex.split(cmd), shell=True, capture_output=True, text=True)
-    #result = subprocess.run('python makepy.py -o variant-manager_orig.py -v MGCVariantMgr', shell=True, capture_output=True, text=True)
-    #result = subprocess.run(['python', 'makepy.py', '-o', 'variant-manager_orig.py', '-v', 'MGCVariantMgr'], capture_output=True, text=True)
+    #result = subprocess.run('python makepy.py -o variantmanager_orig.py -v MGCVariantMgr', shell=True, capture_output=True, text=True)
+    #result = subprocess.run(['python', 'makepy.py', '-o', 'variantmanager_orig.py', '-v', 'MGCVariantMgr'], capture_output=True, text=True)
     print(result)
 
 def generate_output() -> None:
-    with open('./variant-manager_orig.py', 'r') as in_file:
-        with open('./variant-manager_ifc.py', 'w') as out_file:
+    with open('./variantmanager_orig.py', 'r') as in_file:
+        with open('./variantmanager_ifc.py', 'w') as out_file:
             process_file(in_file, out_file)
 
 def copy_result():
-    cmd: str = 'move variant-manager_ifc.py ../variant-manager_ifc.py'
+    cmd: str = 'move variantmanager_ifc.py ../variantmanager_ifc.py'
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     print(result)
-    # cmd: str = 'move variant-manager_orig.py ../variant-manager_orig.py'
+    # cmd: str = 'move variantmanager_orig.py ../variantmanager_orig.py'
     # result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     # print(result)
     # result = subprocess.run(shlex.split(cmd), shell=True, capture_output=True, text=True)
-    # result = subprocess.run(['python', 'makepy.py', '-o', 'variant-manager_orig.py', '-v', 'MGCVariantMgr'], capture_output=True, text=True)
+    # result = subprocess.run(['python', 'makepy.py', '-o', 'variantmanager_orig.py', '-v', 'MGCVariantMgr'], capture_output=True, text=True)
     
 def cleanup():
-    cmd: str = 'del variant-manager_orig.py'
+    cmd: str = 'del variantmanager_orig.py'
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     print(result)
     

@@ -1,7 +1,7 @@
 import win32com.client as win32
 import sys, os, subprocess
-from variant-manager_ifc import constants as c
-from variant-manager_ifc import *
+from variantmanager_ifc import constants as c
+from variantmanager_ifc import *
 
 WHERE_AM_I, WHO_AM_I=os.path.split(os.path.realpath(__file__))
 sys.path.append(WHERE_AM_I)
@@ -32,6 +32,7 @@ def main():
     # the following annotation establishes the classes and definitions from designer_ifc.py to the IDE (VScode, Pycharm, etc.) and thus enables autocompletion  
     #objApplication : IVdApp = None
     #objComponent : IVdComp = None
+    objDocument : IMGCVariantMgrDocument = None
     
     # the following is an example of how to access the constants
     #print(f'enum example: {c.VDM_BLOCK}')
@@ -40,6 +41,7 @@ def main():
 
     # Here custom code can be entered
     # e.g. retrieve the number of Variants 
+
     intNumVariants = objDocument.Variants.Count
     print(f'number of Variants: {intNumVariants}')
     pass
