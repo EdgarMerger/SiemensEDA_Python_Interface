@@ -14,24 +14,11 @@ def init():
     result = subprocess.run(['python', f'{WHERE_AM_I}\\mpy.py'], capture_output=True, text=True)
     # print(result)
     
-def GetProgIDVersion():
-    version_string = ''
-    dllApp = win32.Dispatch('MGCPCBReleaseEnvironmentlib.MGCPCBReleaseEnvServer')
-    colReleases = dllApp.GetInstalledReleases()
-    for objRelease in colReleases:
-        print(f'objRel.3 = {objRelease[3]}')
-        if (objRelease[3] == 'EEVX.2.13'):
-            version_string = objRelease[0]
-        
-    return version_string
-
 
 def main():
     
     # this is a simple IntelliSense usage example
     # the following annotation establishes the classes and definitions from designer_ifc.py to the IDE (VScode, Pycharm, etc.) and thus enables autocompletion  
-    #objApplication : IVdApp = None
-    #objComponent : IVdComp = None
     objDocument : IMGCVariantMgrDocument = None
     
     # the following is an example of how to access the constants

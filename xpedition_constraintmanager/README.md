@@ -18,15 +18,12 @@ python -m pip install pywin32
 ```
 ### 1. Generate COM interface classes
 ```
-# Generate the Python file containing COM interface classes
+# Generate the Python file contaz011ining COM interface classes
 python mpy.py
 ```
 This is the tool to be used for Constraint-Manager (when makepy.py from within mp.py is passed with no arguments)
 
 ![Constraint-Manager](images/COM-Library-Xpedition-Constraint-Manager.jpg)
-
-File containing library COM ifc classes will be generated:
-![COM module](images/Generated_COM-Module.jpg)
 
 ### 2. Extending COM interface (optional: Need to be done when switching to newer Xpedition Constraint-Manager Release)
 
