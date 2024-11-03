@@ -1,4 +1,4 @@
-# ECAD functions and utilities library for Constraints Management
+# ECAD functions and utilities library for Xpedition Constraints Management
 
 This toolbox contains commonly used functions and tools with regard to ECAD Tool automation, here with Siemens Xpedition Constraints Manager.
 It also contains IntelliSense stub module generator which is used to assist development of Automation Scripts by means of code autocompletion.
