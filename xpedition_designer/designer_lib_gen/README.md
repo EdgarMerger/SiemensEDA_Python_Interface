@@ -14,7 +14,7 @@ This script was run with Xpedition Designer VX.2.13 installed, so it has created
 
 ## Overview
 
-This script is designed to parse an input file (like `designer_orig.py`) containing class definitions, and it generates an enhanced output file (`designer.py`) with additional type hinting and access control attributes for properties. The script automates file generation, processing, copying, and cleanup, making it useful for updating code files with type and access information.
+This script is designed to parse an input file (like `designer_orig.py`) containing class definitions, and it generates an enhanced output file (`designer_ifc.py`) with additional type hinting and access control attributes for properties. The script automates file generation, processing, copying, and cleanup, making it useful for updating code files with type and access information.
 
 ## Features
 
@@ -48,6 +48,7 @@ This script is designed to parse an input file (like `designer_orig.py`) contain
 - **`generate_input()`**: Runs `makepy.py` to create an initial input file (`designer_orig.py`) based on specified parameters.
 - **`generate_output()`**: Reads `designer_orig.py`, processes classes, and writes annotated data to `designer_ifc.py`.
 - **`copy_result()`**: Moves `designer_ifc.py` to the target directory.
+- **`add_type_hints_to_methods`**:  Identifies methods in `designer_ifc.py` where the type information is in the comments and adds the return type hint information.
 - **`cleanup()`**: Deletes `designer_orig.py` after processing.
 
 ## Script Details
