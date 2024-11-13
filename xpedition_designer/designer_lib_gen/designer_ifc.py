@@ -2,7 +2,7 @@
 # Created by makepy.py version 0.5.01
 # By python version 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)]
 # From type library 'viewdraw.tlb'
-# On Tue Nov 12 13:47:25 2024
+# On Wed Nov 13 13:31:04 2024
 ''
 makepy_version = '0.5.01'
 python_version = 0x3090af0
@@ -1494,7 +1494,7 @@ class ICommonPropertyManager(DispatchBaseClass):
 			, Value)
 
 	# Result is of type IStringList
-	def GetCompPropertyNames(self):
+	def GetCompPropertyNames(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(3, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetCompPropertyNames', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -1505,21 +1505,21 @@ class ICommonPropertyManager(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(1, LCID, 1, (8, 0), (),)
 
 	# Result is of type IStringList
-	def GetLoosePropertyNames(self):
+	def GetLoosePropertyNames(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(7, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetLoosePropertyNames', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
 		return ret
 
 	# Result is of type IStringList
-	def GetNetPropertyNames(self):
+	def GetNetPropertyNames(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(5, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetNetPropertyNames', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
 		return ret
 
 	# Result is of type IStringList
-	def GetPinPropertyNames(self):
+	def GetPinPropertyNames(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(4, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetPinPropertyNames', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -1534,14 +1534,14 @@ class ICommonPropertyManager(DispatchBaseClass):
 		return ret
 
 	# Result is of type IStringList
-	def GetPropertyNames(self):
+	def GetPropertyNames(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(2, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetPropertyNames', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
 		return ret
 
 	# Result is of type IStringList
-	def GetTransPropertyNames(self):
+	def GetTransPropertyNames(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(6, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetTransPropertyNames', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -1675,7 +1675,7 @@ class IHDLSourceDocuments(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(2, LCID, 1, (24, 0), ((3, 0),),Index
 			)
 
-	def RemoveAll(self):
+	def RemoveAll(self) -> IHDLSourceDocument:
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (24, 0), (),)
 
 	def SaveAll(self):
@@ -1779,7 +1779,7 @@ class IICTDocuments(DispatchBaseClass):
 			)
 
 	# Result is of type IStringList
-	def GetAvailableICTs(self):
+	def GetAvailableICTs(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(3, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetAvailableICTs', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -1789,7 +1789,7 @@ class IICTDocuments(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(5, LCID, 1, (3, 0), (),)
 
 	# Result is of type IStringList
-	def GetOpenedICTs(self):
+	def GetOpenedICTs(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(4, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetOpenedICTs', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -1815,7 +1815,7 @@ class IICTDocuments(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
-	def __iter__(self):
+	def __iter__(self) -> IVdICTDocument:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
@@ -1860,7 +1860,7 @@ class IMGCDesignerDataManagement(DispatchBaseClass):
 			ret = Dispatch(ret, 'FindEntityByPathAndVersion', '{03BE5928-2002-4CCB-818D-775ED6115A41}')
 		return ret
 
-	def IsConnected(self):
+	def IsConnected(self) -> IMGCDesignerDataManagementEntity:
 		'Check Data Management connection status.'
 		return self._oleobj_.InvokeTypes(5, LCID, 1, (11, 0), (),)
 
@@ -1893,7 +1893,7 @@ class IMGCDesignerDataManagement(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCDesignerDataManagementEntities
-	def RecentEntities(self):
+	def RecentEntities(self) -> IMGCDesignerDataManagementEntities:
 		'Get recently used entities.'
 		ret = self._oleobj_.InvokeTypes(2, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -1923,7 +1923,7 @@ class IMGCDesignerDataManagement(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
-	def __iter__(self):
+	def __iter__(self) -> IMGCDesignerDataManagementEntities:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
@@ -1958,7 +1958,7 @@ class IMGCDesignerDataManagementAdditionalProperties(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
-	def __iter__(self):
+	def __iter__(self) -> IMGCDesignerDataManagementAdditionalProperty:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,2,(13, 10),())
@@ -2033,7 +2033,7 @@ class IMGCDesignerDataManagementEntities(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
-	def __iter__(self):
+	def __iter__(self) -> IMGCDesignerDataManagementEntity:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,2,(13, 10),())
@@ -2150,7 +2150,7 @@ class IMGCDesignerDataManagementEntity(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(19, LCID, 1, (24, 0), ((8, 1),),detailsFilePath
 			)
 
-	def Status(self):
+	def Status(self) -> IMGCDesignerDataManagementEntities:
 		"Returns Entity's status."
 		# Result is a Unicode object
 		return self._oleobj_.InvokeTypes(5, LCID, 1, (8, 0), (),)
@@ -2198,14 +2198,14 @@ class IMergeData(DispatchBaseClass):
 	coclass_clsid = IID('{8B362BED-6CF5-1014-9D62-FFC3EECCF0AC}')
 
 	# Result is of type IStringList
-	def GetAvailableTargetGlobals(self):
+	def GetAvailableTargetGlobals(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(11, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetAvailableTargetGlobals', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
 		return ret
 
 	# Result is of type IStringList
-	def GetAvailableTargetLayers(self):
+	def GetAvailableTargetLayers(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(7, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetAvailableTargetLayers', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -2217,7 +2217,7 @@ class IMergeData(DispatchBaseClass):
 			)
 
 	# Result is of type IStringList
-	def GetBusNames(self):
+	def GetBusNames(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(1, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetBusNames', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -2229,14 +2229,14 @@ class IMergeData(DispatchBaseClass):
 			)
 
 	# Result is of type IStringList
-	def GetSourceGlobals(self):
+	def GetSourceGlobals(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(10, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetSourceGlobals', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
 		return ret
 
 	# Result is of type IStringList
-	def GetSourceLayers(self):
+	def GetSourceLayers(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(6, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetSourceLayers', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -2301,7 +2301,7 @@ class IODProjectData(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
-	def __iter__(self):
+	def __iter__(self) -> IStringList:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
@@ -2354,7 +2354,7 @@ class IPDBPartitions(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
-	def __iter__(self):
+	def __iter__(self) -> IStringList:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
@@ -2413,7 +2413,7 @@ class IProjectData(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(31, LCID, 1, (8, 0), (),)
 
 	# Result is of type IODProjectData
-	def GetIODProjectData(self):
+	def GetIODProjectData(self) -> IODProjectData:
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetIODProjectData', '{3D2B940D-C2B5-440E-AB57-E8C6F3FB34C9}')
@@ -2427,7 +2427,7 @@ class IProjectData(DispatchBaseClass):
 			ret = Dispatch(ret, 'GetNetlistLib', '{28D40DF1-22F3-11D0-91AB-58F3E7000000}')
 		return ret
 
-	def GetNetlistLibCount(self):
+	def GetNetlistLibCount(self) -> IVdLibrary:
 		return self._oleobj_.InvokeTypes(44, LCID, 1, (3, 0), (),)
 
 	def GetPCBDesignPath(self, siCDBDesign=defaultNamedNotOptArg, resolveSoftPrefix=defaultNamedNotOptArg):
@@ -2436,7 +2436,7 @@ class IProjectData(DispatchBaseClass):
 			, resolveSoftPrefix)
 
 	# Result is of type IPDBPartitions
-	def GetPDBPartitions(self):
+	def GetPDBPartitions(self) -> IPDBPartitions:
 		ret = self._oleobj_.InvokeTypes(22, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetPDBPartitions', '{D17E5439-1B5A-40D5-A115-1E4656FB102B}')
@@ -2455,7 +2455,7 @@ class IProjectData(DispatchBaseClass):
 			ret = Dispatch(ret, 'GetPinNumbers', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
 		return ret
 
-	def GetProjectFilePath(self):
+	def GetProjectFilePath(self) -> IStringList:
 		# Result is a Unicode object
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (8, 0), (),)
 
@@ -2481,7 +2481,7 @@ class IProjectData(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(6, LCID, 1, (8, 0), (),)
 
 	# Result is of type ISymbolPartitions
-	def GetSymbolPartitions(self):
+	def GetSymbolPartitions(self) -> ISymbolPartitions:
 		ret = self._oleobj_.InvokeTypes(7, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetSymbolPartitions', '{8DE1FE34-146C-4C91-8B52-EE97F9292EEF}')
@@ -2498,7 +2498,7 @@ class IProjectData(DispatchBaseClass):
 			)
 
 	# Result is of type IStringList
-	def GetiCDBDesigns(self):
+	def GetiCDBDesigns(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(9, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetiCDBDesigns', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -2633,7 +2633,7 @@ class IRipper(DispatchBaseClass):
 		return ret
 
 	# Result is of type IVdObjs
-	def GetConnectedObjects(self):
+	def GetConnectedObjects(self) -> IVdObjs:
 		ret = self._oleobj_.InvokeTypes(2, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetConnectedObjects', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
@@ -2780,7 +2780,7 @@ class ISymbolPartitions(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
-	def __iter__(self):
+	def __iter__(self) -> IStringList:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
@@ -2846,7 +2846,7 @@ class IVdApp(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(72, LCID, 1, (8, 0), ((11, 1), (8, 1)),OnlyBorders
 			, Title)
 
-	def CheckIfNavigatorAddinsOpen(self):
+	def CheckIfNavigatorAddinsOpen(self) -> IBindingTables:
 		return self._oleobj_.InvokeTypes(107, LCID, 1, (11, 0), (),)
 
 	def ClearAllLibraries(self):
@@ -2874,7 +2874,7 @@ class IVdApp(DispatchBaseClass):
 			)
 
 	# Result is of type ICommandsManager
-	def CommandsManager(self):
+	def CommandsManager(self) -> ICommandsManager:
 		ret = self._oleobj_.InvokeTypes(220, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'CommandsManager', '{AA7F70A6-2F0E-417C-A1D2-C1621D728EB0}')
@@ -2954,7 +2954,7 @@ class IVdApp(DispatchBaseClass):
 		return ret
 
 	# Result is of type IDesignSearcherAutomation
-	def DesignSearcher(self):
+	def DesignSearcher(self) -> IDesignSearcherAutomation:
 		ret = self._oleobj_.InvokeTypes(297, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'DesignSearcher', '{3EBAD6B7-B757-4A57-9657-DD43BF86A526}')
@@ -3009,7 +3009,7 @@ class IVdApp(DispatchBaseClass):
 		return ret
 
 	# Result is of type ICommonPropertyManager
-	def GetCommonPropertyManager(self):
+	def GetCommonPropertyManager(self) -> ICommonPropertyManager:
 		ret = self._oleobj_.InvokeTypes(243, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetCommonPropertyManager', '{E8758B51-DEBB-46FD-A192-962B14F57FA4}')
@@ -3023,7 +3023,7 @@ class IVdApp(DispatchBaseClass):
 			ret = Dispatch(ret, 'GetConfigurationProperty', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
 		return ret
 
-	def GetCurrentProdLib(self):
+	def GetCurrentProdLib(self) -> IStringList:
 		# Result is a Unicode object
 		return self._oleobj_.InvokeTypes(312, LCID, 1, (8, 0), (),)
 
@@ -3035,12 +3035,12 @@ class IVdApp(DispatchBaseClass):
 			ret = Dispatch(ret, 'GetDefaultColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
 		return ret
 
-	def GetDefaultProdLib(self):
+	def GetDefaultProdLib(self) -> IColor:
 		# Result is a Unicode object
 		return self._oleobj_.InvokeTypes(313, LCID, 1, (8, 0), (),)
 
 	# Result is of type IFramework
-	def GetFramework(self):
+	def GetFramework(self) -> IFramework:
 		ret = self._oleobj_.InvokeTypes(242, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetFramework', '{77CD6602-703B-4AFA-A4C1-B1652A257F15}')
@@ -3051,7 +3051,7 @@ class IVdApp(DispatchBaseClass):
 			, outputFilePath)
 
 	# Result is of type IICTDocuments
-	def GetICTDocuments(self):
+	def GetICTDocuments(self) -> IICTDocuments:
 		ret = self._oleobj_.InvokeTypes(259, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetICTDocuments', '{2A3CCA57-9C38-4484-A6A3-7521DDF7DAD0}')
@@ -3069,7 +3069,7 @@ class IVdApp(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(317, LCID, 1, (8, 0), (),)
 
 	# Result is of type IVdObjs
-	def GetLibraries(self):
+	def GetLibraries(self) -> IVdObjs:
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetLibraries', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
@@ -3090,7 +3090,7 @@ class IVdApp(DispatchBaseClass):
 		return ret
 
 	# Result is of type IProjectData
-	def GetProjectData(self):
+	def GetProjectData(self) -> IProjectData:
 		ret = self._oleobj_.InvokeTypes(228, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetProjectData', '{956DD308-D5ED-40A1-83F2-84113B8937C1}')
@@ -3101,14 +3101,14 @@ class IVdApp(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(299, LCID, 1, (8, 0), (),)
 
 	# Result is of type IVdAppProtectionProxy
-	def GetProtectionProxy(self):
+	def GetProtectionProxy(self) -> IVdAppProtectionProxy:
 		ret = self._oleobj_.InvokeTypes(268, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetProtectionProxy', '{8E0609DD-208C-42B6-A1B0-00DAA3E45423}')
 		return ret
 
 	# Result is of type ISystemDesign
-	def GetSystemDesign(self):
+	def GetSystemDesign(self) -> ISystemDesign:
 		ret = self._oleobj_.InvokeTypes(287, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetSystemDesign', '{C8B527DC-E1E6-439B-8C7F-D55BACC1D5F1}')
@@ -3197,7 +3197,7 @@ class IVdApp(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCDesignerDataManagement
-	def MGCDesignerDataManagement(self):
+	def MGCDesignerDataManagement(self) -> IMGCDesignerDataManagement:
 		ret = self._oleobj_.InvokeTypes(303, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'MGCDesignerDataManagement', '{96EB093C-B1E3-444B-B39D-08D05CB0DF06}')
@@ -3293,7 +3293,7 @@ class IVdApp(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(221, LCID, 1, (24, 0), ((8, 1), (8, 1), (11, 1), (11, 1), (8, 1)),DesignName
 			, LevelStrings, PrintSymbols, ShowOrderDialog, PPOFile)
 
-	def ProductionLibraryLimitationsChanged(self):
+	def ProductionLibraryLimitationsChanged(self) -> IStringCollection:
 		return self._oleobj_.InvokeTypes(308, LCID, 1, (24, 0), (),)
 
 	def PushPath(self, Top=defaultNamedNotOptArg, HierPath=defaultNamedNotOptArg, SheetNumber=defaultNamedNotOptArg):
@@ -3328,7 +3328,7 @@ class IVdApp(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(278, LCID, 1, (24, 0), ((11, 1),),bQueue
 			)
 
-	def Quit(self):
+	def Quit(self) -> IVdObjs:
 		return self._oleobj_.InvokeTypes(226, LCID, 1, (24, 0), (),)
 
 	def ReadIni(self, Inifilename=defaultNamedNotOptArg):
@@ -3360,7 +3360,7 @@ class IVdApp(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(34, LCID, 1, (11, 0), (),)
 
 	# Result is of type IVdSchematicSheetDocuments
-	def SchematicSheetDocuments(self):
+	def SchematicSheetDocuments(self) -> IVdSchematicSheetDocuments:
 		ret = self._oleobj_.InvokeTypes(212, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'SchematicSheetDocuments', '{608CA7F4-A52A-4206-9580-3BEB17CE0073}')
@@ -3798,7 +3798,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(72, LCID, 1, (8, 0), ((11, 1), (8, 1)),OnlyBorders
 			, Title)
 
-	def CheckIfNavigatorAddinsOpen(self):
+	def CheckIfNavigatorAddinsOpen(self) -> IBindingTables:
 		return self._oleobj_.InvokeTypes(107, LCID, 1, (11, 0), (),)
 
 	def ClearAllLibraries(self):
@@ -3826,7 +3826,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 			)
 
 	# Result is of type ICommandsManager
-	def CommandsManager(self):
+	def CommandsManager(self) -> ICommandsManager:
 		ret = self._oleobj_.InvokeTypes(220, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'CommandsManager', '{AA7F70A6-2F0E-417C-A1D2-C1621D728EB0}')
@@ -3906,7 +3906,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 		return ret
 
 	# Result is of type IDesignSearcherAutomation
-	def DesignSearcher(self):
+	def DesignSearcher(self) -> IDesignSearcherAutomation:
 		ret = self._oleobj_.InvokeTypes(297, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'DesignSearcher', '{3EBAD6B7-B757-4A57-9657-DD43BF86A526}')
@@ -3961,7 +3961,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 		return ret
 
 	# Result is of type ICommonPropertyManager
-	def GetCommonPropertyManager(self):
+	def GetCommonPropertyManager(self) -> ICommonPropertyManager:
 		ret = self._oleobj_.InvokeTypes(243, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetCommonPropertyManager', '{E8758B51-DEBB-46FD-A192-962B14F57FA4}')
@@ -3975,7 +3975,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 			ret = Dispatch(ret, 'GetConfigurationProperty', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
 		return ret
 
-	def GetCurrentProdLib(self):
+	def GetCurrentProdLib(self) -> IStringList:
 		# Result is a Unicode object
 		return self._oleobj_.InvokeTypes(312, LCID, 1, (8, 0), (),)
 
@@ -3987,12 +3987,12 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 			ret = Dispatch(ret, 'GetDefaultColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
 		return ret
 
-	def GetDefaultProdLib(self):
+	def GetDefaultProdLib(self) -> IColor:
 		# Result is a Unicode object
 		return self._oleobj_.InvokeTypes(313, LCID, 1, (8, 0), (),)
 
 	# Result is of type IFramework
-	def GetFramework(self):
+	def GetFramework(self) -> IFramework:
 		ret = self._oleobj_.InvokeTypes(242, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetFramework', '{77CD6602-703B-4AFA-A4C1-B1652A257F15}')
@@ -4003,7 +4003,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 			, outputFilePath)
 
 	# Result is of type IICTDocuments
-	def GetICTDocuments(self):
+	def GetICTDocuments(self) -> IICTDocuments:
 		ret = self._oleobj_.InvokeTypes(259, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetICTDocuments', '{2A3CCA57-9C38-4484-A6A3-7521DDF7DAD0}')
@@ -4021,7 +4021,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(317, LCID, 1, (8, 0), (),)
 
 	# Result is of type IVdObjs
-	def GetLibraries(self):
+	def GetLibraries(self) -> IVdObjs:
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetLibraries', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
@@ -4042,7 +4042,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 		return ret
 
 	# Result is of type IProjectData
-	def GetProjectData(self):
+	def GetProjectData(self) -> IProjectData:
 		ret = self._oleobj_.InvokeTypes(228, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetProjectData', '{956DD308-D5ED-40A1-83F2-84113B8937C1}')
@@ -4131,7 +4131,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCDesignerDataManagement
-	def MGCDesignerDataManagement(self):
+	def MGCDesignerDataManagement(self) -> IMGCDesignerDataManagement:
 		ret = self._oleobj_.InvokeTypes(303, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'MGCDesignerDataManagement', '{96EB093C-B1E3-444B-B39D-08D05CB0DF06}')
@@ -4227,7 +4227,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(221, LCID, 1, (24, 0), ((8, 1), (8, 1), (11, 1), (11, 1), (8, 1)),DesignName
 			, LevelStrings, PrintSymbols, ShowOrderDialog, PPOFile)
 
-	def ProductionLibraryLimitationsChanged(self):
+	def ProductionLibraryLimitationsChanged(self) -> IStringCollection:
 		return self._oleobj_.InvokeTypes(308, LCID, 1, (24, 0), (),)
 
 	def PushPath(self, Top=defaultNamedNotOptArg, HierPath=defaultNamedNotOptArg, SheetNumber=defaultNamedNotOptArg):
@@ -4258,7 +4258,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 			ret = Dispatch(ret, 'QueryPages', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
 		return ret
 
-	def Quit(self):
+	def Quit(self) -> IVdObjs:
 		return self._oleobj_.InvokeTypes(226, LCID, 1, (24, 0), (),)
 
 	def ReadIni(self, Inifilename=defaultNamedNotOptArg):
@@ -4286,7 +4286,7 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(34, LCID, 1, (11, 0), (),)
 
 	# Result is of type IVdSchematicSheetDocuments
-	def SchematicSheetDocuments(self):
+	def SchematicSheetDocuments(self) -> IVdSchematicSheetDocuments:
 		ret = self._oleobj_.InvokeTypes(212, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'SchematicSheetDocuments', '{608CA7F4-A52A-4206-9580-3BEB17CE0073}')
@@ -4591,7 +4591,7 @@ class IVdArc(DispatchBaseClass):
 		return ret
 
 	# Result is of type IColor
-	def GetObjectColor(self):
+	def GetObjectColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(13, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
@@ -4666,7 +4666,7 @@ class IVdAttr(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(33, LCID, 1, (24, 0), (),)
 
 	# Result is of type IVdPoint
-	def GetLocation(self):
+	def GetLocation(self) -> IVdPoint:
 		ret = self._oleobj_.InvokeTypes(13, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetLocation', '{AE729498-9683-11CE-8246-00001B4D36B5}')
@@ -4678,7 +4678,7 @@ class IVdAttr(DispatchBaseClass):
 			, pathvalue, full_or_not)
 
 	# Result is of type IColor
-	def GetObjectColor(self):
+	def GetObjectColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(29, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
@@ -5005,7 +5005,7 @@ class IVdBlock(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(42, LCID, 1, (11, 0), ((8, 1), (8, 1)),OldComp
 			, NewComp)
 
-	def CheckIfWirUpToDateWithCDB(self):
+	def CheckIfWirUpToDateWithCDB(self) -> IVdText:
 		return self._oleobj_.InvokeTypes(55, LCID, 1, (11, 0), (),)
 
 	def ClearHighlight(self, SelectedOnly=defaultNamedNotOptArg):
@@ -5056,7 +5056,7 @@ class IVdBlock(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(46, LCID, 1, (8, 0), ((8, 1), (3, 1), (8, 1)),ObjectName
 			, ObjectType, AttributeNameList)
 
-	def GetBatchAttributes(self):
+	def GetBatchAttributes(self) -> IVdAttr:
 		# Result is a Unicode object
 		return self._oleobj_.InvokeTypes(27, LCID, 1, (8, 0), (),)
 
@@ -5069,7 +5069,7 @@ class IVdBlock(DispatchBaseClass):
 		return ret
 
 	# Result is of type IVdBlock
-	def GetChildBlock(self):
+	def GetChildBlock(self) -> IVdBlock:
 		ret = self._oleobj_.InvokeTypes(60, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetChildBlock', '{AE729484-9683-11CE-8246-00001B4D36B5}')
@@ -5101,7 +5101,7 @@ class IVdBlock(DispatchBaseClass):
 			ret = Dispatch(ret, 'GetReuseBlockMergeData', '{4584E756-C172-4389-AD41-AEE82CB45759}')
 		return ret
 
-	def InsertBorder(self):
+	def InsertBorder(self) -> IMergeData:
 		return self._oleobj_.InvokeTypes(38, LCID, 1, (24, 0), (),)
 
 	def IsReadOnly(self):
@@ -5224,28 +5224,28 @@ class IVdBox(DispatchBaseClass):
 		return ret
 
 	# Result is of type IColor
-	def GetObjectColor(self):
+	def GetObjectColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(14, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
 		return ret
 
 	# Result is of type IColor
-	def GetObjectFillColor(self):
+	def GetObjectFillColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(18, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectFillColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
 		return ret
 
 	# Result is of type IColor
-	def GetObjectGradientPrimaryColor(self):
+	def GetObjectGradientPrimaryColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(23, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectGradientPrimaryColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
 		return ret
 
 	# Result is of type IColor
-	def GetObjectGradientSecondaryColor(self):
+	def GetObjectGradientSecondaryColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(25, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectGradientSecondaryColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
@@ -5349,21 +5349,21 @@ class IVdCircle(DispatchBaseClass):
 	coclass_clsid = IID('{8B36932D-6CF5-1014-9D62-FFC3EECCF0AC}')
 
 	# Result is of type IVdPoint
-	def GetCenter(self):
+	def GetCenter(self) -> IVdPoint:
 		ret = self._oleobj_.InvokeTypes(8, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetCenter', '{AE729498-9683-11CE-8246-00001B4D36B5}')
 		return ret
 
 	# Result is of type IColor
-	def GetObjectColor(self):
+	def GetObjectColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(15, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
 		return ret
 
 	# Result is of type IColor
-	def GetObjectFillColor(self):
+	def GetObjectFillColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(19, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectFillColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
@@ -5471,21 +5471,21 @@ class IVdCmpPin(DispatchBaseClass):
 		return ret
 
 	# Result is of type IVdPoint
-	def GetLocation(self):
+	def GetLocation(self) -> IVdPoint:
 		ret = self._oleobj_.InvokeTypes(8, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetLocation', '{AE729498-9683-11CE-8246-00001B4D36B5}')
 		return ret
 
 	# Result is of type IVdComp
-	def _GetComp(self):
+	def _GetComp(self) -> IVdComp:
 		ret = self._oleobj_.InvokeTypes(12, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, '_GetComp', '{AE72948A-9683-11CE-8246-00001B4D36B5}')
 		return ret
 
 	# Result is of type IVdPin
-	def _GetPin(self):
+	def _GetPin(self) -> IVdPin:
 		ret = self._oleobj_.InvokeTypes(11, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, '_GetPin', '{AE729496-9683-11CE-8246-00001B4D36B5}')
@@ -5536,172 +5536,172 @@ class IVdCmpPin(DispatchBaseClass):
 			raise TypeError("This object does not support enumeration")
 		return win32com.client.util.Iterator(ob, None)
 
-# class IVdComp(DispatchBaseClass):
-	# CLSID = IID('{AE72948A-9683-11CE-8246-00001B4D36B5}')
-	# coclass_clsid = IID('{8B36976A-6CF5-1014-9D62-FFC3EECCF0AC}')
+class IVdComp(DispatchBaseClass):
+	CLSID = IID('{AE72948A-9683-11CE-8246-00001B4D36B5}')
+	coclass_clsid = IID('{8B36976A-6CF5-1014-9D62-FFC3EECCF0AC}')
 
-	# def ActivateMoveMode(self):
-		# return self._oleobj_.InvokeTypes(27, LCID, 1, (11, 0), (),)
+	def ActivateMoveMode(self):
+		return self._oleobj_.InvokeTypes(27, LCID, 1, (11, 0), (),)
 
-	# # Result is of type IVdAttr
-	# def AddAttribute(self, String=defaultNamedNotOptArg, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg, Visibility=defaultNamedNotOptArg):
-		# ret = self._oleobj_.InvokeTypes(17, LCID, 1, (9, 0), ((8, 1), (3, 1), (3, 1), (3, 1)),String
-			# , X, Y, Visibility)
-		# if ret is not None:
-			# ret = Dispatch(ret, 'AddAttribute', '{AE729482-9683-11CE-8246-00001B4D36B5}')
-		# return ret
+	# Result is of type IVdAttr
+	def AddAttribute(self, String=defaultNamedNotOptArg, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg, Visibility=defaultNamedNotOptArg):
+		ret = self._oleobj_.InvokeTypes(17, LCID, 1, (9, 0), ((8, 1), (3, 1), (3, 1), (3, 1)),String
+			, X, Y, Visibility)
+		if ret is not None:
+			ret = Dispatch(ret, 'AddAttribute', '{AE729482-9683-11CE-8246-00001B4D36B5}')
+		return ret
 
-	# def AddBatchAttributes(self, AttributeListSting=defaultNamedNotOptArg):
-		# return self._oleobj_.InvokeTypes(20, LCID, 1, (11, 0), ((8, 1),),AttributeListSting
-			# )
+	def AddBatchAttributes(self, AttributeListSting=defaultNamedNotOptArg):
+		return self._oleobj_.InvokeTypes(20, LCID, 1, (11, 0), ((8, 1),),AttributeListSting
+			)
 
-	# def AddBatchOats(self, AttributeListSting=defaultNamedNotOptArg):
-		# return self._oleobj_.InvokeTypes(24, LCID, 1, (11, 0), ((8, 1),),AttributeListSting
-			# )
+	def AddBatchOats(self, AttributeListSting=defaultNamedNotOptArg):
+		return self._oleobj_.InvokeTypes(24, LCID, 1, (11, 0), ((8, 1),),AttributeListSting
+			)
 
-	# # Result is of type IVdLabel
-	# def AddLabel(self, String=defaultNamedNotOptArg, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg):
-		# ret = self._oleobj_.InvokeTypes(18, LCID, 1, (9, 0), ((8, 1), (3, 1), (3, 1)),String
-			# , X, Y)
-		# if ret is not None:
-			# ret = Dispatch(ret, 'AddLabel', '{AE72948E-9683-11CE-8246-00001B4D36B5}')
-		# return ret
+	# Result is of type IVdLabel
+	def AddLabel(self, String=defaultNamedNotOptArg, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg):
+		ret = self._oleobj_.InvokeTypes(18, LCID, 1, (9, 0), ((8, 1), (3, 1), (3, 1)),String
+			, X, Y)
+		if ret is not None:
+			ret = Dispatch(ret, 'AddLabel', '{AE72948E-9683-11CE-8246-00001B4D36B5}')
+		return ret
 
-	# # Result is of type IVdAttr
-	# def AddOat(self, String=defaultNamedNotOptArg):
-		# ret = self._oleobj_.InvokeTypes(19, LCID, 1, (9, 0), ((8, 1),),String
-			# )
-		# if ret is not None:
-			# ret = Dispatch(ret, 'AddOat', '{AE729482-9683-11CE-8246-00001B4D36B5}')
-		# return ret
+	# Result is of type IVdAttr
+	def AddOat(self, String=defaultNamedNotOptArg):
+		ret = self._oleobj_.InvokeTypes(19, LCID, 1, (9, 0), ((8, 1),),String
+			)
+		if ret is not None:
+			ret = Dispatch(ret, 'AddOat', '{AE729482-9683-11CE-8246-00001B4D36B5}')
+		return ret
 
-	# def ExtractSchematic(self):
-		# return self._oleobj_.InvokeTypes(30, LCID, 1, (24, 0), (),)
+	def ExtractSchematic(self) -> IVdAttr:
+		return self._oleobj_.InvokeTypes(30, LCID, 1, (24, 0), (),)
 
-	# # Result is of type IVdAttr
-	# def FindAttribute(self, AttributeString=defaultNamedNotOptArg):
-		# ret = self._oleobj_.InvokeTypes(23, LCID, 1, (9, 0), ((8, 1),),AttributeString
-			# )
-		# if ret is not None:
-			# ret = Dispatch(ret, 'FindAttribute', '{AE729482-9683-11CE-8246-00001B4D36B5}')
-		# return ret
+	# Result is of type IVdAttr
+	def FindAttribute(self, AttributeString=defaultNamedNotOptArg):
+		ret = self._oleobj_.InvokeTypes(23, LCID, 1, (9, 0), ((8, 1),),AttributeString
+			)
+		if ret is not None:
+			ret = Dispatch(ret, 'FindAttribute', '{AE729482-9683-11CE-8246-00001B4D36B5}')
+		return ret
 
-	# def GetBatchAttributes(self):
-		# # Result is a Unicode object
-		# return self._oleobj_.InvokeTypes(21, LCID, 1, (8, 0), (),)
+	def GetBatchAttributes(self) -> IVdAttr:
+		# Result is a Unicode object
+		return self._oleobj_.InvokeTypes(21, LCID, 1, (8, 0), (),)
 
-	# def GetBatchOats(self):
-		# # Result is a Unicode object
-		# return self._oleobj_.InvokeTypes(25, LCID, 1, (8, 0), (),)
+	def GetBatchOats(self):
+		# Result is a Unicode object
+		return self._oleobj_.InvokeTypes(25, LCID, 1, (8, 0), (),)
 
-	# # Result is of type IVdPoint
-	# def GetBboxPoint(self, Location=defaultNamedNotOptArg):
-		# ret = self._oleobj_.InvokeTypes(16, LCID, 1, (9, 0), ((3, 1),),Location
-			# )
-		# if ret is not None:
-			# ret = Dispatch(ret, 'GetBboxPoint', '{AE729498-9683-11CE-8246-00001B4D36B5}')
-		# return ret
+	# Result is of type IVdPoint
+	def GetBboxPoint(self, Location=defaultNamedNotOptArg):
+		ret = self._oleobj_.InvokeTypes(16, LCID, 1, (9, 0), ((3, 1),),Location
+			)
+		if ret is not None:
+			ret = Dispatch(ret, 'GetBboxPoint', '{AE729498-9683-11CE-8246-00001B4D36B5}')
+		return ret
 
-	# # Result is of type IVdObjs
-	# def GetConnections(self):
-		# ret = self._oleobj_.InvokeTypes(22, LCID, 1, (9, 0), (),)
-		# if ret is not None:
-			# ret = Dispatch(ret, 'GetConnections', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
-		# return ret
+	# Result is of type IVdObjs
+	def GetConnections(self) -> IVdObjs:
+		ret = self._oleobj_.InvokeTypes(22, LCID, 1, (9, 0), (),)
+		if ret is not None:
+			ret = Dispatch(ret, 'GetConnections', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
+		return ret
 
-	# def GetForwardPCB(self):
-		# return self._oleobj_.InvokeTypes(28, LCID, 1, (3, 0), (),)
+	def GetForwardPCB(self):
+		return self._oleobj_.InvokeTypes(28, LCID, 1, (3, 0), (),)
 
-	# # Result is of type IVdPoint
-	# def GetLocation(self):
-		# ret = self._oleobj_.InvokeTypes(13, LCID, 1, (9, 0), (),)
-		# if ret is not None:
-			# ret = Dispatch(ret, 'GetLocation', '{AE729498-9683-11CE-8246-00001B4D36B5}')
-		# return ret
+	# Result is of type IVdPoint
+	def GetLocation(self) -> IVdPoint:
+		ret = self._oleobj_.InvokeTypes(13, LCID, 1, (9, 0), (),)
+		if ret is not None:
+			ret = Dispatch(ret, 'GetLocation', '{AE729498-9683-11CE-8246-00001B4D36B5}')
+		return ret
 
-	# def GetName(self, Flag=defaultNamedNotOptArg):
-		# # Result is a Unicode object
-		# return self._oleobj_.InvokeTypes(15, LCID, 1, (8, 0), ((3, 1),),Flag
-			# )
+	def GetName(self, Flag=defaultNamedNotOptArg):
+		# Result is a Unicode object
+		return self._oleobj_.InvokeTypes(15, LCID, 1, (8, 0), ((3, 1),),Flag
+			)
 
-	# def SetForwardPCB(self, forwardPCBValue=defaultNamedNotOptArg):
-		# return self._oleobj_.InvokeTypes(29, LCID, 1, (24, 0), ((3, 1),),forwardPCBValue
-			# )
+	def SetForwardPCB(self, forwardPCBValue=defaultNamedNotOptArg):
+		return self._oleobj_.InvokeTypes(29, LCID, 1, (24, 0), ((3, 1),),forwardPCBValue
+			)
 
-	# def SetLocation(self, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg):
-		# return self._oleobj_.InvokeTypes(14, LCID, 1, (24, 0), ((3, 1), (3, 1)),X
-			# , Y)
+	def SetLocation(self, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg):
+		return self._oleobj_.InvokeTypes(14, LCID, 1, (24, 0), ((3, 1), (3, 1)),X
+			, Y)
 
-	# def _SetSelected(self, Flag=defaultNamedNotOptArg):
-		# return self._oleobj_.InvokeTypes(12, LCID, 1, (24, 0), ((3, 1),),Flag
-			# )
+	def _SetSelected(self, Flag=defaultNamedNotOptArg):
+		return self._oleobj_.InvokeTypes(12, LCID, 1, (24, 0), ((3, 1),),Flag
+			)
 
-	# _prop_map_get_ = {
-		# # Method 'Application' returns object of type 'IVdApp'
-		# "Application": (9, 2, (9, 0), (), "Application", '{EA4ABD71-84B0-11CE-8237-00001B4D36B5}'),
-		# # Method 'Attributes' returns object of type 'IVdObjs'
-		# "Attributes": (1, 2, (9, 0), (), "Attributes", '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}'),
-		# "Id": (6, 2, (3, 0), (), "Id", None),
-		# # Method 'Label' returns object of type 'IVdLabel'
-		# "Label": (2, 2, (9, 0), (), "Label", '{AE72948E-9683-11CE-8246-00001B4D36B5}'),
-		# "Orientation": (4, 2, (3, 0), (), "Orientation", None),
-		# # Method 'Parent' returns object of type 'IVdBlock'
-		# "Parent": (10, 2, (9, 0), (), "Parent", '{AE729484-9683-11CE-8246-00001B4D36B5}'),
-		# "Refdes": (8, 2, (8, 0), (), "Refdes", None),
-		# "Scale": (7, 2, (5, 0), (), "Scale", None),
-		# # Method 'SymbolBlock' returns object of type 'IVdBlock'
-		# "SymbolBlock": (11, 2, (9, 0), (), "SymbolBlock", '{AE729484-9683-11CE-8246-00001B4D36B5}'),
-		# "Type": (3, 2, (3, 0), (), "Type", None),
-		# "UID": (5, 2, (8, 0), (), "UID", None),
-	# }
-	# _prop_map_put_ = {
-		# "Orientation": ((4, LCID, 4, 0),()),
-		# "Refdes": ((8, LCID, 4, 0),()),
-		# "Scale": ((7, LCID, 4, 0),()),
-		# "Selected": ((26, LCID, 4, 0),()),
-	# }
+	_prop_map_get_ = {
+		# Method 'Application' returns object of type 'IVdApp'
+		"Application": (9, 2, (9, 0), (), "Application", '{EA4ABD71-84B0-11CE-8237-00001B4D36B5}'),
+		# Method 'Attributes' returns object of type 'IVdObjs'
+		"Attributes": (1, 2, (9, 0), (), "Attributes", '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}'),
+		"Id": (6, 2, (3, 0), (), "Id", None),
+		# Method 'Label' returns object of type 'IVdLabel'
+		"Label": (2, 2, (9, 0), (), "Label", '{AE72948E-9683-11CE-8246-00001B4D36B5}'),
+		"Orientation": (4, 2, (3, 0), (), "Orientation", None),
+		# Method 'Parent' returns object of type 'IVdBlock'
+		"Parent": (10, 2, (9, 0), (), "Parent", '{AE729484-9683-11CE-8246-00001B4D36B5}'),
+		"Refdes": (8, 2, (8, 0), (), "Refdes", None),
+		"Scale": (7, 2, (5, 0), (), "Scale", None),
+		# Method 'SymbolBlock' returns object of type 'IVdBlock'
+		"SymbolBlock": (11, 2, (9, 0), (), "SymbolBlock", '{AE729484-9683-11CE-8246-00001B4D36B5}'),
+		"Type": (3, 2, (3, 0), (), "Type", None),
+		"UID": (5, 2, (8, 0), (), "UID", None),
+	}
+	_prop_map_put_ = {
+		"Orientation": ((4, LCID, 4, 0),()),
+		"Refdes": ((8, LCID, 4, 0),()),
+		"Scale": ((7, LCID, 4, 0),()),
+		"Selected": ((26, LCID, 4, 0),()),
+	}
 
-	# Application: str # IVdApp; read_only
-	# Attributes: str # IVdObjs; read_only
-	# Id: str # read_only
-	# Label: str # IVdLabel; read_only
-	# Orientation: str # read/write
-	# Parent: str # IVdBlock; read_only
-	# Refdes: str # read/write
-	# Scale: str # read/write
-	# SymbolBlock: str # IVdBlock; read_only
-	# Type: str # read_only
-	# UID: str # read_only
-	# Selected: bool # write_only
+	Application: str # IVdApp; read_only
+	Attributes: str # IVdObjs; read_only
+	Id: str # read_only
+	Label: str # IVdLabel; read_only
+	Orientation: str # read/write
+	Parent: str # IVdBlock; read_only
+	Refdes: str # read/write
+	Scale: str # read/write
+	SymbolBlock: str # IVdBlock; read_only
+	Type: str # read_only
+	UID: str # read_only
+	Selected: bool # write_only
 
-	# def __iter__(self):
-		# "Return a Python iterator for this object"
-		# try:
-			# ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
-		# except pythoncom.error:
-			# raise TypeError("This object does not support enumeration")
-		# return win32com.client.util.Iterator(ob, None)
+	def __iter__(self):
+		"Return a Python iterator for this object"
+		try:
+			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
+		except pythoncom.error:
+			raise TypeError("This object does not support enumeration")
+		return win32com.client.util.Iterator(ob, None)
 
 class IVdConnection(DispatchBaseClass):
 	CLSID = IID('{1446F3C0-2169-11D0-91A7-7A9695000000}')
 	coclass_clsid = IID('{8B36BB3F-6CF5-1014-9D62-FFC3EECCF0AC}')
 
 	# Result is of type IVdCmpPin
-	def _GetCompPin(self):
+	def _GetCompPin(self) -> IVdCmpPin:
 		ret = self._oleobj_.InvokeTypes(1, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, '_GetCompPin', '{AE72948C-9683-11CE-8246-00001B4D36B5}')
 		return ret
 
 	# Result is of type IVdNet
-	def _GetNet(self):
+	def _GetNet(self) -> IVdNet:
 		ret = self._oleobj_.InvokeTypes(2, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, '_GetNet', '{AE729492-9683-11CE-8246-00001B4D36B5}')
 		return ret
 
 	# Result is of type IVdSegment
-	def _GetSegment(self):
+	def _GetSegment(self) -> IVdSegment:
 		ret = self._oleobj_.InvokeTypes(3, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, '_GetSegment', '{AE72949A-9683-11CE-8246-00001B4D36B5}')
@@ -5749,7 +5749,7 @@ class IVdDoc(DispatchBaseClass):
 			, FileName)
 
 	# Result is of type IMGCDesignerDataManagementEntity
-	def DataManagementEntity(self):
+	def DataManagementEntity(self) -> IMGCDesignerDataManagementEntity:
 		ret = self._oleobj_.InvokeTypes(24, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'DataManagementEntity', '{03BE5928-2002-4CCB-818D-775ED6115A41}')
@@ -5763,7 +5763,7 @@ class IVdDoc(DispatchBaseClass):
 			)
 
 	# Result is of type IVdViews
-	def GetViews(self):
+	def GetViews(self) -> IVdViews:
 		ret = self._oleobj_.InvokeTypes(14, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetViews', '{DC3A8AF0-91B4-11CE-8243-00001B4D36B5}')
@@ -5840,7 +5840,7 @@ class IVdDocs(DispatchBaseClass):
 	coclass_clsid = IID('{8B36663A-6CF5-1014-9D62-FFC3EECCF0AC}')
 
 	# Result is of type IVdDoc
-	def Add(self):
+	def Add(self) -> IVdDoc:
 		ret = self._oleobj_.InvokeTypes(5, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'Add', '{4ADEF4E2-690A-11CE-9261-0020C5E26659}')
@@ -5865,7 +5865,7 @@ class IVdDocs(DispatchBaseClass):
 			ret = Dispatch(ret, 'Open', '{4ADEF4E2-690A-11CE-9261-0020C5E26659}')
 		return ret
 
-	def SaveAll(self):
+	def SaveAll(self) -> IVdDoc:
 		return self._oleobj_.InvokeTypes(10, LCID, 1, (24, 0), (),)
 
 	def SelectPath(self, FileName=defaultNamedNotOptArg, HierPath=defaultNamedNotOptArg, SheetNumber=defaultNamedNotOptArg, Type=defaultNamedNotOptArg):
@@ -5926,7 +5926,7 @@ class IVdFrameBoard(DispatchBaseClass):
 			ret = Dispatch(ret, 'GetLocation', '{AE729498-9683-11CE-8246-00001B4D36B5}')
 		return ret
 
-	def IsClone(self):
+	def IsClone(self) -> IVdPoint:
 		return self._oleobj_.InvokeTypes(13, LCID, 1, (11, 0), (),)
 
 	def SetFrameBoardName(self, NewName=defaultNamedNotOptArg):
@@ -6081,7 +6081,7 @@ class IVdICTBlock(DispatchBaseClass):
 			, _MIDL__IVdICTBlock0004_)
 
 	# Result is of type IVdObjs
-	def GetInstances(self):
+	def GetInstances(self) -> IVdObjs:
 		ret = self._oleobj_.InvokeTypes(105, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetInstances', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
@@ -6092,7 +6092,7 @@ class IVdICTBlock(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(2, LCID, 1, (8, 0), (),)
 
 	# Result is of type IVdObjs
-	def GetNets(self):
+	def GetNets(self) -> IVdObjs:
 		ret = self._oleobj_.InvokeTypes(104, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetNets', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
@@ -6150,7 +6150,7 @@ class IVdICTComp(DispatchBaseClass):
 			ret = Dispatch(ret, 'GetAttributesNames', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
 		return ret
 
-	def GetDefName(self):
+	def GetDefName(self) -> IStringList:
 		# Result is a Unicode object
 		return self._oleobj_.InvokeTypes(105, LCID, 1, (8, 0), (),)
 
@@ -6163,7 +6163,7 @@ class IVdICTComp(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(2, LCID, 1, (8, 0), (),)
 
 	# Result is of type IVdObjs
-	def GetPins(self):
+	def GetPins(self) -> IVdObjs:
 		ret = self._oleobj_.InvokeTypes(108, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetPins', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
@@ -6212,7 +6212,7 @@ class IVdICTDocument(DispatchBaseClass):
 			, FileName)
 
 	# Result is of type IVdICTViews
-	def GetViews(self):
+	def GetViews(self) -> IVdICTViews:
 		ret = self._oleobj_.InvokeTypes(108, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetViews', '{EA874DB4-9B4D-4E7F-BE4F-D41AD4A560DE}')
@@ -6262,7 +6262,7 @@ class IVdICTNet(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(2, LCID, 1, (8, 0), (),)
 
 	# Result is of type IVdObjs
-	def GetPins(self):
+	def GetPins(self) -> IVdObjs:
 		ret = self._oleobj_.InvokeTypes(101, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetPins', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
@@ -6328,7 +6328,7 @@ class IVdICTPin(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(2, LCID, 1, (8, 0), (),)
 
 	# Result is of type IVdObjs
-	def GetNets(self):
+	def GetNets(self) -> IVdObjs:
 		ret = self._oleobj_.InvokeTypes(101, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetNets', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
@@ -6386,7 +6386,7 @@ class IVdICTView(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(106, LCID, 1, (11, 0), ((8, 1),),Name
 			)
 
-	def SetSignalsView(self):
+	def SetSignalsView(self) -> IVdObjs:
 		return self._oleobj_.InvokeTypes(102, LCID, 1, (24, 0), (),)
 
 	def SetSymbolsView(self):
@@ -6435,7 +6435,7 @@ class IVdICTViews(DispatchBaseClass):
 	Count: int # read_only
 	Parent: str # IVdDoc; read_only
 
-	def __iter__(self):
+	def __iter__(self) -> IVdICTView:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
@@ -6459,14 +6459,14 @@ class IVdLabel(DispatchBaseClass):
 	coclass_clsid = IID('{8B36A221-6CF5-1014-9D62-FFC3EECCF0AC}')
 
 	# Result is of type IVdPoint
-	def GetLocation(self):
+	def GetLocation(self) -> IVdPoint:
 		ret = self._oleobj_.InvokeTypes(13, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetLocation', '{AE729498-9683-11CE-8246-00001B4D36B5}')
 		return ret
 
 	# Result is of type IColor
-	def GetObjectColor(self):
+	def GetObjectColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(21, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
@@ -6592,14 +6592,14 @@ class IVdLine(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (3, 0), (),)
 
 	# Result is of type IColor
-	def GetObjectColor(self):
+	def GetObjectColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(15, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
 		return ret
 
 	# Result is of type IColor
-	def GetObjectFillColor(self):
+	def GetObjectFillColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(19, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectFillColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
@@ -6613,7 +6613,7 @@ class IVdLine(DispatchBaseClass):
 			ret = Dispatch(ret, 'GetPoint', '{AE729498-9683-11CE-8246-00001B4D36B5}')
 		return ret
 
-	def IsColorAutomatic(self):
+	def IsColorAutomatic(self) -> IVdPoint:
 		return self._oleobj_.InvokeTypes(17, LCID, 1, (11, 0), (),)
 
 	def IsFillColorAutomatic(self):
@@ -6746,28 +6746,28 @@ class IVdNet(DispatchBaseClass):
 		return ret
 
 	# Result is of type IColor
-	def GetObjectColor(self):
+	def GetObjectColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
 		return ret
 
 	# Result is of type IVdObjs
-	def GetRippers(self):
+	def GetRippers(self) -> IVdObjs:
 		ret = self._oleobj_.InvokeTypes(28, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetRippers', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
 		return ret
 
 	# Result is of type IVdObjs
-	def GetSegments(self):
+	def GetSegments(self) -> IVdObjs:
 		ret = self._oleobj_.InvokeTypes(14, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetSegments', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
 		return ret
 
 	# Result is of type IStringList
-	def GetSignals(self):
+	def GetSignals(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(27, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetSignals', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -6945,7 +6945,7 @@ class IVdPin(DispatchBaseClass):
 			)
 
 	# Result is of type IColor
-	def GetObjectColor(self):
+	def GetObjectColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(21, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
@@ -7096,7 +7096,7 @@ class IVdSchematicSheetDocument(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(118, LCID, 1, (11, 0), (),)
 
 	# Result is of type IVdViews
-	def GetViews(self):
+	def GetViews(self) -> IVdViews:
 		ret = self._oleobj_.InvokeTypes(108, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetViews', '{DC3A8AF0-91B4-11CE-8243-00001B4D36B5}')
@@ -7174,7 +7174,7 @@ class IVdSchematicSheetDocuments(DispatchBaseClass):
 	coclass_clsid = IID('{8B36663A-6CF5-1014-9D62-FFC3EECCF0AC}')
 
 	# Result is of type IVdSchematicSheetDocument
-	def Add(self):
+	def Add(self) -> IVdSchematicSheetDocument:
 		ret = self._oleobj_.InvokeTypes(105, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'Add', '{D8B95AF2-D943-4295-8D86-71B4F904C3AA}')
@@ -7203,7 +7203,7 @@ class IVdSchematicSheetDocuments(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(116, LCID, 1, (3, 0), (),)
 
 	# Result is of type IStringList
-	def GetAvailableSchematics(self):
+	def GetAvailableSchematics(self) -> IStringList:
 		ret = self._oleobj_.InvokeTypes(108, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetAvailableSchematics', '{3566B3FB-97C7-4F45-B1A6-E5469271F9AC}')
@@ -7229,7 +7229,7 @@ class IVdSchematicSheetDocuments(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(117, LCID, 1, (11, 0), ((8, 1), (8, 1)),SchematicName
 			, SheetNumber)
 
-	def IsSheetsClipboardEmpty(self):
+	def IsSheetsClipboardEmpty(self) -> IStringList:
 		return self._oleobj_.InvokeTypes(113, LCID, 1, (3, 0), (),)
 
 	def IsSymbolUnderEdit(self, sSymbolName=defaultNamedNotOptArg, sSymbolExtension=defaultNamedNotOptArg):
@@ -7268,7 +7268,7 @@ class IVdSchematicSheetDocuments(DispatchBaseClass):
 			ret = Dispatch(ret, 'Open_Hierarchically', '{D8B95AF2-D943-4295-8D86-71B4F904C3AA}')
 		return ret
 
-	def PasteBlocksFromClipboard(self):
+	def PasteBlocksFromClipboard(self) -> IVdSchematicSheetDocument:
 		return self._oleobj_.InvokeTypes(115, LCID, 1, (24, 0), (),)
 
 	def PasteFromClipboard(self, SchematicName=defaultNamedNotOptArg, dstPath=defaultNamedNotOptArg, SheetsToBeReplaced=defaultNamedNotOptArg):
@@ -7356,7 +7356,7 @@ class IVdSegment(DispatchBaseClass):
 	Parent: str # IVdNet; read_only
 	Type: str # read_only
 
-	def __iter__(self):
+	def __iter__(self) -> IVdPoint:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
@@ -7369,14 +7369,14 @@ class IVdText(DispatchBaseClass):
 	coclass_clsid = IID('{8B36B75E-6CF5-1014-9D62-FFC3EECCF0AC}')
 
 	# Result is of type IVdPoint
-	def GetLocation(self):
+	def GetLocation(self) -> IVdPoint:
 		ret = self._oleobj_.InvokeTypes(10, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetLocation', '{AE729498-9683-11CE-8246-00001B4D36B5}')
 		return ret
 
 	# Result is of type IColor
-	def GetObjectColor(self):
+	def GetObjectColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(17, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
@@ -7461,7 +7461,7 @@ class IVdView(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(11, LCID, 1, (24, 0), (),)
 
 	# Result is of type IVdBlock
-	def ActiveBlock(self):
+	def ActiveBlock(self) -> IVdBlock:
 		ret = self._oleobj_.InvokeTypes(8, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'ActiveBlock', '{AE729484-9683-11CE-8246-00001B4D36B5}')
@@ -7479,7 +7479,7 @@ class IVdView(DispatchBaseClass):
 			, SymbolName)
 
 	# Result is of type IVdApp
-	def Application(self):
+	def Application(self) -> IVdApp:
 		ret = self._oleobj_.InvokeTypes(9, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'Application', '{EA4ABD71-84B0-11CE-8237-00001B4D36B5}')
@@ -7504,7 +7504,7 @@ class IVdView(DispatchBaseClass):
 			, Xmin, Ymin, Xmax, Ymax)
 
 	# Result is of type IVdSchematicSheetDocument
-	def Document(self):
+	def Document(self) -> IVdSchematicSheetDocument:
 		ret = self._oleobj_.InvokeTypes(10, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'Document', '{D8B95AF2-D943-4295-8D86-71B4F904C3AA}')
@@ -7549,7 +7549,7 @@ class IVdView(DispatchBaseClass):
 			ret = Dispatch(ret, 'Query', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
 		return ret
 
-	def Refresh(self):
+	def Refresh(self) -> IVdObjs:
 		return self._oleobj_.InvokeTypes(6, LCID, 1, (24, 0), (),)
 
 	def SelectByName(self, Name=defaultNamedNotOptArg):
@@ -7679,7 +7679,7 @@ class IVdViews(DispatchBaseClass):
 	Count: int # read_only
 	Parent: str # IVdDoc; read_only
 
-	def __iter__(self):
+	def __iter__(self) -> IVdView:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
@@ -7730,7 +7730,7 @@ class IViewport(DispatchBaseClass):
 			, Top, Right, Bottom)
 
 	# Result is of type IColor
-	def GetObjectColor(self):
+	def GetObjectColor(self) -> IColor:
 		ret = self._oleobj_.InvokeTypes(28, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'GetObjectColor', '{C1031A0C-15BD-4897-A3E5-4C615CDEA684}')
@@ -7819,7 +7819,7 @@ class IViewport(DispatchBaseClass):
 	TextFont: str # write_only
 	TextSize: str # write_only
 
-	def __iter__(self):
+	def __iter__(self) -> IVdRect:
 		"Return a Python iterator for this object"
 		try:
 			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())

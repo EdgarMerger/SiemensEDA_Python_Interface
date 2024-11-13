@@ -121,7 +121,43 @@ def copy_result():
     # print(result)
     # result = subprocess.run(shlex.split(cmd), shell=True, capture_output=True, text=True)
     # result = subprocess.run(['python', 'makepy.py', '-o', 'designer_orig.py', '-v', 'ViewDraw'], capture_output=True, text=True)
-    
+
+
+def add_type_hints_to_methods():
+    # Read the content of the file
+    with open('./designer_ifc.py', 'r') as file:
+        lines = file.readlines()
+
+    updated_lines = []
+    method_pattern = re.compile(r'^\s*def\s+(\w+)\(self\)\s*:')
+    type_comment_pattern = re.compile(r'^\s*#\s*Result\s+is\s+of\s+type\s+(\w+)\s*')
+
+    current_type = None
+    for line in lines:
+        # Check for type comment
+        type_comment_match = type_comment_pattern.match(line)
+        if type_comment_match:
+            # Extract type from comment and preserve the comment line
+            current_type = type_comment_match.group(1)
+            updated_lines.append(line)  # Keep the type comment
+
+        # Check for method definition
+        elif method_pattern.match(line) and current_type:
+            # Add the type hint to the method
+            line = re.sub(r'(\))\s*:', f') -> {current_type}:', line)
+            current_type = None  # Reset current type after applying
+            updated_lines.append(line)
+        
+        # Regular line (no type comment or method)
+        else:
+            updated_lines.append(line)
+
+    # Write the modified lines back to the file
+    with open('./designer_ifc.py', 'w') as file:
+        file.writelines(updated_lines)
+
+
+
 def cleanup():
     cmd: str = 'del designer_orig.py'
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
@@ -131,8 +167,9 @@ def cleanup():
 def run() -> None:
     generate_input()
     generate_output()
+    add_type_hints_to_methods()
     copy_result()
-    cleanup()
+    #cleanup()
 
 def main():
     run()
