@@ -113,10 +113,10 @@ def generate_output() -> None:
             process_file(in_file, out_file)
 
 def copy_result():
-    cmd: str = 'move designer_ifc.py ../designer_ifc.py'
+    cmd: str = 'copy designer_ifc.py ../designer_ifc.py'
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     print(result)
-    # cmd: str = 'move designer_orig.py ../designer_orig.py'
+    # cmd: str = 'copy designer_orig.py ../designer_orig.py'
     # result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     # print(result)
     # result = subprocess.run(shlex.split(cmd), shell=True, capture_output=True, text=True)
@@ -129,7 +129,7 @@ def add_type_hints_to_methods():
         lines = file.readlines()
 
     updated_lines = []
-    method_pattern = re.compile(r'^\s*def\s+(\w+)\(self\)\s*:')
+    method_pattern = re.compile(r'^\s*def\s+(\w+)\(.*\):', re.IGNORECASE)
     type_comment_pattern = re.compile(r'^\s*#\s*Result\s+is\s+of\s+type\s+(\w+)\s*')
 
     current_type = None
@@ -140,17 +140,17 @@ def add_type_hints_to_methods():
             # Extract type from comment and preserve the comment line
             current_type = type_comment_match.group(1)
             updated_lines.append(line)  # Keep the type comment
+            continue
 
         # Check for method definition
-        elif method_pattern.match(line) and current_type:
+        method_match = method_pattern.match(line)
+        if method_match and current_type:
             # Add the type hint to the method
+            method_name = method_match.group(1)
             line = re.sub(r'(\))\s*:', f') -> {current_type}:', line)
             current_type = None  # Reset current type after applying
-            updated_lines.append(line)
-        
-        # Regular line (no type comment or method)
-        else:
-            updated_lines.append(line)
+ 
+        updated_lines.append(line)
 
     # Write the modified lines back to the file
     with open('./designer_ifc.py', 'w') as file:

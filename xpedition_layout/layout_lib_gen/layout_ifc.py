@@ -1,11 +1,10 @@
 # -*- coding: mbcs -*-
 # Created by makepy.py version 0.5.01
-# By python version 3.9.7 (heads/master:23670a2, Jan 17 2022, 17:27:40) [MSC v.1928 64 bit (AMD64)]
-# From type library 'MGCPCB.tlb'
-# On Tue Mar 19 16:26:51 2024
+# By python version 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)]
+# On Wed Nov 13 16:06:07 2024
 'MGCPCB (AutoActive series) Type Library'
 makepy_version = '0.5.01'
-python_version = 0x30907f0
+python_version = 0x3090af0
 
 import win32com.client.CLSIDToClass, pythoncom, pywintypes
 import win32com.client.util
@@ -2862,7 +2861,7 @@ class IMGCPCBActualPlaneShape(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -2880,7 +2879,7 @@ class IMGCPCBActualPlaneShape(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -2977,7 +2976,7 @@ class IMGCPCBActualPlaneShapes(DispatchBaseClass):
 
 	# Result is of type IMGCPCBActualPlaneShape
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBActualPlaneShape:
 		'Returns the actual plane shape of a given index in the actual plane shape collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -3093,7 +3092,7 @@ class IMGCPCBApplication(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(57, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBDocument
-	def OpenDocument(self, filename=defaultNamedNotOptArg):
+	def OpenDocument(self, filename=defaultNamedNotOptArg) -> IMGCPCBDocument:
 		'Opens (and returns) a new Document.'
 		ret = self._oleobj_.InvokeTypes(6, LCID, 1, (9, 0), ((8, 1),),filename
 			)
@@ -3102,7 +3101,7 @@ class IMGCPCBApplication(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBDocument
-	def OpenDocumentMultiThreaded(self, filename=defaultNamedNotOptArg):
+	def OpenDocumentMultiThreaded(self, filename=defaultNamedNotOptArg) -> IMGCPCBDocument:
 		'Opens a new Document.Internal usage only!  This will behave as File Open. May not return a new document.'
 		ret = self._oleobj_.InvokeTypes(50, LCID, 1, (9, 0), ((8, 1),),filename
 			)
@@ -3111,7 +3110,7 @@ class IMGCPCBApplication(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBApplication
-	def OpenReference(self, refDesign=defaultNamedNotOptArg):
+	def OpenReference(self, refDesign=defaultNamedNotOptArg) -> IMGCPCBApplication:
 		'Returns the Application object of the reference application. The input should be a string containing the full path to the reference design.'
 		ret = self._oleobj_.InvokeTypes(42, LCID, 1, (9, 0), ((8, 1),),refDesign
 			)
@@ -3456,7 +3455,7 @@ class IMGCPCBBendArea(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -3520,13 +3519,13 @@ class IMGCPCBBendArea(DispatchBaseClass):
 			, dBendAngle, BendOrigin, dAreaTolerance, dLeftSlideDistance, dRightSlideDistance
 			, eUnit, eAngleUnit)
 
-	def MoveRelative(self, XOffset=defaultNamedNotOptArg, YOffset=defaultNamedNotOptArg, eUnit=0):
+	def MoveRelative(self, XOffset=defaultNamedNotOptArg, YOffset=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBBendAreas:
 		'Moves the specified offset.'
 		return self._oleobj_.InvokeTypes(15, LCID, 1, (24, 0), ((5, 1), (5, 1), (3, 49)),XOffset
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -3673,7 +3672,7 @@ class IMGCPCBBendAreas(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBendArea
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBBendArea:
 		'Returns the bend area of a given index in the bend area collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -3880,7 +3879,7 @@ class IMGCPCBBoardOutline(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -3898,7 +3897,7 @@ class IMGCPCBBoardOutline(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -3985,7 +3984,7 @@ class IMGCPCBBoards(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBoard
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBBoard:
 		'Returns the board of a given index in the boards collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -4056,7 +4055,7 @@ class IMGCPCBBondPad(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(19, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -4066,7 +4065,7 @@ class IMGCPCBBondPad(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBreakoutDefaults
 	# The method GetBreakoutDefaults is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBreakoutDefaults(self, nLayer=0):
+	def GetBreakoutDefaults(self, nLayer=0) -> IMGCPCBBreakoutDefaults:
 		"Returns this bond pad's breakout defaults.  A single layer can be specified."
 		ret = self._oleobj_.InvokeTypes(42, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -4082,7 +4081,7 @@ class IMGCPCBBondPad(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, nLayer=0, bIncludeNegativePads=False):
+	def GetPads(self, nLayer=0, bIncludeNegativePads=False) -> IMGCPCBPads:
 		'Returns the pad collection for this padstack object on the specified layer (0=all layers). May optionally return the negative pads too, the presence of a negative pad on a layer will override the regular pad on that layer.'
 		ret = self._oleobj_.InvokeTypes(20, LCID, 2, (9, 0), ((3, 49), (11, 49)),nLayer
 			, bIncludeNegativePads)
@@ -4109,7 +4108,7 @@ class IMGCPCBBondPad(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTeardropDefaults
 	# The method GetTeardropDefaults is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTeardropDefaults(self, nLayer=0):
+	def GetTeardropDefaults(self, nLayer=0) -> IMGCPCBTeardropDefaults:
 		"Returns this bond pad's teardrop defaults.  A single layer can be specified."
 		ret = self._oleobj_.InvokeTypes(43, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -4119,7 +4118,7 @@ class IMGCPCBBondPad(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserPads
 	# The method GetUserPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserPads(self, sLayerOnly='*'):
+	def GetUserPads(self, sLayerOnly='*') -> IMGCPCBUserPads:
 		'Returns the collection of user pads.'
 		return self._ApplyTypes_(52, 2, (9, 32), ((8, 49),), 'GetUserPads', '{ACC37237-2F98-403B-8783-C21D7026F5B4}',sLayerOnly
 			)
@@ -4158,7 +4157,7 @@ class IMGCPCBBondPad(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this padstack object.'
 		ret = self._oleobj_.InvokeTypes(31, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -4390,7 +4389,7 @@ class IMGCPCBBondPads(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBondPad
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBBondPad:
 		'Returns the bond pad of a given index in the bond pads collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -4514,7 +4513,7 @@ class IMGCPCBBreakoutDefaults(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBreakoutDefault
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBBreakoutDefault:
 		'Returns the breakout default of a given index in the breakout defaults collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -4576,7 +4575,7 @@ class IMGCPCBBreakoutTrace(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -4594,7 +4593,7 @@ class IMGCPCBBreakoutTrace(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -4695,7 +4694,7 @@ class IMGCPCBBreakoutTraces(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBreakoutTrace
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBBreakoutTrace:
 		'Returns the breakout trace of a given index in the breakout trace collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -4761,7 +4760,7 @@ class IMGCPCBBusPath(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -4779,7 +4778,7 @@ class IMGCPCBBusPath(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -4900,7 +4899,7 @@ class IMGCPCBBusPaths(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBusPath
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBBusPath:
 		'Returns the bus path of a given index in the bus path collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -5000,7 +4999,7 @@ class IMGCPCBCavities(DispatchBaseClass):
 
 	# Result is of type IMGCPCBCavity
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBCavity:
 		'Returns the cavity of a given index in the cavity collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -5064,7 +5063,7 @@ class IMGCPCBCavity(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -5094,7 +5093,7 @@ class IMGCPCBCavity(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -5255,7 +5254,7 @@ class IMGCPCBCells(DispatchBaseClass):
 
 	# Result is of type IMGCPCBCell
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBCell:
 		'Returns the cell of a given index in the cell collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -5517,7 +5516,7 @@ class IMGCPCBClusters(DispatchBaseClass):
 
 	# Result is of type IMGCPCBCluster
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBCluster:
 		'Returns the object of a given index in the cluster collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -5825,7 +5824,7 @@ class IMGCPCBComplexVia(DispatchBaseClass):
 
 	# Result is of type IMGCPCBObjects
 	# The method ConnectionPointsOnLayer is actually a property, but must be used as a method to correctly pass the arguments
-	def ConnectionPointsOnLayer(self, pNet=defaultNamedNotOptArg, Layer=defaultNamedNotOptArg, eUnit=defaultNamedNotOptArg, pPointsArray=pythoncom.Missing):
+	def ConnectionPointsOnLayer(self, pNet=defaultNamedNotOptArg, Layer=defaultNamedNotOptArg, eUnit=defaultNamedNotOptArg, pPointsArray=pythoncom.Missing) -> IMGCPCBObjects:
 		'Return the all connection points of this ComplexVia on layer.'
 		return self._ApplyTypes_(28, 2, (9, 0), ((9, 1), (3, 1), (3, 1), (16396, 2)), 'ConnectionPointsOnLayer', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED76}',pNet
 			, Layer, eUnit, pPointsArray)
@@ -5836,7 +5835,7 @@ class IMGCPCBComplexVia(DispatchBaseClass):
 
 	# Result is of type IMGCPCBObstructs
 	# The method GetObstructs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObstructs(self, eSelectType=-1):
+	def GetObstructs(self, eSelectType=-1) -> IMGCPCBObstructs:
 		"Returns the ComplexVia's obstruct collection."
 		ret = self._oleobj_.InvokeTypes(22, LCID, 2, (9, 0), ((3, 49),),eSelectType
 			)
@@ -5891,7 +5890,7 @@ class IMGCPCBComplexVia(DispatchBaseClass):
 
 	# Result is of type IMGCPCBObjects
 	# The method UserDefinedConnectionPointsOnLayer is actually a property, but must be used as a method to correctly pass the arguments
-	def UserDefinedConnectionPointsOnLayer(self, pNet=defaultNamedNotOptArg, Layer=defaultNamedNotOptArg, eUnit=defaultNamedNotOptArg, pPointsArray=pythoncom.Missing):
+	def UserDefinedConnectionPointsOnLayer(self, pNet=defaultNamedNotOptArg, Layer=defaultNamedNotOptArg, eUnit=defaultNamedNotOptArg, pPointsArray=pythoncom.Missing) -> IMGCPCBObjects:
 		'Return the user defined connection points of this ComplexVia on layer.'
 		return self._ApplyTypes_(30, 2, (9, 0), ((9, 1), (3, 1), (3, 1), (16396, 2)), 'UserDefinedConnectionPointsOnLayer', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED76}',pNet
 			, Layer, eUnit, pPointsArray)
@@ -5992,7 +5991,7 @@ class IMGCPCBComplexViaPattern(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGeometries
 	# The method GeometriesByLayer is actually a property, but must be used as a method to correctly pass the arguments
-	def GeometriesByLayer(self, nLayer=defaultNamedNotOptArg, eObjectClass=-1):
+	def GeometriesByLayer(self, nLayer=defaultNamedNotOptArg, eObjectClass=-1) -> IMGCPCBGeometries:
 		'Returns the geometry collection for defined layer for this complex via pattern.'
 		ret = self._oleobj_.InvokeTypes(6, LCID, 2, (9, 0), ((3, 1), (3, 49)),nLayer
 			, eObjectClass)
@@ -6056,7 +6055,7 @@ class IMGCPCBComplexViaPatterns(DispatchBaseClass):
 
 	# Result is of type IMGCPCBComplexViaPattern
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBComplexViaPattern:
 		'Returns the via pattern of a given index in the complex via collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -6124,7 +6123,7 @@ class IMGCPCBComplexVias(DispatchBaseClass):
 
 	# Result is of type IMGCPCBComplexVia
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBComplexVia:
 		'Returns the via of a given index in the complex via collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -6186,7 +6185,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 	coclass_clsid = IID('{EDEDED08-D5F6-4B04-8FE7-EDEDEDEDED00}')
 
 	# Result is of type IMGCPCBGlueSpot
-	def AddGlueSpot(self, PositionX=defaultNamedNotOptArg, PositionY=defaultNamedNotOptArg, eUnit=0):
+	def AddGlueSpot(self, PositionX=defaultNamedNotOptArg, PositionY=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBGlueSpot:
 		'Adds a glue spot to the cell.'
 		ret = self._oleobj_.InvokeTypes(94, LCID, 1, (9, 0), ((5, 1), (5, 1), (3, 49)),PositionX
 			, PositionY, eUnit)
@@ -6199,7 +6198,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 			, TextString)
 
 	# Result is of type IMGCPCBMotionObject
-	def CreateMotionGfx(self, motionType=3):
+	def CreateMotionGfx(self, motionType=3) -> IMGCPCBMotionObject:
 		'Puts the part into motion graphics. (Beta)'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 1, (9, 0), ((3, 49),),motionType
 			)
@@ -6224,7 +6223,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(112, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCPCBPin
-	def FindPin(self, strPinName=defaultNamedNotOptArg):
+	def FindPin(self, strPinName=defaultNamedNotOptArg) -> IMGCPCBPin:
 		'Find the pin with the specified name.'
 		ret = self._oleobj_.InvokeTypes(52, LCID, 1, (9, 0), ((8, 1),),strPinName
 			)
@@ -6233,7 +6232,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property, on this component, by name.'
 		ret = self._oleobj_.InvokeTypes(58, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -6273,7 +6272,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerGfxs
 	# The method GetConductorLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerGfxs(self, eSelectType=-1, eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerGfxs(self, eSelectType=-1, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerGfxs:
 		"Returns the Component's board layer gfx collection. (Deprecated) Use ConductorLayerGfxs2."
 		ret = self._oleobj_.InvokeTypes(42, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, nLayerOnly)
@@ -6283,14 +6282,14 @@ class IMGCPCBComponent(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerGfxs
 	# The method GetConductorLayerGfxs2 is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerGfxs2(self, pArrayOfSelectType='', eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerGfxs2(self, pArrayOfSelectType='', eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerGfxs:
 		"Returns the Component's board layer gfx collection."
 		return self._ApplyTypes_(72, 2, (9, 32), ((16396, 49), (3, 49), (3, 49)), 'GetConductorLayerGfxs2', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED21}',pArrayOfSelectType
 			, eSelectOnly, nLayerOnly)
 
 	# Result is of type IMGCPCBConductorLayerTexts
 	# The method GetConductorLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerTexts:
 		"Returns the Component's board text collection."
 		ret = self._oleobj_.InvokeTypes(45, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -6300,7 +6299,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 
 	# Result is of type IMGCPCBEmbeddedPassiveShapes
 	# The method GetEmbeddedPassiveShapes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetEmbeddedPassiveShapes(self, eSelectOnly=0, eType=-1, nLayerOnly=0):
+	def GetEmbeddedPassiveShapes(self, eSelectOnly=0, eType=-1, nLayerOnly=0) -> IMGCPCBEmbeddedPassiveShapes:
 		"Returns the component's collection of embedded passive shapes."
 		ret = self._oleobj_.InvokeTypes(69, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectOnly
 			, eType, nLayerOnly)
@@ -6310,7 +6309,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerGfxs
 	# The method GetFabricationLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerGfxs(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0):
+	def GetFabricationLayerGfxs(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0) -> IMGCPCBFabricationLayerGfxs:
 		"Returns the Component's fabrication layer graphics collection."
 		ret = self._oleobj_.InvokeTypes(43, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, eLayerOnly)
@@ -6320,7 +6319,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerTexts
 	# The method GetFabricationLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0):
+	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0) -> IMGCPCBFabricationLayerTexts:
 		"Returns the Component's fabrication text collection."
 		ret = self._oleobj_.InvokeTypes(47, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, eLayerOnly)
@@ -6342,7 +6341,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 
 	# Result is of type IMGCPCBObstructs
 	# The method GetObstructs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObstructs(self, eSelectType=-1):
+	def GetObstructs(self, eSelectType=-1) -> IMGCPCBObstructs:
 		"Returns the Component's obstruct collection."
 		ret = self._oleobj_.InvokeTypes(29, LCID, 2, (9, 0), ((3, 49),),eSelectType
 			)
@@ -6358,7 +6357,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPins
 	# The method GetPins is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPins(self, Name='*'):
+	def GetPins(self, Name='*') -> IMGCPCBPins:
 		"Returns the Component's pin collection."
 		return self._ApplyTypes_(9, 2, (9, 32), ((8, 49),), 'GetPins', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED08}',Name
 			)
@@ -6377,14 +6376,14 @@ class IMGCPCBComponent(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserLayerGfxs
 	# The method GetUserLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerGfxs(self, eSelectOnly=0, sLayerOnly='*'):
+	def GetUserLayerGfxs(self, eSelectOnly=0, sLayerOnly='*') -> IMGCPCBUserLayerGfxs:
 		"Returns the Component's user layer gfx collection."
 		return self._ApplyTypes_(44, 2, (9, 32), ((3, 49), (8, 49)), 'GetUserLayerGfxs', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED51}',eSelectOnly
 			, sLayerOnly)
 
 	# Result is of type IMGCPCBUserLayerTexts
 	# The method GetUserLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*'):
+	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*') -> IMGCPCBUserLayerTexts:
 		"Returns the Component's user text collection."
 		return self._ApplyTypes_(48, 2, (9, 32), ((3, 49), (8, 49)), 'GetUserLayerTexts', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED5A}',eSelectOnly
 			, sLayerOnly)
@@ -6402,7 +6401,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(88, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCPCBComponent
-	def IsNested(self):
+	def IsNested(self) -> IMGCPCBComponent:
 		'Return the parent component if this component is nested inside another.'
 		ret = self._oleobj_.InvokeTypes(56, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -6476,7 +6475,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this pin.'
 		ret = self._oleobj_.InvokeTypes(59, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -6485,7 +6484,7 @@ class IMGCPCBComponent(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBProperty
-	def PutPropertyEx(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg, sSource=defaultNamedNotOptArg):
+	def PutPropertyEx(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg, sSource=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property with source defined.'
 		ret = self._oleobj_.InvokeTypes(100, LCID, 1, (9, 0), ((8, 1), (8, 1), (8, 1)),sName
 			, sValue, sSource)
@@ -6799,7 +6798,7 @@ class IMGCPCBComponents(DispatchBaseClass):
 
 	# Result is of type IMGCPCBComponent
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBComponent:
 		'Returns the cmp of a given index in the components collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -6881,7 +6880,7 @@ class IMGCPCBConductiveArea(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -6915,7 +6914,7 @@ class IMGCPCBConductiveArea(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -7041,7 +7040,7 @@ class IMGCPCBConductiveAreas(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductiveArea
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBConductiveArea:
 		'Returns the conductive area of a given index in the conductive area collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -7107,7 +7106,7 @@ class IMGCPCBConductorLayerGfx(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -7125,7 +7124,7 @@ class IMGCPCBConductorLayerGfx(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -7203,7 +7202,7 @@ class IMGCPCBConductorLayerGfxs(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerGfx
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBConductorLayerGfx:
 		'Returns the gfx of a given index in the gfx collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -7269,7 +7268,7 @@ class IMGCPCBConductorLayerText(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(10, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property, on the text object, by name.'
 		ret = self._oleobj_.InvokeTypes(37, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -7308,7 +7307,7 @@ class IMGCPCBConductorLayerText(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this textobject .'
 		ret = self._oleobj_.InvokeTypes(38, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -7435,7 +7434,7 @@ class IMGCPCBConductorLayerTexts(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerText
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBConductorLayerText:
 		'Returns the text of a given index in the text collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -7592,7 +7591,7 @@ class IMGCPCBConstraintClasses(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConstraintClass
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBConstraintClass:
 		'Returns the net group of a given index in the net group collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -7650,7 +7649,7 @@ class IMGCPCBConstructionLine(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -7682,7 +7681,7 @@ class IMGCPCBConstructionLine(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -7770,7 +7769,7 @@ class IMGCPCBConstructionLines(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConstructionLine
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBConstructionLine:
 		'Returns the Construction Line of a given index in the Construction Line collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -7836,7 +7835,7 @@ class IMGCPCBConstructionPoint(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -7880,7 +7879,7 @@ class IMGCPCBConstructionPoint(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -7991,7 +7990,7 @@ class IMGCPCBConstructionPoints(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConstructionPoint
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBConstructionPoint:
 		'Returns the Construction Point of a given index in the Construction Point collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -8057,7 +8056,7 @@ class IMGCPCBContour(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -8075,7 +8074,7 @@ class IMGCPCBContour(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -8185,7 +8184,7 @@ class IMGCPCBContours(DispatchBaseClass):
 
 	# Result is of type IMGCPCBContour
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBContour:
 		'Returns the contour of a given index in the contour collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -8406,7 +8405,7 @@ class IMGCPCBCopperBalancingData(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -8424,7 +8423,7 @@ class IMGCPCBCopperBalancingData(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -8508,7 +8507,7 @@ class IMGCPCBCopperBalancingDatas(DispatchBaseClass):
 
 	# Result is of type IMGCPCBCopperBalancingData
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBCopperBalancingData:
 		'Returns the copper balancing data of a given index in the copper balancing data collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -8574,7 +8573,7 @@ class IMGCPCBCopperBalancingShape(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -8592,7 +8591,7 @@ class IMGCPCBCopperBalancingShape(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -8684,7 +8683,7 @@ class IMGCPCBCopperBalancingShapes(DispatchBaseClass):
 
 	# Result is of type IMGCPCBCopperBalancingShape
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBCopperBalancingShape:
 		'Returns the copper balancing shape of a given index in the copper balancing shape collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -8778,7 +8777,7 @@ class IMGCPCBDRCWindow(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -8796,7 +8795,7 @@ class IMGCPCBDRCWindow(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -8950,7 +8949,7 @@ class IMGCPCBDataManagement(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDataManagementAdditionalProperties
 	# The method AdditionalProperties is actually a property, but must be used as a method to correctly pass the arguments
-	def AdditionalProperties(self, types=defaultNamedNotOptArg):
+	def AdditionalProperties(self, types=defaultNamedNotOptArg) -> IMGCPCBDataManagementAdditionalProperties:
 		'Find additional properties available for entities of given types.'
 		ret = self._oleobj_.InvokeTypes(11, LCID, 2, (9, 0), ((3, 1),),types
 			)
@@ -8960,7 +8959,7 @@ class IMGCPCBDataManagement(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDataManagementEntities
 	# The method CachedEntities is actually a property, but must be used as a method to correctly pass the arguments
-	def CachedEntities(self, types=defaultNamedNotOptArg):
+	def CachedEntities(self, types=defaultNamedNotOptArg) -> IMGCPCBDataManagementEntities:
 		'Find all entities and return them with cached property values.'
 		ret = self._oleobj_.InvokeTypes(2, LCID, 2, (9, 0), ((3, 1),),types
 			)
@@ -8980,7 +8979,7 @@ class IMGCPCBDataManagement(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBDataManagementEntity
-	def FindCachedEntityByPath(self, Path=defaultNamedNotOptArg, AdditionalProperties=defaultNamedNotOptArg):
+	def FindCachedEntityByPath(self, Path=defaultNamedNotOptArg, AdditionalProperties=defaultNamedNotOptArg) -> IMGCPCBDataManagementEntity:
 		'Find entity by path and return it with cached property values.'
 		ret = self._oleobj_.InvokeTypes(12, LCID, 1, (9, 0), ((8, 1), (9, 0)),Path
 			, AdditionalProperties)
@@ -8989,7 +8988,7 @@ class IMGCPCBDataManagement(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBDataManagementEntity
-	def FindEntityByPath(self, Path=defaultNamedNotOptArg):
+	def FindEntityByPath(self, Path=defaultNamedNotOptArg) -> IMGCPCBDataManagementEntity:
 		'Find entity by path.'
 		ret = self._oleobj_.InvokeTypes(4, LCID, 1, (9, 0), ((8, 1),),Path
 			)
@@ -8998,7 +8997,7 @@ class IMGCPCBDataManagement(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBDataManagementEntity
-	def FindEntityByPathAndVersion(self, Path=defaultNamedNotOptArg, Version=defaultNamedNotOptArg):
+	def FindEntityByPathAndVersion(self, Path=defaultNamedNotOptArg, Version=defaultNamedNotOptArg) -> IMGCPCBDataManagementEntity:
 		'Find entity by path and version.'
 		ret = self._oleobj_.InvokeTypes(15, LCID, 1, (9, 0), ((8, 1), (8, 1)),Path
 			, Version)
@@ -9037,7 +9036,7 @@ class IMGCPCBDataManagement(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDataManagementEntities
 	# The method entities is actually a property, but must be used as a method to correctly pass the arguments
-	def entities(self, types=defaultNamedNotOptArg):
+	def entities(self, types=defaultNamedNotOptArg) -> IMGCPCBDataManagementEntities:
 		'Find all entities.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((3, 1),),types
 			)
@@ -9093,7 +9092,7 @@ class IMGCPCBDataManagementAdditionalProperties(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDataManagementAdditionalProperty
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBDataManagementAdditionalProperty:
 		'Returns the additional property of a given index in the entities collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -9178,7 +9177,7 @@ class IMGCPCBDataManagementEntities(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDataManagementEntity
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBDataManagementEntity:
 		'Returns the entity of a given index in the entities collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -9266,7 +9265,7 @@ class IMGCPCBDataManagementEntity(DispatchBaseClass):
 			, filter, includeParents)
 
 	# Result is of type IMGCPCBDocument
-	def EditExclusive(self):
+	def EditExclusive(self) -> IMGCPCBDocument:
 		'Opens Entity for Edit Exclusive.'
 		ret = self._oleobj_.InvokeTypes(9, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -9299,7 +9298,7 @@ class IMGCPCBDataManagementEntity(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDataManagementEntities
 	# The method RelatedEntities is actually a property, but must be used as a method to correctly pass the arguments
-	def RelatedEntities(self, types=defaultNamedNotOptArg):
+	def RelatedEntities(self, types=defaultNamedNotOptArg) -> IMGCPCBDataManagementEntities:
 		'Find all related entities.'
 		ret = self._oleobj_.InvokeTypes(19, LCID, 2, (9, 0), ((3, 1),),types
 			)
@@ -9317,7 +9316,7 @@ class IMGCPCBDataManagementEntity(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(29, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBDocument
-	def View(self):
+	def View(self) -> IMGCPCBDocument:
 		'Opens Entity for View.'
 		ret = self._oleobj_.InvokeTypes(13, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -9325,7 +9324,7 @@ class IMGCPCBDataManagementEntity(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBDocument
-	def ViewForOutputsGeneration(self):
+	def ViewForOutputsGeneration(self) -> IMGCPCBDocument:
 		'Opens entity for view and outputs generation.'
 		ret = self._oleobj_.InvokeTypes(32, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -9513,7 +9512,7 @@ class IMGCPCBDetailedViews(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDetailedView
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, Index=defaultNamedNotOptArg):
+	def Item(self, Index=defaultNamedNotOptArg) -> IMGCPCBDetailedView:
 		'Returns the detailed view of a given index in the detailed view collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),Index
 			)
@@ -9573,7 +9572,7 @@ class IMGCPCBDialog(DispatchBaseClass):
 	coclass_clsid = IID('{EDEDED5E-D5F6-4B04-8FE7-EDEDEDEDED00}')
 
 	# Result is of type IMGCPCBButton
-	def FindButton(self, vButton=defaultNamedNotOptArg):
+	def FindButton(self, vButton=defaultNamedNotOptArg) -> IMGCPCBButton:
 		'Find the specified button on this dialog.'
 		ret = self._oleobj_.InvokeTypes(2, LCID, 1, (9, 0), ((12, 1),),vButton
 			)
@@ -9582,7 +9581,7 @@ class IMGCPCBDialog(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBCheckBox
-	def FindCheckBox(self, vButton=defaultNamedNotOptArg):
+	def FindCheckBox(self, vButton=defaultNamedNotOptArg) -> IMGCPCBCheckBox:
 		'Find the specified button on this dialog.'
 		ret = self._oleobj_.InvokeTypes(3, LCID, 1, (9, 0), ((12, 1),),vButton
 			)
@@ -9591,7 +9590,7 @@ class IMGCPCBDialog(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBEditBox
-	def FindEditBox(self, vEditBox=defaultNamedNotOptArg):
+	def FindEditBox(self, vEditBox=defaultNamedNotOptArg) -> IMGCPCBEditBox:
 		'Find the specified edit box on this dialog. (Beta)'
 		ret = self._oleobj_.InvokeTypes(5, LCID, 1, (9, 0), ((12, 1),),vEditBox
 			)
@@ -9705,7 +9704,7 @@ class IMGCPCBDifferentialPairs(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDifferentialPair
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBDifferentialPair:
 		'Returns the differential pair of a given index in the differential pair collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -10031,7 +10030,7 @@ class IMGCPCBDimensionSchemes(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDimensionScheme
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBDimensionScheme:
 		'Returns the dimension scheme of a given index in the dimension schemes collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -10211,7 +10210,7 @@ class IMGCPCBDimensions(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDimension
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBDimension:
 		'Returns the dimension of a given index in the dimensions collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -10602,7 +10601,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBSheets
-	def CopySheet(self, sheetName=defaultNamedNotOptArg, copySheetName=defaultNamedNotOptArg, numberOfCopies=defaultNamedNotOptArg):
+	def CopySheet(self, sheetName=defaultNamedNotOptArg, copySheetName=defaultNamedNotOptArg, numberOfCopies=defaultNamedNotOptArg) -> IMGCPCBSheets:
 		'Copy a Sheet in the Drawing Editor'
 		ret = self._oleobj_.InvokeTypes(343, LCID, 1, (9, 0), ((8, 1), (8, 1), (3, 1)),sheetName
 			, copySheetName, numberOfCopies)
@@ -10611,7 +10610,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBComponent
-	def CreateComponent(self, PartName=defaultNamedNotOptArg, CellName=defaultNamedNotOptArg, RefDes=defaultNamedNotOptArg, bSearchCentralLibrary=True):
+	def CreateComponent(self, PartName=defaultNamedNotOptArg, CellName=defaultNamedNotOptArg, RefDes=defaultNamedNotOptArg, bSearchCentralLibrary=True) -> IMGCPCBComponent:
 		'Creates a new component in the design and flags the changes as needing to be propagated to the front end. If part not found in design, will search central library based on flag.'
 		ret = self._oleobj_.InvokeTypes(286, LCID, 1, (9, 0), ((8, 1), (8, 1), (8, 1), (11, 49)),PartName
 			, CellName, RefDes, bSearchCentralLibrary)
@@ -10620,7 +10619,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBView
-	def CreateCustomView(self, _ocxId=defaultNamedNotOptArg):
+	def CreateCustomView(self, _ocxId=defaultNamedNotOptArg) -> IMGCPCBView:
 		'Creates custom view.'
 		ret = self._oleobj_.InvokeTypes(278, LCID, 1, (9, 0), ((12, 1),),_ocxId
 			)
@@ -10629,7 +10628,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBGroup
-	def CreateDefaultRFGroup(self):
+	def CreateDefaultRFGroup(self) -> IMGCPCBGroup:
 		'Create new RF Default Group.'
 		ret = self._oleobj_.InvokeTypes(311, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -10663,7 +10662,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 			ret = Dispatch(ret, 'DefaultViaPadstack', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED0E}')
 		return ret
 
-	def ExportAscii(self, sDestinationDir=defaultNamedNotOptArg, eHKPType=defaultNamedNotOptArg, sLogFile=''):
+	def ExportAscii(self, sDestinationDir=defaultNamedNotOptArg, eHKPType=defaultNamedNotOptArg, sLogFile='') -> IMGCPCBPadstack:
 		'Exports ASCII file(s) to the specified directory.'
 		return self._ApplyTypes_(111, 1, (24, 32), ((8, 1), (3, 1), (8, 49)), 'ExportAscii', None,sDestinationDir
 			, eHKPType, sLogFile)
@@ -10682,7 +10681,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 			, sLogFile)
 
 	# Result is of type IMGCPCBCell
-	def FindCell(self, Cell=defaultNamedNotOptArg):
+	def FindCell(self, Cell=defaultNamedNotOptArg) -> IMGCPCBCell:
 		'Find a Cell with the specified name.'
 		ret = self._oleobj_.InvokeTypes(177, LCID, 1, (9, 0), ((8, 1),),Cell
 			)
@@ -10691,7 +10690,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBComponent
-	def FindComponent(self, BRefDes=defaultNamedNotOptArg):
+	def FindComponent(self, BRefDes=defaultNamedNotOptArg) -> IMGCPCBComponent:
 		'Find the component with the specified reference designator.'
 		ret = self._oleobj_.InvokeTypes(51, LCID, 1, (9, 0), ((8, 1),),BRefDes
 			)
@@ -10700,7 +10699,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBGroup
-	def FindGroup(self, Name=defaultNamedNotOptArg):
+	def FindGroup(self, Name=defaultNamedNotOptArg) -> IMGCPCBGroup:
 		'Find the group with the specified name.'
 		ret = self._oleobj_.InvokeTypes(175, LCID, 1, (9, 0), ((8, 1),),Name
 			)
@@ -10709,7 +10708,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBGroup
-	def FindGroupByHierarchicalName(self, Name=defaultNamedNotOptArg):
+	def FindGroupByHierarchicalName(self, Name=defaultNamedNotOptArg) -> IMGCPCBGroup:
 		'Find the hierarchical group with the specified name.'
 		ret = self._oleobj_.InvokeTypes(302, LCID, 1, (9, 0), ((8, 1),),Name
 			)
@@ -10718,7 +10717,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBGroups
-	def FindGroupsByManagedBlockName(self, ManagedBlockName=defaultNamedNotOptArg, bReturnAllInstances=False):
+	def FindGroupsByManagedBlockName(self, ManagedBlockName=defaultNamedNotOptArg, bReturnAllInstances=False) -> IMGCPCBGroups:
 		'Find collection of groups with the specified managed block name. By default will return only 1 instance in the collection. To return all instances, set flag to true.'
 		ret = self._oleobj_.InvokeTypes(414, LCID, 1, (9, 0), ((8, 1), (11, 49)),ManagedBlockName
 			, bReturnAllInstances)
@@ -10727,7 +10726,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBLayerObject
-	def FindLayerById(self, layerUniqueId=defaultNamedNotOptArg):
+	def FindLayerById(self, layerUniqueId=defaultNamedNotOptArg) -> IMGCPCBLayerObject:
 		'Get layer by unique id'
 		ret = self._oleobj_.InvokeTypes(361, LCID, 1, (9, 0), ((12, 1),),layerUniqueId
 			)
@@ -10736,7 +10735,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBMultiBoardOutline
-	def FindMultiBoardOutlineByName(self, BoardOutlineName=defaultNamedNotOptArg):
+	def FindMultiBoardOutlineByName(self, BoardOutlineName=defaultNamedNotOptArg) -> IMGCPCBMultiBoardOutline:
 		'Find Board Outline with specified name.'
 		ret = self._oleobj_.InvokeTypes(359, LCID, 1, (9, 0), ((8, 1),),BoardOutlineName
 			)
@@ -10745,7 +10744,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBNet
-	def FindNet(self, BNetName=defaultNamedNotOptArg):
+	def FindNet(self, BNetName=defaultNamedNotOptArg) -> IMGCPCBNet:
 		'Find the net with the specified net name.'
 		ret = self._oleobj_.InvokeTypes(52, LCID, 1, (9, 0), ((8, 1),),BNetName
 			)
@@ -10754,7 +10753,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBNet
-	def FindNetByID(self, UniqueNumber=defaultNamedNotOptArg):
+	def FindNetByID(self, UniqueNumber=defaultNamedNotOptArg) -> IMGCPCBNet:
 		"Finds an net by it's unique ID."
 		ret = self._oleobj_.InvokeTypes(275, LCID, 1, (9, 0), ((12, 1),),UniqueNumber
 			)
@@ -10763,7 +10762,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBNetGroup
-	def FindNetGroup(self, Name=defaultNamedNotOptArg):
+	def FindNetGroup(self, Name=defaultNamedNotOptArg) -> IMGCPCBNetGroup:
 		'Find the net group with the specified name.'
 		ret = self._oleobj_.InvokeTypes(296, LCID, 1, (9, 0), ((8, 1),),Name
 			)
@@ -10772,7 +10771,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBNetGroup
-	def FindNetGroupByHierarchicalName(self, Name=defaultNamedNotOptArg):
+	def FindNetGroupByHierarchicalName(self, Name=defaultNamedNotOptArg) -> IMGCPCBNetGroup:
 		'Find the hierarchical net group with the specified name.'
 		ret = self._oleobj_.InvokeTypes(315, LCID, 1, (9, 0), ((8, 1),),Name
 			)
@@ -10789,7 +10788,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBPart
-	def FindPart(self, Part=defaultNamedNotOptArg):
+	def FindPart(self, Part=defaultNamedNotOptArg) -> IMGCPCBPart:
 		'Find a part with the specified name.'
 		ret = self._oleobj_.InvokeTypes(176, LCID, 1, (9, 0), ((8, 1),),Part
 			)
@@ -10798,7 +10797,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBPhysicalReuseLibraryCircuit
-	def FindPhysicalReuseLibraryCircuit(self, pName=defaultNamedNotOptArg):
+	def FindPhysicalReuseLibraryCircuit(self, pName=defaultNamedNotOptArg) -> IMGCPCBPhysicalReuseLibraryCircuit:
 		'Find the physical reuse library circuit with the specified name.'
 		ret = self._oleobj_.InvokeTypes(409, LCID, 1, (9, 0), ((8, 1),),pName
 			)
@@ -10807,7 +10806,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBPlaneAssignment
-	def FindPlaneAssignment(self, nLayer=defaultNamedNotOptArg, pNet=defaultNamedNotOptArg):
+	def FindPlaneAssignment(self, nLayer=defaultNamedNotOptArg, pNet=defaultNamedNotOptArg) -> IMGCPCBPlaneAssignment:
 		'Find the plane assignment for the specific net and layer.'
 		ret = self._oleobj_.InvokeTypes(204, LCID, 1, (9, 0), ((3, 1), (9, 1)),nLayer
 			, pNet)
@@ -10816,7 +10815,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBPlaneClass
-	def FindPlaneClass(self, sName=defaultNamedNotOptArg):
+	def FindPlaneClass(self, sName=defaultNamedNotOptArg) -> IMGCPCBPlaneClass:
 		'Find the plane class with the specified name.'
 		ret = self._oleobj_.InvokeTypes(202, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -10825,7 +10824,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find design the property by name.'
 		ret = self._oleobj_.InvokeTypes(155, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -10834,7 +10833,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBUserLayer
-	def FindUserLayer(self, BUserLayerName=defaultNamedNotOptArg):
+	def FindUserLayer(self, BUserLayerName=defaultNamedNotOptArg) -> IMGCPCBUserLayer:
 		'Find the user layer object with the specified name.'
 		ret = self._oleobj_.InvokeTypes(88, LCID, 1, (9, 0), ((8, 1),),BUserLayerName
 			)
@@ -10853,7 +10852,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBActualPlaneShapes
 	# The method GetActualPlaneShapes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetActualPlaneShapes(self, eSelectOnly=0, nLayerOnly=0):
+	def GetActualPlaneShapes(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBActualPlaneShapes:
 		"Returns the document's actual plane shape collection."
 		ret = self._oleobj_.InvokeTypes(153, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -10863,7 +10862,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBendAreas
 	# The method GetBendAreas is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBendAreas(self, eSelectOnly=0):
+	def GetBendAreas(self, eSelectOnly=0) -> IMGCPCBBendAreas:
 		"Returns the document's collection of bend areas."
 		ret = self._oleobj_.InvokeTypes(349, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -10873,7 +10872,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBoards
 	# The method GetBoards is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBoards(self, eSelectOnly=0):
+	def GetBoards(self, eSelectOnly=0) -> IMGCPCBBoards:
 		"Returns the document's collection of boards."
 		ret = self._oleobj_.InvokeTypes(134, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -10883,7 +10882,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBondPads
 	# The method GetBondPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBondPads(self, SelectType=0):
+	def GetBondPads(self, SelectType=0) -> IMGCPCBBondPads:
 		"Returns the Document's collection of bond pads that match the supplied criteria."
 		ret = self._oleobj_.InvokeTypes(256, LCID, 2, (9, 0), ((3, 49),),SelectType
 			)
@@ -10893,7 +10892,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBObjects
 	# The method GetBondWires is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBondWires(self, SelectType=0):
+	def GetBondWires(self, SelectType=0) -> IMGCPCBObjects:
 		"Returns the Document's collection of bond wires that match the supplied criteria."
 		ret = self._oleobj_.InvokeTypes(255, LCID, 2, (9, 0), ((3, 49),),SelectType
 			)
@@ -10903,7 +10902,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBreakoutTraces
 	# The method GetBreakoutTraces is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBreakoutTraces(self, eSelectOnly=0, nLayerOnly=0):
+	def GetBreakoutTraces(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBBreakoutTraces:
 		'Get the collection of breakout traces in the document.'
 		ret = self._oleobj_.InvokeTypes(80, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -10913,7 +10912,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBNets
 	# The method GetBusNets is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBusNets(self, eSelectOnly=0):
+	def GetBusNets(self, eSelectOnly=0) -> IMGCPCBNets:
 		"Returns the Document's collection of Bus nets that match the supplied criteria."
 		ret = self._oleobj_.InvokeTypes(300, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -10923,7 +10922,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBusPaths
 	# The method GetBusPaths is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBusPaths(self, eSelectOnly=0, nLayerOnly=0):
+	def GetBusPaths(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBBusPaths:
 		"Returns the document's bus path collection."
 		ret = self._oleobj_.InvokeTypes(169, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -10933,7 +10932,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBCavities
 	# The method GetCavities is actually a property, but must be used as a method to correctly pass the arguments
-	def GetCavities(self, SelectType=0):
+	def GetCavities(self, SelectType=0) -> IMGCPCBCavities:
 		"Returns the Document's collection  of Cavities that match the supplied criteria.."
 		ret = self._oleobj_.InvokeTypes(260, LCID, 2, (9, 0), ((3, 49),),SelectType
 			)
@@ -10949,14 +10948,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBCells
 	# The method GetCells is actually a property, but must be used as a method to correctly pass the arguments
-	def GetCells(self, CellName='*'):
+	def GetCells(self, CellName='*') -> IMGCPCBCells:
 		"Returns the Document's collection of cells."
 		return self._ApplyTypes_(30, 2, (9, 32), ((8, 49),), 'GetCells', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED19}',CellName
 			)
 
 	# Result is of type IMGCPCBChangeData
 	# The method GetChangeData is actually a property, but must be used as a method to correctly pass the arguments
-	def GetChangeData(self, FromRecord=-1.0, ToRecord=-1.0):
+	def GetChangeData(self, FromRecord=-1.0, ToRecord=-1.0) -> IMGCPCBChangeData:
 		'Returns the change lists for the specified record span.'
 		ret = self._oleobj_.InvokeTypes(248, LCID, 2, (9, 0), ((12, 49), (12, 49)),FromRecord
 			, ToRecord)
@@ -10972,7 +10971,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBComplexVias
 	# The method GetComplexVias is actually a property, but must be used as a method to correctly pass the arguments
-	def GetComplexVias(self, eSelectOnly=0):
+	def GetComplexVias(self, eSelectOnly=0) -> IMGCPCBComplexVias:
 		"Returns the Document's collection of complex vias."
 		ret = self._oleobj_.InvokeTypes(386, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -10982,14 +10981,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBComponents
 	# The method GetComponents is actually a property, but must be used as a method to correctly pass the arguments
-	def GetComponents(self, eSelectOnly=0, eCompType=-1, eCelltype=4, sRefDes='*'):
+	def GetComponents(self, eSelectOnly=0, eCompType=-1, eCelltype=4, sRefDes='*') -> IMGCPCBComponents:
 		"Returns the Document's collection of components that match the supplied criteria. The refDes may contain the '*' and '?' wildcards."
 		return self._ApplyTypes_(22, 2, (9, 32), ((3, 49), (3, 49), (3, 49), (8, 49)), 'GetComponents', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED04}',eSelectOnly
 			, eCompType, eCelltype, sRefDes)
 
 	# Result is of type IMGCPCBConductiveAreas
 	# The method GetConductiveAreas is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductiveAreas(self, eSelectOnly=0, nLayerOnly=0):
+	def GetConductiveAreas(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductiveAreas:
 		"Returns the document's collection conductive areas"
 		ret = self._oleobj_.InvokeTypes(44, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -10999,7 +10998,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerGfxs
 	# The method GetConductorLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerGfxs(self, eSelectType=-1, eSelectOnly=0, nLayerOnly=0, bIncludeComponentGfx=True):
+	def GetConductorLayerGfxs(self, eSelectType=-1, eSelectOnly=0, nLayerOnly=0, bIncludeComponentGfx=True) -> IMGCPCBConductorLayerGfxs:
 		"Returns the Document's collection of board layer graphics that match the supplied criteria.  These are non-user and non-fabrication graphics. (Deprecated)"
 		ret = self._oleobj_.InvokeTypes(35, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49), (11, 49)),eSelectType
 			, eSelectOnly, nLayerOnly, bIncludeComponentGfx)
@@ -11009,14 +11008,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerGfxs
 	# The method GetConductorLayerGfxs2 is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerGfxs2(self, pArrayOfSelectType='', eSelectOnly=0, nLayerOnly=0, bIncludeComponentGfx=True):
+	def GetConductorLayerGfxs2(self, pArrayOfSelectType='', eSelectOnly=0, nLayerOnly=0, bIncludeComponentGfx=True) -> IMGCPCBConductorLayerGfxs:
 		"Returns the document's collection of board layer graphics that match the supplied criteria.  These are non-user and non-fabrication graphics."
 		return self._ApplyTypes_(163, 2, (9, 32), ((16396, 49), (3, 49), (3, 49), (11, 49)), 'GetConductorLayerGfxs2', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED21}',pArrayOfSelectType
 			, eSelectOnly, nLayerOnly, bIncludeComponentGfx)
 
 	# Result is of type IMGCPCBConductorLayerTexts
 	# The method GetConductorLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0, bIncludeComponentText=True):
+	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0, bIncludeComponentText=True) -> IMGCPCBConductorLayerTexts:
 		"Returns the Document's collection of board texts that match the supplied criteria."
 		ret = self._oleobj_.InvokeTypes(71, LCID, 2, (9, 0), ((3, 49), (3, 49), (11, 49)),eSelectOnly
 			, nLayerOnly, bIncludeComponentText)
@@ -11032,28 +11031,28 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConstraintClasses
 	# The method GetConstraintClasses is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraintClasses(self, Name='*'):
+	def GetConstraintClasses(self, Name='*') -> IMGCPCBConstraintClasses:
 		"Returns the Document's collection of constraint classes that match the supplied criteria."
 		return self._ApplyTypes_(284, 2, (9, 32), ((8, 49),), 'GetConstraintClasses', '{AEDD489A-9A64-4842-ADF9-72F22B82C33C}',Name
 			)
 
 	# Result is of type IMGCPCBConstructionLines
 	# The method GetConstructionLines is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstructionLines(self, eSelectOnly=0, sLayerOnly='*'):
+	def GetConstructionLines(self, eSelectOnly=0, sLayerOnly='*') -> IMGCPCBConstructionLines:
 		"Returns the Document's collection of construction lines that match the supplied criteria."
 		return self._ApplyTypes_(212, 2, (9, 32), ((3, 49), (8, 49)), 'GetConstructionLines', '{9F40B36F-3CB4-48B6-AC53-8F42E432C5C5}',eSelectOnly
 			, sLayerOnly)
 
 	# Result is of type IMGCPCBConstructionPoints
 	# The method GetConstructionPoints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstructionPoints(self, eSelectOnly=0, sLayerOnly='*'):
+	def GetConstructionPoints(self, eSelectOnly=0, sLayerOnly='*') -> IMGCPCBConstructionPoints:
 		"Returns the Document's collection of construction points that match the supplied criteria."
 		return self._ApplyTypes_(205, 2, (9, 32), ((3, 49), (8, 49)), 'GetConstructionPoints', '{70468F79-8CB4-4E7B-B6AE-9B167F349DC3}',eSelectOnly
 			, sLayerOnly)
 
 	# Result is of type IMGCPCBContours
 	# The method GetContours is actually a property, but must be used as a method to correctly pass the arguments
-	def GetContours(self, eSelectOnly=0):
+	def GetContours(self, eSelectOnly=0) -> IMGCPCBContours:
 		"Returns the document's contour collection."
 		ret = self._oleobj_.InvokeTypes(42, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11063,7 +11062,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBCopperBalancingDatas
 	# The method GetCopperBalancingDatas is actually a property, but must be used as a method to correctly pass the arguments
-	def GetCopperBalancingDatas(self, eSelectOnly=0, nLayerOnly=0):
+	def GetCopperBalancingDatas(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBCopperBalancingDatas:
 		"Returns the document's copper balancing data collection."
 		ret = self._oleobj_.InvokeTypes(133, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11073,7 +11072,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBCopperBalancingShapes
 	# The method GetCopperBalancingShapes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetCopperBalancingShapes(self, eSelectOnly=0, nLayerOnly=0):
+	def GetCopperBalancingShapes(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBCopperBalancingShapes:
 		"Returns the document's copper balancing shape collection."
 		ret = self._oleobj_.InvokeTypes(132, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11083,7 +11082,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDetailedViews
 	# The method GetDetailedViews is actually a property, but must be used as a method to correctly pass the arguments
-	def GetDetailedViews(self, eSelectOnly=0):
+	def GetDetailedViews(self, eSelectOnly=0) -> IMGCPCBDetailedViews:
 		"Returns the document's collection of detailed views."
 		ret = self._oleobj_.InvokeTypes(135, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11093,7 +11092,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDifferentialPairs
 	# The method GetDifferentialPairs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetDifferentialPairs(self, eSelectOnly=0):
+	def GetDifferentialPairs(self, eSelectOnly=0) -> IMGCPCBDifferentialPairs:
 		'Returns the collection of differential pairs.'
 		ret = self._oleobj_.InvokeTypes(224, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11102,14 +11101,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBDimensionScheme
-	def GetDimensionScheme(self, sSchemeName='', bLocal=False):
+	def GetDimensionScheme(self, sSchemeName='', bLocal=False) -> IMGCPCBDimensionScheme:
 		'Loads and returns the Dimension Scheme object with scheme SchemeName.  If SchemeName is undefined the system defaults are returned.'
 		return self._ApplyTypes_(68, 1, (9, 32), ((8, 49), (11, 49)), 'GetDimensionScheme', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED49}',sSchemeName
 			, bLocal)
 
 	# Result is of type IMGCPCBDimensions
 	# The method GetDimensions is actually a property, but must be used as a method to correctly pass the arguments
-	def GetDimensions(self, eSelectOnly=0):
+	def GetDimensions(self, eSelectOnly=0) -> IMGCPCBDimensions:
 		'Returns documents collection of associative dimensions matching selection criteria'
 		ret = self._oleobj_.InvokeTypes(66, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11125,7 +11124,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDrillDrawings
 	# The method GetDrillDrawings is actually a property, but must be used as a method to correctly pass the arguments
-	def GetDrillDrawings(self, eSelectOnly=0):
+	def GetDrillDrawings(self, eSelectOnly=0) -> IMGCPCBDrillDrawings:
 		"Returns the document's drill drawing collection."
 		ret = self._oleobj_.InvokeTypes(61, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11135,7 +11134,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDrillTables
 	# The method GetDrillTables is actually a property, but must be used as a method to correctly pass the arguments
-	def GetDrillTables(self, eSelectOnly=0):
+	def GetDrillTables(self, eSelectOnly=0) -> IMGCPCBDrillTables:
 		'Returns the collection of DrillTables associated with the drawing file designs'
 		ret = self._oleobj_.InvokeTypes(194, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11145,7 +11144,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBEmbeddedPassiveShapes
 	# The method GetEmbeddedPassiveShapes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetEmbeddedPassiveShapes(self, eSelectOnly=0, eType=-1, nLayerOnly=0):
+	def GetEmbeddedPassiveShapes(self, eSelectOnly=0, eType=-1, nLayerOnly=0) -> IMGCPCBEmbeddedPassiveShapes:
 		"Returns the document's collection of embedded passive shapes."
 		ret = self._oleobj_.InvokeTypes(158, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectOnly
 			, eType, nLayerOnly)
@@ -11155,7 +11154,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerGfxs
 	# The method GetFabricationLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerGfxs(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0, bIncludeComponentGfx=True):
+	def GetFabricationLayerGfxs(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0, bIncludeComponentGfx=True) -> IMGCPCBFabricationLayerGfxs:
 		"Returns the Document's collection of fabrication layer graphics that match the supplied criteria."
 		ret = self._oleobj_.InvokeTypes(69, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49), (11, 49)),eSelectType
 			, eSelectOnly, eLayerOnly, bIncludeComponentGfx)
@@ -11165,7 +11164,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerTexts
 	# The method GetFabricationLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0, bIncludeComponentText=True):
+	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0, bIncludeComponentText=True) -> IMGCPCBFabricationLayerTexts:
 		"Returns the Document's collection of fabrication texts that match the supplied criteria."
 		ret = self._oleobj_.InvokeTypes(72, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49), (11, 49)),eSelectType
 			, eSelectOnly, eLayerOnly, bIncludeComponentText)
@@ -11175,7 +11174,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFiducials
 	# The method GetFiducials is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFiducials(self, eSelectOnly=0):
+	def GetFiducials(self, eSelectOnly=0) -> IMGCPCBFiducials:
 		"Returns the Document's collection of fiducials."
 		ret = self._oleobj_.InvokeTypes(31, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11185,7 +11184,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFromTos
 	# The method GetFromTos is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFromTos(self, eSelectOnly=0, eFromToType=1):
+	def GetFromTos(self, eSelectOnly=0, eFromToType=1) -> IMGCPCBFromTos:
 		"Returns the Document's collection of fromtos."
 		ret = self._oleobj_.InvokeTypes(29, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, eFromToType)
@@ -11195,7 +11194,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGeneratedPlanes
 	# The method GetGeneratedPlaneOutlines is actually a property, but must be used as a method to correctly pass the arguments
-	def GetGeneratedPlaneOutlines(self, eSelectOnly=0, nLayerOnly=0):
+	def GetGeneratedPlaneOutlines(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBGeneratedPlanes:
 		"Returns the document's generated plane outline collection."
 		ret = self._oleobj_.InvokeTypes(178, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11205,7 +11204,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGeneratedPlanes
 	# The method GetGeneratedPlanes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetGeneratedPlanes(self, eSelectOnly=0, nLayerOnly=0):
+	def GetGeneratedPlanes(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBGeneratedPlanes:
 		"Returns the document's generated plane collection."
 		ret = self._oleobj_.InvokeTypes(49, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11220,7 +11219,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGroups
 	# The method GetGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetGroups(self, eSelectOnly=0, eGroupType=-1, bRootGroupsOnly=True):
+	def GetGroups(self, eSelectOnly=0, eGroupType=-1, bRootGroupsOnly=True) -> IMGCPCBGroups:
 		"Returns the Document's collection of groups that match the supplied criteria."
 		ret = self._oleobj_.InvokeTypes(172, LCID, 2, (9, 0), ((3, 49), (3, 49), (11, 49)),eSelectOnly
 			, eGroupType, bRootGroupsOnly)
@@ -11230,14 +11229,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBHazards
 	# The method GetHazards is actually a property, but must be used as a method to correctly pass the arguments
-	def GetHazards(self, eType=''):
+	def GetHazards(self, eType='') -> IMGCPCBHazards:
 		"Returns the document's collection of hazards"
 		return self._ApplyTypes_(165, 2, (9, 32), ((16396, 49),), 'GetHazards', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED9E}',eType
 			)
 
 	# Result is of type IMGCPCBHazards
 	# The method GetHazardsEx is actually a property, but must be used as a method to correctly pass the arguments
-	def GetHazardsEx(self, eType='', eAcceptType=0):
+	def GetHazardsEx(self, eType='', eAcceptType=0) -> IMGCPCBHazards:
 		"Returns the document's hazards collection for the specified AcceptType."
 		return self._ApplyTypes_(251, 2, (9, 32), ((16396, 49), (3, 49)), 'GetHazardsEx', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED9E}',eType
 			, eAcceptType)
@@ -11250,14 +11249,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBHoles
 	# The method GetHoles is actually a property, but must be used as a method to correctly pass the arguments
-	def GetHoles(self, sHoleName='*'):
+	def GetHoles(self, sHoleName='*') -> IMGCPCBHoles:
 		"Returns the document's collection of holes that match the supplied criteria. The hole name may contain wildcards"
 		return self._ApplyTypes_(37, 2, (9, 32), ((8, 49),), 'GetHoles', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED17}',sHoleName
 			)
 
 	# Result is of type IMGCPCBImages
 	# The method GetImages is actually a property, but must be used as a method to correctly pass the arguments
-	def GetImages(self, eSelectOnly=0):
+	def GetImages(self, eSelectOnly=0) -> IMGCPCBImages:
 		"Returns the document's collection of images."
 		ret = self._oleobj_.InvokeTypes(380, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11267,7 +11266,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBInsertionOutlines
 	# The method GetInsertionOutlines is actually a property, but must be used as a method to correctly pass the arguments
-	def GetInsertionOutlines(self, eSelectOnly=0, nLayerOnly=0):
+	def GetInsertionOutlines(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBInsertionOutlines:
 		"Returns the document's insertion outline collection."
 		ret = self._oleobj_.InvokeTypes(235, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11277,7 +11276,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBLayerObjects
 	# The method GetLayerStack is actually a property, but must be used as a method to correctly pass the arguments
-	def GetLayerStack(self, bIncludeInsulationLayer=True):
+	def GetLayerStack(self, bIncludeInsulationLayer=True) -> IMGCPCBLayerObjects:
 		'Returns the layer stackup as a collection of layer objects.'
 		ret = self._oleobj_.InvokeTypes(157, LCID, 2, (9, 0), ((11, 49),),bIncludeInsulationLayer
 			)
@@ -11291,7 +11290,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMatchLengthGroups
 	# The method GetMatchLengthGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMatchLengthGroups(self, eMatchType=1):
+	def GetMatchLengthGroups(self, eMatchType=1) -> IMGCPCBMatchLengthGroups:
 		'Returns the collection of match length groups.(deprecated)'
 		ret = self._oleobj_.InvokeTypes(225, LCID, 2, (9, 0), ((3, 49),),eMatchType
 			)
@@ -11301,7 +11300,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMaterials
 	# The method GetMaterials is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMaterials(self, eMaterialType=-1):
+	def GetMaterials(self, eMaterialType=-1) -> IMGCPCBMaterials:
 		'Find all the material objects.'
 		ret = self._oleobj_.InvokeTypes(305, LCID, 2, (9, 0), ((3, 49),),eMaterialType
 			)
@@ -11311,7 +11310,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMetalizationAreas
 	# The method GetMetalizationAreas is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMetalizationAreas(self, eSelectOnly=0, nLayerOnly=0):
+	def GetMetalizationAreas(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBMetalizationAreas:
 		"Returns the document's collection metalization areas"
 		ret = self._oleobj_.InvokeTypes(198, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11321,7 +11320,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMountingHoles
 	# The method GetMountingHoles is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMountingHoles(self, eSelectOnly=0):
+	def GetMountingHoles(self, eSelectOnly=0) -> IMGCPCBMountingHoles:
 		"Returns the Document's mounting hole collection."
 		ret = self._oleobj_.InvokeTypes(45, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11331,14 +11330,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMultiBoardOutlines
 	# The method GetMultiBoardOutlines is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMultiBoardOutlines(self, eSelectOnly=0, BoardOutlineName='*'):
+	def GetMultiBoardOutlines(self, eSelectOnly=0, BoardOutlineName='*') -> IMGCPCBMultiBoardOutlines:
 		'Returns the board outlines(multi board outlines) associated with rigid/flex design.  '
 		return self._ApplyTypes_(357, 2, (9, 32), ((3, 49), (8, 49)), 'GetMultiBoardOutlines', '{D69EB1A8-F5FC-4897-AD3C-676C50CF60AC}',eSelectOnly
 			, BoardOutlineName)
 
 	# Result is of type IMGCPCBMultiVias
 	# The method GetMultiVias is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMultiVias(self, eSelectOnly=0):
+	def GetMultiVias(self, eSelectOnly=0) -> IMGCPCBMultiVias:
 		"Returns the document's multi via collection."
 		ret = self._oleobj_.InvokeTypes(166, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11348,14 +11347,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBNetClasses
 	# The method GetNetClasses is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNetClasses(self, sNetClassName='*'):
+	def GetNetClasses(self, sNetClassName='*') -> IMGCPCBNetClasses:
 		"Returns the Document's collection of netsclasses that match the supplied criteria. The refDes may contain the '*' and '?' wildcards."
 		return self._ApplyTypes_(24, 2, (9, 32), ((8, 49),), 'GetNetClasses', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED11}',sNetClassName
 			)
 
 	# Result is of type IMGCPCBNetGroups
 	# The method GetNetGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNetGroups(self, eSelectOnly=0, eGroupType=-1, bRootGroupsOnly=True):
+	def GetNetGroups(self, eSelectOnly=0, eGroupType=-1, bRootGroupsOnly=True) -> IMGCPCBNetGroups:
 		"Returns the Document's collection of net groups that match the supplied criteria."
 		ret = self._oleobj_.InvokeTypes(294, LCID, 2, (9, 0), ((3, 49), (3, 49), (11, 49)),eSelectOnly
 			, eGroupType, bRootGroupsOnly)
@@ -11371,7 +11370,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBNets
 	# The method GetNets is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNets(self, eSelectOnly=0, bIncludeNetsForUnconnectedPins=False, sNetName='*'):
+	def GetNets(self, eSelectOnly=0, bIncludeNetsForUnconnectedPins=False, sNetName='*') -> IMGCPCBNets:
 		"Returns the Document's collection of nets that match the supplied criteria. The refDes may contain the '*' and '?' wildcards."
 		return self._ApplyTypes_(23, 2, (9, 32), ((3, 49), (11, 49), (8, 49)), 'GetNets', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED06}',eSelectOnly
 			, bIncludeNetsForUnconnectedPins, sNetName)
@@ -11388,7 +11387,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBObstructs
 	# The method GetObstructs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObstructs(self, eSelectType=-1, eSelectOnly=0, nLayerOnly=0):
+	def GetObstructs(self, eSelectType=-1, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBObstructs:
 		"Returns the document's obstruct collection."
 		ret = self._oleobj_.InvokeTypes(41, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, nLayerOnly)
@@ -11404,7 +11403,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPadstackObjects
 	# The method GetPadstackObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPadstackObjects(self, eSelectType=-1, eSelectOnly=0):
+	def GetPadstackObjects(self, eSelectType=-1, eSelectOnly=0) -> IMGCPCBPadstackObjects:
 		'Get the collection of padstack objects in the document'
 		ret = self._oleobj_.InvokeTypes(82, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectType
 			, eSelectOnly)
@@ -11414,14 +11413,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPadstacks
 	# The method GetPadstacks is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPadstacks(self, sPadstackName='*'):
+	def GetPadstacks(self, sPadstackName='*') -> IMGCPCBPadstacks:
 		"Returns the document's collection of padstacks the match the supplied criteria. The padstack name may contain wildcards"
 		return self._ApplyTypes_(36, 2, (9, 32), ((8, 49),), 'GetPadstacks', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED14}',sPadstackName
 			)
 
 	# Result is of type IMGCPCBPanels
 	# The method GetPanels is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPanels(self, eSelectOnly=0):
+	def GetPanels(self, eSelectOnly=0) -> IMGCPCBPanels:
 		'Returns the collection of Panels associated with this document'
 		ret = self._oleobj_.InvokeTypes(184, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11437,14 +11436,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBParts
 	# The method GetParts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetParts(self, sPartName='*'):
+	def GetParts(self, sPartName='*') -> IMGCPCBParts:
 		"Returns the Document's collection of parts with matching criteria."
 		return self._ApplyTypes_(25, 2, (9, 32), ((8, 49),), 'GetParts', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED20}',sPartName
 			)
 
 	# Result is of type IMGCPCBPins
 	# The method GetPins is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPins(self, eSelectOnly=0):
+	def GetPins(self, eSelectOnly=0) -> IMGCPCBPins:
 		"Returns the Document's collection of pins."
 		ret = self._oleobj_.InvokeTypes(26, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11454,7 +11453,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlacementObstructs
 	# The method GetPlacementObstructs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPlacementObstructs(self, eSelectOnly=0, nLayerOnly=0):
+	def GetPlacementObstructs(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBPlacementObstructs:
 		"Returns the document's placement obstruct collection."
 		ret = self._oleobj_.InvokeTypes(40, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11464,7 +11463,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlacementOutlines
 	# The method GetPlacementOutlines is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPlacementOutlines(self, eSelectOnly=0, nLayerOnly=0):
+	def GetPlacementOutlines(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBPlacementOutlines:
 		"Returns the document's placement outline collection."
 		ret = self._oleobj_.InvokeTypes(48, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11474,7 +11473,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlaneAssignments
 	# The method GetPlaneAssignments is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPlaneAssignments(self, nLayerOnly=0):
+	def GetPlaneAssignments(self, nLayerOnly=0) -> IMGCPCBPlaneAssignments:
 		'Returns the collection of plane assignments.'
 		ret = self._oleobj_.InvokeTypes(203, LCID, 2, (9, 0), ((3, 49),),nLayerOnly
 			)
@@ -11484,7 +11483,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlaneEditingSketches
 	# The method GetPlaneEditingSketches is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPlaneEditingSketches(self, eSelectOnly=0, nLayerOnly=0):
+	def GetPlaneEditingSketches(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBPlaneEditingSketches:
 		"Returns the document's plane editing sketch collection."
 		ret = self._oleobj_.InvokeTypes(179, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11494,7 +11493,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlaneShapes
 	# The method GetPlaneShapes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPlaneShapes(self, eSelectOnly=0, nLayerOnly=0):
+	def GetPlaneShapes(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBPlaneShapes:
 		"Returns the document's plane shape collection."
 		ret = self._oleobj_.InvokeTypes(47, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11504,7 +11503,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBReservedAreas
 	# The method GetReservedAreas is actually a property, but must be used as a method to correctly pass the arguments
-	def GetReservedAreas(self, eSelectOnly=0, nLayerOnly=0):
+	def GetReservedAreas(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBReservedAreas:
 		"Returns the document's reserved area collection."
 		ret = self._oleobj_.InvokeTypes(310, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11514,7 +11513,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBResistorShapes
 	# The method GetResistorShapes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetResistorShapes(self, eSelectOnly=0, nLayerOnly=0):
+	def GetResistorShapes(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBResistorShapes:
 		"Returns the document's resistor shape collection."
 		ret = self._oleobj_.InvokeTypes(265, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11530,7 +11529,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBReuseAreas
 	# The method GetReuseAreas is actually a property, but must be used as a method to correctly pass the arguments
-	def GetReuseAreas(self, eSelectOnly=0, ePublishableState=0, eReuseAreaState=0):
+	def GetReuseAreas(self, eSelectOnly=0, ePublishableState=0, eReuseAreaState=0) -> IMGCPCBReuseAreas:
 		"Returns the document's Reuse Area(Managed Block area) collection."
 		ret = self._oleobj_.InvokeTypes(320, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectOnly
 			, ePublishableState, eReuseAreaState)
@@ -11546,7 +11545,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBRooms
 	# The method GetRooms is actually a property, but must be used as a method to correctly pass the arguments
-	def GetRooms(self, eSelectOnly=0, eLayerOnly=0):
+	def GetRooms(self, eSelectOnly=0, eLayerOnly=0) -> IMGCPCBRooms:
 		"Returns the document's room collection."
 		ret = self._oleobj_.InvokeTypes(46, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, eLayerOnly)
@@ -11556,7 +11555,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBRouteFences
 	# The method GetRouteFences is actually a property, but must be used as a method to correctly pass the arguments
-	def GetRouteFences(self, eType=-1, eSelectOnly=0):
+	def GetRouteFences(self, eType=-1, eSelectOnly=0) -> IMGCPCBRouteFences:
 		"Returns the document's collection of route fences."
 		ret = self._oleobj_.InvokeTypes(162, LCID, 2, (9, 0), ((3, 49), (3, 49)),eType
 			, eSelectOnly)
@@ -11566,7 +11565,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBRuleAreas
 	# The method GetRuleAreas is actually a property, but must be used as a method to correctly pass the arguments
-	def GetRuleAreas(self, eSelectOnly=0, nLayerOnly=0):
+	def GetRuleAreas(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBRuleAreas:
 		"Returns the document's rule area collection."
 		ret = self._oleobj_.InvokeTypes(43, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11576,14 +11575,14 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBSandboxes
 	# The method GetSandboxes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetSandboxes(self, sSandboxName='*', eSelectOnly=0):
+	def GetSandboxes(self, sSandboxName='*', eSelectOnly=0) -> IMGCPCBSandboxes:
 		"Returns the document's sandbox collection."
 		return self._ApplyTypes_(246, 2, (9, 32), ((8, 49), (3, 49)), 'GetSandboxes', '{BD848A19-1634-4C73-BADF-459C5B94BA4C}',sSandboxName
 			, eSelectOnly)
 
 	# Result is of type IMGCPCBShearingHoles
 	# The method GetShearingHoles is actually a property, but must be used as a method to correctly pass the arguments
-	def GetShearingHoles(self, SelectOnly=0):
+	def GetShearingHoles(self, SelectOnly=0) -> IMGCPCBShearingHoles:
 		"Returns the document's shearing hole collection."
 		ret = self._oleobj_.InvokeTypes(131, LCID, 2, (9, 0), ((3, 49),),SelectOnly
 			)
@@ -11593,21 +11592,21 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBSheets
 	# The method GetSheets is actually a property, but must be used as a method to correctly pass the arguments
-	def GetSheets(self, sheetName='*'):
+	def GetSheets(self, sheetName='*') -> IMGCPCBSheets:
 		'Returns the collection for sheets associated with the current drawing editor design. (VALID ONLY IN DRAWING EDITOR)'
 		return self._ApplyTypes_(218, 2, (9, 32), ((8, 49),), 'GetSheets', '{74EA0496-1B5F-4B40-8E75-D19BF96DA3A6}',sheetName
 			)
 
 	# Result is of type IMGCPCBNetGroups
 	# The method GetShieldingGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetShieldingGroups(self, ShieldingGroupName='*'):
+	def GetShieldingGroups(self, ShieldingGroupName='*') -> IMGCPCBNetGroups:
 		"Returns the document's shielding net Group collection.('Shielding Rules' returns empty collection if topology planner license is not acquired."
 		return self._ApplyTypes_(342, 2, (9, 32), ((8, 49),), 'GetShieldingGroups', '{DF8FC11D-AFBD-41A9-AF29-8821B9164732}',ShieldingGroupName
 			)
 
 	# Result is of type IMGCPCBSketchPlanVias
 	# The method GetSketchPlanVias is actually a property, but must be used as a method to correctly pass the arguments
-	def GetSketchPlanVias(self, eSelectOnly=0):
+	def GetSketchPlanVias(self, eSelectOnly=0) -> IMGCPCBSketchPlanVias:
 		"Returns the document's sketch plan via collection."
 		ret = self._oleobj_.InvokeTypes(389, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11617,7 +11616,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBSketchPlans
 	# The method GetSketchPlans is actually a property, but must be used as a method to correctly pass the arguments
-	def GetSketchPlans(self, eSelectOnly=0, nLayerOnly=0):
+	def GetSketchPlans(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBSketchPlans:
 		"Returns the document's sketch pathcollection."
 		ret = self._oleobj_.InvokeTypes(376, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11627,7 +11626,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTargetAreas
 	# The method GetTargetAreas is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTargetAreas(self, eSelectOnly=0, nLayerOnly=0):
+	def GetTargetAreas(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBTargetAreas:
 		"Returns the document's target area collection."
 		ret = self._oleobj_.InvokeTypes(168, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11637,7 +11636,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTeardrops
 	# The method GetTeardrops is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTeardrops(self, eSelectOnly=0, nLayerOnly=0):
+	def GetTeardrops(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBTeardrops:
 		'Get the collection of teardrops in the document.'
 		ret = self._oleobj_.InvokeTypes(81, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11647,7 +11646,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTieLegs
 	# The method GetTieLegs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTieLegs(self, eSelectOnly=0, nLayerOnly=0):
+	def GetTieLegs(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBTieLegs:
 		"Returns the document's tie leg collection."
 		ret = self._oleobj_.InvokeTypes(154, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11657,7 +11656,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTiebars
 	# The method GetTiebars is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTiebars(self, eSelectOnly=0):
+	def GetTiebars(self, eSelectOnly=0) -> IMGCPCBTiebars:
 		"Returns the Document's collection of tiebars."
 		ret = self._oleobj_.InvokeTypes(415, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11667,7 +11666,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBToolingHoles
 	# The method GetToolingHoles is actually a property, but must be used as a method to correctly pass the arguments
-	def GetToolingHoles(self, SelectOnly=0):
+	def GetToolingHoles(self, SelectOnly=0) -> IMGCPCBToolingHoles:
 		"Returns the document's tooling hole collection."
 		ret = self._oleobj_.InvokeTypes(129, LCID, 2, (9, 0), ((3, 49),),SelectOnly
 			)
@@ -11677,7 +11676,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTracedrops
 	# The method GetTracedrops is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTracedrops(self, eSelectOnly=0, nLayerOnly=0):
+	def GetTracedrops(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBTracedrops:
 		'Get the collection of tracedrops in the document.'
 		ret = self._oleobj_.InvokeTypes(325, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11687,7 +11686,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTraces
 	# The method GetTraces is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTraces(self, eSelectOnly=0, nLayerOnly=0):
+	def GetTraces(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBTraces:
 		"Returns the Document's collection of traces."
 		ret = self._oleobj_.InvokeTypes(27, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -11697,21 +11696,21 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserLayerGfxs
 	# The method GetUserLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerGfxs(self, eSelectOnly=0, sLayerOnly='*', bIncludeComponentGfx=True):
+	def GetUserLayerGfxs(self, eSelectOnly=0, sLayerOnly='*', bIncludeComponentGfx=True) -> IMGCPCBUserLayerGfxs:
 		"Returns the Document's collection of user layer graphics that match the supplied criteria."
 		return self._ApplyTypes_(70, 2, (9, 32), ((3, 49), (8, 49), (11, 49)), 'GetUserLayerGfxs', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED51}',eSelectOnly
 			, sLayerOnly, bIncludeComponentGfx)
 
 	# Result is of type IMGCPCBUserLayerTexts
 	# The method GetUserLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*', bIncludeComponentText=True):
+	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*', bIncludeComponentText=True) -> IMGCPCBUserLayerTexts:
 		"Returns the Document's collection of user texts that match the supplied criteria.  LayerOnly can be a regular expression."
 		return self._ApplyTypes_(73, 2, (9, 32), ((3, 49), (8, 49), (11, 49)), 'GetUserLayerTexts', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED5A}',eSelectOnly
 			, sLayerOnly, bIncludeComponentText)
 
 	# Result is of type IMGCPCBVias
 	# The method GetVias is actually a property, but must be used as a method to correctly pass the arguments
-	def GetVias(self, eSelectOnly=0):
+	def GetVias(self, eSelectOnly=0) -> IMGCPCBVias:
 		"Returns the Document's collection of vias."
 		ret = self._oleobj_.InvokeTypes(28, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11721,21 +11720,21 @@ class IMGCPCBDocument(DispatchBaseClass):
 
 	# Result is of type IMGCPCBViews
 	# The method GetViews is actually a property, but must be used as a method to correctly pass the arguments
-	def GetViews(self, eViewSelect=0, viewName='*'):
+	def GetViews(self, eViewSelect=0, viewName='*') -> IMGCPCBViews:
 		'Returns the collection of views associated with the design(eViewSelect unused parameter). (Deprecated). Use ViewsEx instead.'
 		return self._ApplyTypes_(192, 2, (9, 32), ((3, 49), (8, 49)), 'GetViews', '{05700A92-D895-44BB-96C1-9D5BCCAE050F}',eViewSelect
 			, viewName)
 
 	# Result is of type IMGCPCBViews
 	# The method GetViewsEx is actually a property, but must be used as a method to correctly pass the arguments
-	def GetViewsEx(self, eViewSelect=0, viewName='*'):
+	def GetViewsEx(self, eViewSelect=0, viewName='*') -> IMGCPCBViews:
 		'Returns the collection of views associated with the design(eViewSelect unused parameter)'
 		return self._ApplyTypes_(280, 2, (9, 32), ((3, 49), (8, 49)), 'GetViewsEx', '{05700A92-D895-44BB-96C1-9D5BCCAE050F}',eViewSelect
 			, viewName)
 
 	# Result is of type IMGCPCBWireBondGuides
 	# The method GetWireBondGuides is actually a property, but must be used as a method to correctly pass the arguments
-	def GetWireBondGuides(self, eSelectOnly=0):
+	def GetWireBondGuides(self, eSelectOnly=0) -> IMGCPCBWireBondGuides:
 		"Returns the Document's collection of bondwire guides."
 		ret = self._oleobj_.InvokeTypes(345, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -11811,7 +11810,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 			, eFixType, eUnit, eAngleUnit)
 
 	# Result is of type IMGCPCBNet
-	def NewNet(self, sNetName=defaultNamedNotOptArg, pNetClass=defaultNamedNotOptArg):
+	def NewNet(self, sNetName=defaultNamedNotOptArg, pNetClass=defaultNamedNotOptArg) -> IMGCPCBNet:
 		'Add a new (empty) net to the design.'
 		ret = self._oleobj_.InvokeTypes(147, LCID, 1, (9, 0), ((8, 1), (9, 1)),sNetName
 			, pNetClass)
@@ -11820,7 +11819,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBPadstack
-	def NewPadstack(self, sPadstackName=defaultNamedNotOptArg, eType=defaultNamedNotOptArg):
+	def NewPadstack(self, sPadstackName=defaultNamedNotOptArg, eType=defaultNamedNotOptArg) -> IMGCPCBPadstack:
 		'Add a new (empty) padstack object to the design. (Beta)'
 		ret = self._oleobj_.InvokeTypes(145, LCID, 1, (9, 0), ((8, 1), (3, 1)),sPadstackName
 			, eType)
@@ -11829,7 +11828,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBPin
-	def NewPin(self, sPinName=defaultNamedNotOptArg, pPadstack=defaultNamedNotOptArg):
+	def NewPin(self, sPinName=defaultNamedNotOptArg, pPadstack=defaultNamedNotOptArg) -> IMGCPCBPin:
 		'Creates a new unplaced pin for the cell.'
 		ret = self._oleobj_.InvokeTypes(236, LCID, 1, (9, 0), ((8, 1), (12, 1)),sPinName
 			, pPadstack)
@@ -11838,7 +11837,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBRoutePass
-	def NewRoutePass(self):
+	def NewRoutePass(self) -> IMGCPCBRoutePass:
 		'Creates and returns a single Route Pass object.'
 		ret = self._oleobj_.InvokeTypes(107, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -11853,7 +11852,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBObjects
-	def ObjectsInBetween(self, pObject1=defaultNamedNotOptArg, pObject2=defaultNamedNotOptArg):
+	def ObjectsInBetween(self, pObject1=defaultNamedNotOptArg, pObject2=defaultNamedNotOptArg) -> IMGCPCBObjects:
 		'Get the list of objects connected between two objects. e.g. all the things in between two pins. Will return an empty collection if there is no connection between these two things.'
 		ret = self._oleobj_.InvokeTypes(119, LCID, 1, (9, 0), ((9, 1), (9, 1)),pObject1
 			, pObject2)
@@ -11903,7 +11902,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 			, y, Layer, ToLayer, Unit)
 
 	# The method PlaceLayerEnabled is actually a property, but must be used as a method to correctly pass the arguments
-	def PlaceLayerEnabled(self, eLayer=defaultNamedNotOptArg):
+	def PlaceLayerEnabled(self, eLayer=defaultNamedNotOptArg) -> IMGCPCBComponents:
 		'Is layer enabled for placement? (Deprecated)'
 		return self._oleobj_.InvokeTypes(74, LCID, 2, (11, 0), ((3, 1),),eLayer
 			)
@@ -11931,7 +11930,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBFabricationLayerText
-	def PutAssemblyPartNumber(self, dPositionX=defaultNamedNotOptArg, dPositionY=defaultNamedNotOptArg, eUnit=0):
+	def PutAssemblyPartNumber(self, dPositionX=defaultNamedNotOptArg, dPositionY=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBFabricationLayerText:
 		'Places an Assembly part number at the specified location.'
 		ret = self._oleobj_.InvokeTypes(231, LCID, 1, (9, 0), ((5, 1), (5, 1), (3, 49)),dPositionX
 			, dPositionY, eUnit)
@@ -11940,7 +11939,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBFabricationLayerText
-	def PutAssemblyRefDes(self, dPositionX=defaultNamedNotOptArg, dPositionY=defaultNamedNotOptArg, eUnit=0):
+	def PutAssemblyRefDes(self, dPositionX=defaultNamedNotOptArg, dPositionY=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBFabricationLayerText:
 		'Places an Assembly RefDes at the specified location.'
 		ret = self._oleobj_.InvokeTypes(229, LCID, 1, (9, 0), ((5, 1), (5, 1), (3, 49)),dPositionX
 			, dPositionY, eUnit)
@@ -11998,7 +11997,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBBoardOutline
-	def PutBoardOutline(self, nPnts=defaultNamedNotOptArg, pSafeArrayOfPnts=defaultNamedNotOptArg, dGraphicsWidth=defaultNamedNotOptArg, eUnit=0):
+	def PutBoardOutline(self, nPnts=defaultNamedNotOptArg, pSafeArrayOfPnts=defaultNamedNotOptArg, dGraphicsWidth=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBBoardOutline:
 		'Adds or replaces the board outline.'
 		ret = self._oleobj_.InvokeTypes(63, LCID, 1, (9, 0), ((3, 1), (16396, 1), (5, 1), (3, 49)),nPnts
 			, pSafeArrayOfPnts, dGraphicsWidth, eUnit)
@@ -12168,7 +12167,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBCopperBalancingShape
-	def PutCopperBalancingShape(self, nLayer=defaultNamedNotOptArg, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, eUnit=0):
+	def PutCopperBalancingShape(self, nLayer=defaultNamedNotOptArg, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBCopperBalancingShape:
 		'Places a copper balancing shape on the board.'
 		ret = self._oleobj_.InvokeTypes(142, LCID, 1, (9, 0), ((3, 1), (3, 1), (16396, 1), (3, 49)),nLayer
 			, nPnts, safeArrayOfPnts, eUnit)
@@ -12177,7 +12176,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBConductorLayerGfx
-	def PutDRCWindow(self, dGraphicsWidth=defaultNamedNotOptArg, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, eUnit=0):
+	def PutDRCWindow(self, dGraphicsWidth=defaultNamedNotOptArg, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBConductorLayerGfx:
 		'Places a DRC window on the board.'
 		ret = self._oleobj_.InvokeTypes(182, LCID, 1, (9, 0), ((5, 1), (3, 1), (16396, 1), (3, 49)),dGraphicsWidth
 			, nPnts, safeArrayOfPnts, eUnit)
@@ -12275,7 +12274,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBFromTo
-	def PutFromTo(self, pObject1=defaultNamedNotOptArg, pObject2=defaultNamedNotOptArg):
+	def PutFromTo(self, pObject1=defaultNamedNotOptArg, pObject2=defaultNamedNotOptArg) -> IMGCPCBFromTo:
 		'Add netline between two objects that are on same net.'
 		ret = self._oleobj_.InvokeTypes(291, LCID, 1, (9, 0), ((9, 1), (9, 1)),pObject1
 			, pObject2)
@@ -12284,7 +12283,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBGroup
-	def PutGroup(self, eGroupType=defaultNamedNotOptArg, sGroupName=defaultNamedNotOptArg):
+	def PutGroup(self, eGroupType=defaultNamedNotOptArg, sGroupName=defaultNamedNotOptArg) -> IMGCPCBGroup:
 		'Creates a new Group.'
 		ret = self._oleobj_.InvokeTypes(173, LCID, 1, (9, 0), ((3, 1), (8, 1)),eGroupType
 			, sGroupName)
@@ -12293,7 +12292,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBHole
-	def PutHole(self, sHoleName=defaultNamedNotOptArg):
+	def PutHole(self, sHoleName=defaultNamedNotOptArg) -> IMGCPCBHole:
 		'Put a hole from the local or central libriaries.'
 		ret = self._oleobj_.InvokeTypes(122, LCID, 1, (9, 0), ((8, 1),),sHoleName
 			)
@@ -12354,7 +12353,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBManufacturingOutline
-	def PutManufacturingOutline(self, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, eUnit=0):
+	def PutManufacturingOutline(self, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBManufacturingOutline:
 		'Adds or replaces the board manufacturing outline.'
 		ret = self._oleobj_.InvokeTypes(141, LCID, 1, (9, 0), ((3, 1), (16396, 1), (3, 49)),nPnts
 			, safeArrayOfPnts, eUnit)
@@ -12431,7 +12430,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBNetGroup
-	def PutNetGroup(self, eGroupType=defaultNamedNotOptArg, sGroupName=defaultNamedNotOptArg):
+	def PutNetGroup(self, eGroupType=defaultNamedNotOptArg, sGroupName=defaultNamedNotOptArg) -> IMGCPCBNetGroup:
 		'Creates a new net Group.'
 		ret = self._oleobj_.InvokeTypes(295, LCID, 1, (9, 0), ((3, 1), (8, 1)),eGroupType
 			, sGroupName)
@@ -12509,7 +12508,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBPanelBorder
-	def PutPanelBorder(self, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, graphicsWidth=defaultNamedNotOptArg, eUnit=0):
+	def PutPanelBorder(self, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, graphicsWidth=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBPanelBorder:
 		'Adds or replaces the panel border.'
 		ret = self._oleobj_.InvokeTypes(127, LCID, 1, (9, 0), ((3, 1), (16396, 1), (5, 1), (3, 49)),nPnts
 			, safeArrayOfPnts, graphicsWidth, eUnit)
@@ -12518,7 +12517,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBPanelOutline
-	def PutPanelOutline(self, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, graphicsWidth=defaultNamedNotOptArg, eUnit=0):
+	def PutPanelOutline(self, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, graphicsWidth=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBPanelOutline:
 		'Adds or replaces the panel outline.'
 		ret = self._oleobj_.InvokeTypes(125, LCID, 1, (9, 0), ((3, 1), (16396, 1), (5, 1), (3, 49)),nPnts
 			, safeArrayOfPnts, graphicsWidth, eUnit)
@@ -12597,7 +12596,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property on the design.'
 		ret = self._oleobj_.InvokeTypes(124, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -12647,7 +12646,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBRouteBorder
-	def PutRouteBorder(self, nPnts=defaultNamedNotOptArg, pSafeArrayOfPnts=defaultNamedNotOptArg, dGraphicsWidth=defaultNamedNotOptArg, eUnit=0):
+	def PutRouteBorder(self, nPnts=defaultNamedNotOptArg, pSafeArrayOfPnts=defaultNamedNotOptArg, dGraphicsWidth=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBRouteBorder:
 		'Adds or replaces the route border.'
 		ret = self._oleobj_.InvokeTypes(64, LCID, 1, (9, 0), ((3, 1), (16396, 1), (5, 1), (3, 49)),nPnts
 			, pSafeArrayOfPnts, dGraphicsWidth, eUnit)
@@ -12703,7 +12702,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBSheet
-	def PutSheet(self, sheetName=defaultNamedNotOptArg, drawingTemplateName=defaultNamedNotOptArg, instanceNames=defaultNamedNotOptArg, schemeNames=defaultNamedNotOptArg):
+	def PutSheet(self, sheetName=defaultNamedNotOptArg, drawingTemplateName=defaultNamedNotOptArg, instanceNames=defaultNamedNotOptArg, schemeNames=defaultNamedNotOptArg) -> IMGCPCBSheet:
 		'Add a Sheet in the Drawing Editor'
 		ret = self._oleobj_.InvokeTypes(193, LCID, 1, (9, 0), ((8, 1), (8, 1), (12, 1), (12, 1)),sheetName
 			, drawingTemplateName, instanceNames, schemeNames)
@@ -12712,7 +12711,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBSheetOutline
-	def PutSheetOutline(self, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, graphicsWidth=defaultNamedNotOptArg, eUnit=0):
+	def PutSheetOutline(self, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, graphicsWidth=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBSheetOutline:
 		'Adds or replaces the sheet outline on the active sheet.'
 		ret = self._oleobj_.InvokeTypes(186, LCID, 1, (9, 0), ((3, 1), (16396, 1), (5, 1), (3, 49)),nPnts
 			, safeArrayOfPnts, graphicsWidth, eUnit)
@@ -12721,7 +12720,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBNetGroup
-	def PutShieldingNetGroup(self, sGroupName=defaultNamedNotOptArg, pNet=defaultNamedNotOptArg, pNetClass=0):
+	def PutShieldingNetGroup(self, sGroupName=defaultNamedNotOptArg, pNet=defaultNamedNotOptArg, pNetClass=0) -> IMGCPCBNetGroup:
 		"Creates a new shielding net Group. Will display in NetExplorer as 'Shielding Rules'. (not valid without topology planner license)"
 		ret = self._oleobj_.InvokeTypes(341, LCID, 1, (9, 0), ((8, 1), (9, 1), (9, 49)),sGroupName
 			, pNet, pNetClass)
@@ -12730,7 +12729,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBFabricationLayerText
-	def PutSilkscreenPartNumber(self, dPositionX=defaultNamedNotOptArg, dPositionY=defaultNamedNotOptArg, eUnit=0):
+	def PutSilkscreenPartNumber(self, dPositionX=defaultNamedNotOptArg, dPositionY=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBFabricationLayerText:
 		'Places a Silkscreen part number at the specified location.'
 		ret = self._oleobj_.InvokeTypes(232, LCID, 1, (9, 0), ((5, 1), (5, 1), (3, 49)),dPositionX
 			, dPositionY, eUnit)
@@ -12739,7 +12738,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBFabricationLayerText
-	def PutSilkscreenRefDes(self, dPositionX=defaultNamedNotOptArg, dPositionY=defaultNamedNotOptArg, eUnit=0):
+	def PutSilkscreenRefDes(self, dPositionX=defaultNamedNotOptArg, dPositionY=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBFabricationLayerText:
 		'Places a Silkscreen RefDes at the specified location.'
 		ret = self._oleobj_.InvokeTypes(230, LCID, 1, (9, 0), ((5, 1), (5, 1), (3, 49)),dPositionX
 			, dPositionY, eUnit)
@@ -12758,7 +12757,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBStackupScheme
-	def PutStackupScheme(self, Name=defaultNamedNotOptArg):
+	def PutStackupScheme(self, Name=defaultNamedNotOptArg) -> IMGCPCBStackupScheme:
 		'Creates and returns a new StackupScheme object.'
 		ret = self._oleobj_.InvokeTypes(396, LCID, 1, (9, 0), ((8, 1),),Name
 			)
@@ -12775,7 +12774,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 			, bVisibility, sRefDes)
 
 	# Result is of type IMGCPCBTestFixtureOutline
-	def PutTestFixtureOutline(self, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, eUnit=0):
+	def PutTestFixtureOutline(self, nPnts=defaultNamedNotOptArg, safeArrayOfPnts=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBTestFixtureOutline:
 		'Adds or replaces the board test fixture outline.'
 		ret = self._oleobj_.InvokeTypes(271, LCID, 1, (9, 0), ((3, 1), (16396, 1), (3, 49)),nPnts
 			, safeArrayOfPnts, eUnit)
@@ -12868,7 +12867,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBPins
-	def PutVirtualPinsOnLocations(self, nPins=defaultNamedNotOptArg, pSafeArrayOfPoints=defaultNamedNotOptArg, pFromTo=defaultNamedNotOptArg, eUnit=0):
+	def PutVirtualPinsOnLocations(self, nPins=defaultNamedNotOptArg, pSafeArrayOfPoints=defaultNamedNotOptArg, pFromTo=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBPins:
 		'Internal use only.  Places a given number virtual pins on the board at the given location.  This operation cannot be undone and clears the undo stack.'
 		ret = self._oleobj_.InvokeTypes(401, LCID, 1, (9, 0), ((3, 1), (16396, 1), (9, 1), (3, 49)),nPins
 			, pSafeArrayOfPoints, pFromTo, eUnit)
@@ -12906,7 +12905,7 @@ class IMGCPCBDocument(DispatchBaseClass):
 			ret = Dispatch(ret, 'PutXAngleDimension', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED47}')
 		return ret
 
-	def ReleaseLocks(self, lockMask=defaultNamedNotOptArg):
+	def ReleaseLocks(self, lockMask=defaultNamedNotOptArg) -> IMGCPCBDimension:
 		'Release given locks as defined in EPcbLockType'
 		return self._oleobj_.InvokeTypes(379, LCID, 1, (24, 0), ((3, 1),),lockMask
 			)
@@ -13612,7 +13611,7 @@ class IMGCPCBDrillDrawing(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -13634,7 +13633,7 @@ class IMGCPCBDrillDrawing(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(36, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -13721,7 +13720,7 @@ class IMGCPCBDrillDrawings(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDrillDrawing
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBDrillDrawing:
 		'Returns the drill drawing of a given index in the drill drawings collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -13873,7 +13872,7 @@ class IMGCPCBDrillTables(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDrillTable
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBDrillTable:
 		'Returns the panel of a given index in the boards collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -14026,7 +14025,7 @@ class IMGCPCBEditorControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, ePadShape=0):
+	def GetPads(self, ePadShape=0) -> IMGCPCBPads:
 		'Returns the pad collection containing pads with different names irrespective of the layer on which they are present.'
 		ret = self._oleobj_.InvokeTypes(31, LCID, 2, (9, 0), ((3, 49),),ePadShape
 			)
@@ -14105,7 +14104,7 @@ class IMGCPCBEditorControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBLayerRanges
 	# The method PadEntryAllowedPadsViaSpan is actually a property, but must be used as a method to correctly pass the arguments
-	def PadEntryAllowedPadsViaSpan(self, pPad=defaultNamedNotOptArg, ePadShape=defaultNamedNotOptArg):
+	def PadEntryAllowedPadsViaSpan(self, pPad=defaultNamedNotOptArg, ePadShape=defaultNamedNotOptArg) -> IMGCPCBLayerRanges:
 		'Sets or returns via spans allowed under a pad or pads. If a pad object is specified the pad shape is ignored, if the pad object is null, the pad shape is used.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 2, (9, 0), ((9, 1), (3, 1)),pPad
 			, ePadShape)
@@ -14115,7 +14114,7 @@ class IMGCPCBEditorControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBLayerRanges
 	# The method PadEntryViaSpansForPad is actually a property, but must be used as a method to correctly pass the arguments
-	def PadEntryViaSpansForPad(self, pPad=defaultNamedNotOptArg):
+	def PadEntryViaSpansForPad(self, pPad=defaultNamedNotOptArg) -> IMGCPCBLayerRanges:
 		'Gets the valid layer ranges that can be used for the via spans for the specified pad'
 		ret = self._oleobj_.InvokeTypes(80, LCID, 2, (9, 0), ((9, 0),),pPad
 			)
@@ -14142,7 +14141,7 @@ class IMGCPCBEditorControl(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBCluster
-	def PutCluster(self, sName=defaultNamedNotOptArg):
+	def PutCluster(self, sName=defaultNamedNotOptArg) -> IMGCPCBCluster:
 		'Creates a cluster by given name and returns the created object. (Deprecated)'
 		ret = self._oleobj_.InvokeTypes(20, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -14151,7 +14150,7 @@ class IMGCPCBEditorControl(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBRoom
-	def PutRoom(self, sName=defaultNamedNotOptArg):
+	def PutRoom(self, sName=defaultNamedNotOptArg) -> IMGCPCBRoom:
 		'Creates a room by given name and returns the created object.'
 		ret = self._oleobj_.InvokeTypes(18, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -14696,7 +14695,7 @@ class IMGCPCBEmbeddedPassiveShape(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -14714,7 +14713,7 @@ class IMGCPCBEmbeddedPassiveShape(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -14800,7 +14799,7 @@ class IMGCPCBEmbeddedPassiveShapes(DispatchBaseClass):
 
 	# Result is of type IMGCPCBEmbeddedPassiveShape
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBEmbeddedPassiveShape:
 		'Returns the embedded passive shape of a given index in the embedded passive shape collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -14997,7 +14996,7 @@ class IMGCPCBErrors(DispatchBaseClass):
 
 	# Result is of type IMGCPCBError
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBError:
 		'Returns the Error object of a given index in the Error collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -15152,7 +15151,7 @@ class IMGCPCBFabricationLayerGfx(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -15190,7 +15189,7 @@ class IMGCPCBFabricationLayerGfx(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(36, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -15293,7 +15292,7 @@ class IMGCPCBFabricationLayerGfxs(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerGfx
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBFabricationLayerGfx:
 		'Returns the gfx of a given index in the gfx collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -15367,7 +15366,7 @@ class IMGCPCBFabricationLayerText(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(10, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property, on the text object, by name.'
 		ret = self._oleobj_.InvokeTypes(40, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -15410,7 +15409,7 @@ class IMGCPCBFabricationLayerText(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this textobject .'
 		ret = self._oleobj_.InvokeTypes(41, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -15543,7 +15542,7 @@ class IMGCPCBFabricationLayerTexts(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerText
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBFabricationLayerText:
 		'Returns the text of a given index in the text collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -15662,7 +15661,7 @@ class IMGCPCBFabricationPads(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationPad
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBFabricationPad:
 		'Returns the pad of a given index in the pad collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -15724,7 +15723,7 @@ class IMGCPCBFiducial(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(19, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -15740,7 +15739,7 @@ class IMGCPCBFiducial(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, nLayer=0, bIncludeNegativePads=False):
+	def GetPads(self, nLayer=0, bIncludeNegativePads=False) -> IMGCPCBPads:
 		'Returns the pad collection for this padstack object on the specified layer (0=all layers). May optionally return the negative pads too, the presence of a negative pad on a layer will override the regular pad on that layer.'
 		ret = self._oleobj_.InvokeTypes(20, LCID, 2, (9, 0), ((3, 49), (11, 49)),nLayer
 			, bIncludeNegativePads)
@@ -15762,7 +15761,7 @@ class IMGCPCBFiducial(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserPads
 	# The method GetUserPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserPads(self, sLayerOnly='*'):
+	def GetUserPads(self, sLayerOnly='*') -> IMGCPCBUserPads:
 		'Returns the collection of user pads.'
 		return self._ApplyTypes_(41, 2, (9, 32), ((8, 49),), 'GetUserPads', '{ACC37237-2F98-403B-8783-C21D7026F5B4}',sLayerOnly
 			)
@@ -15795,7 +15794,7 @@ class IMGCPCBFiducial(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this padstack object.'
 		ret = self._oleobj_.InvokeTypes(31, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -15938,7 +15937,7 @@ class IMGCPCBFiducials(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFiducial
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBFiducial:
 		'Returns the fiducial of a given index in the fiducials collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -16226,7 +16225,7 @@ class IMGCPCBFromTos(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFromTo
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBFromTo:
 		'Returns the fromTo of a given index in the fromTo collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -16290,7 +16289,7 @@ class IMGCPCBGeneratedPlane(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -16326,7 +16325,7 @@ class IMGCPCBGeneratedPlane(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -16428,7 +16427,7 @@ class IMGCPCBGeneratedPlanes(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGeneratedPlane
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBGeneratedPlane:
 		'Returns the generated plane of a given index in the generated plane collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -16496,7 +16495,7 @@ class IMGCPCBGeometries(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGeometry
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBGeometry:
 		'Returns the geometry of a given index in the geometries collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -16662,7 +16661,7 @@ class IMGCPCBGeometry(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(19, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCPCBObjects
-	def PutCutout(self, pSafeArrayOfPoints=defaultNamedNotOptArg, eUnit=0):
+	def PutCutout(self, pSafeArrayOfPoints=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBObjects:
 		'Adds a cutout to this geometry.'
 		ret = self._oleobj_.InvokeTypes(23, LCID, 1, (9, 0), ((16396, 1), (3, 49)),pSafeArrayOfPoints
 			, eUnit)
@@ -16758,7 +16757,7 @@ class IMGCPCBGlobalDisplayControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBColorPattern
 	# The method Color is actually a property, but must be used as a method to correctly pass the arguments
-	def Color(self, itemName=defaultNamedNotOptArg):
+	def Color(self, itemName=defaultNamedNotOptArg) -> IMGCPCBColorPattern:
 		'Sets or returns the color data for the named item.'
 		ret = self._oleobj_.InvokeTypes(18, LCID, 2, (9, 0), ((8, 1),),itemName
 			)
@@ -16768,7 +16767,7 @@ class IMGCPCBGlobalDisplayControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBColorPattern
 	# The method ConductorLayerColor is actually a property, but must be used as a method to correctly pass the arguments
-	def ConductorLayerColor(self, nLayer=defaultNamedNotOptArg, eType=defaultNamedNotOptArg):
+	def ConductorLayerColor(self, nLayer=defaultNamedNotOptArg, eType=defaultNamedNotOptArg) -> IMGCPCBColorPattern:
 		'This property sets or returns color of different conductive layers.'
 		ret = self._oleobj_.InvokeTypes(1, LCID, 2, (9, 0), ((2, 1), (3, 1)),nLayer
 			, eType)
@@ -16778,7 +16777,7 @@ class IMGCPCBGlobalDisplayControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBColorPattern
 	# The method GeneralItemsColor is actually a property, but must be used as a method to correctly pass the arguments
-	def GeneralItemsColor(self, eType=defaultNamedNotOptArg):
+	def GeneralItemsColor(self, eType=defaultNamedNotOptArg) -> IMGCPCBColorPattern:
 		'This property sets or returns color of the general items.'
 		ret = self._oleobj_.InvokeTypes(2, LCID, 2, (9, 0), ((3, 1),),eType
 			)
@@ -16794,7 +16793,7 @@ class IMGCPCBGlobalDisplayControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBColor
 	# The method HazardsColor is actually a property, but must be used as a method to correctly pass the arguments
-	def HazardsColor(self, eType=defaultNamedNotOptArg):
+	def HazardsColor(self, eType=defaultNamedNotOptArg) -> IMGCPCBColor:
 		'This property sets or returns color of the Hazards.'
 		ret = self._oleobj_.InvokeTypes(9, LCID, 2, (9, 0), ((3, 1),),eType
 			)
@@ -16809,7 +16808,7 @@ class IMGCPCBGlobalDisplayControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBColorPattern
 	# The method MaterialColor is actually a property, but must be used as a method to correctly pass the arguments
-	def MaterialColor(self, Name=defaultNamedNotOptArg):
+	def MaterialColor(self, Name=defaultNamedNotOptArg) -> IMGCPCBColorPattern:
 		'This property sets or returns color of a material'
 		ret = self._oleobj_.InvokeTypes(11, LCID, 2, (9, 0), ((8, 1),),Name
 			)
@@ -16825,7 +16824,7 @@ class IMGCPCBGlobalDisplayControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBColorPattern
 	# The method MiscItemsColor is actually a property, but must be used as a method to correctly pass the arguments
-	def MiscItemsColor(self, eType=defaultNamedNotOptArg):
+	def MiscItemsColor(self, eType=defaultNamedNotOptArg) -> IMGCPCBColorPattern:
 		'This property sets or returns color of the misc items.'
 		ret = self._oleobj_.InvokeTypes(4, LCID, 2, (9, 0), ((3, 1),),eType
 			)
@@ -16841,7 +16840,7 @@ class IMGCPCBGlobalDisplayControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBColorPattern
 	# The method NetColor is actually a property, but must be used as a method to correctly pass the arguments
-	def NetColor(self, bIsNetOrNetClass=defaultNamedNotOptArg, Name=defaultNamedNotOptArg):
+	def NetColor(self, bIsNetOrNetClass=defaultNamedNotOptArg, Name=defaultNamedNotOptArg) -> IMGCPCBColorPattern:
 		'This property sets or returns color of the nets or netclasses.'
 		ret = self._oleobj_.InvokeTypes(7, LCID, 2, (9, 0), ((11, 1), (8, 1)),bIsNetOrNetClass
 			, Name)
@@ -16851,7 +16850,7 @@ class IMGCPCBGlobalDisplayControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBColorPattern
 	# The method PartItemsColor is actually a property, but must be used as a method to correctly pass the arguments
-	def PartItemsColor(self, eType=defaultNamedNotOptArg, eSide=defaultNamedNotOptArg):
+	def PartItemsColor(self, eType=defaultNamedNotOptArg, eSide=defaultNamedNotOptArg) -> IMGCPCBColorPattern:
 		'This property sets or returns color of the part items.'
 		ret = self._oleobj_.InvokeTypes(5, LCID, 2, (9, 0), ((3, 1), (3, 1)),eType
 			, eSide)
@@ -16949,7 +16948,7 @@ class IMGCPCBGlobalDisplayControl(DispatchBaseClass):
 
 	# Result is of type IMGCPCBColorPattern
 	# The method UserLayerColor is actually a property, but must be used as a method to correctly pass the arguments
-	def UserLayerColor(self, Name=defaultNamedNotOptArg):
+	def UserLayerColor(self, Name=defaultNamedNotOptArg) -> IMGCPCBColorPattern:
 		'This property sets or returns color of the user layers.'
 		ret = self._oleobj_.InvokeTypes(6, LCID, 2, (9, 0), ((8, 1),),Name
 			)
@@ -17068,7 +17067,7 @@ class IMGCPCBGlueSpots(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGlueSpot
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBGlueSpot:
 		'Returns the glue spot of a given index in the glue spot collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -17153,7 +17152,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(60, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property, on this group, by name.'
 		ret = self._oleobj_.InvokeTypes(38, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -17181,7 +17180,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerGfxs
 	# The method GetConductorLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerGfxs(self, eSelectType=-1, eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerGfxs(self, eSelectType=-1, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerGfxs:
 		"Returns the Group's board layer gfx collection. (Deprecated) Use ConductorLayerGfxs2."
 		ret = self._oleobj_.InvokeTypes(26, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, nLayerOnly)
@@ -17191,14 +17190,14 @@ class IMGCPCBGroup(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerGfxs
 	# The method GetConductorLayerGfxs2 is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerGfxs2(self, pArrayOfSelectType='', eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerGfxs2(self, pArrayOfSelectType='', eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerGfxs:
 		"Returns the Group's board layer gfx collection."
 		return self._ApplyTypes_(43, 2, (9, 32), ((16396, 49), (3, 49), (3, 49)), 'GetConductorLayerGfxs2', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED21}',pArrayOfSelectType
 			, eSelectOnly, nLayerOnly)
 
 	# Result is of type IMGCPCBConductorLayerTexts
 	# The method GetConductorLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerTexts:
 		"Returns the Group's board text collection."
 		ret = self._oleobj_.InvokeTypes(29, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -17208,7 +17207,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 
 	# Result is of type IMGCPCBEmbeddedPassiveShapes
 	# The method GetEmbeddedPassiveShapes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetEmbeddedPassiveShapes(self, eSelectOnly=0, eType=-1, nLayerOnly=0):
+	def GetEmbeddedPassiveShapes(self, eSelectOnly=0, eType=-1, nLayerOnly=0) -> IMGCPCBEmbeddedPassiveShapes:
 		"Returns the group's collection of embedded passive shapes."
 		ret = self._oleobj_.InvokeTypes(40, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectOnly
 			, eType, nLayerOnly)
@@ -17218,7 +17217,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerGfxs
 	# The method GetFabricationLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerGfxs(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0):
+	def GetFabricationLayerGfxs(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0) -> IMGCPCBFabricationLayerGfxs:
 		"Returns the Group's fabrication layer graphics collection."
 		ret = self._oleobj_.InvokeTypes(27, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, eLayerOnly)
@@ -17228,7 +17227,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerTexts
 	# The method GetFabricationLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0):
+	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0) -> IMGCPCBFabricationLayerTexts:
 		"Returns the Group's fabrication text collection."
 		ret = self._oleobj_.InvokeTypes(30, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, eLayerOnly)
@@ -17238,7 +17237,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 
 	# Result is of type IMGCPCBObstructs
 	# The method GetObstructs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObstructs(self, eSelectType=-1):
+	def GetObstructs(self, eSelectType=-1) -> IMGCPCBObstructs:
 		"Returns the Group's obstruct collection."
 		ret = self._oleobj_.InvokeTypes(16, LCID, 2, (9, 0), ((3, 49),),eSelectType
 			)
@@ -17254,7 +17253,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPadstackObjects
 	# The method GetPadstackObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPadstackObjects(self, eSelectType=-1):
+	def GetPadstackObjects(self, eSelectType=-1) -> IMGCPCBPadstackObjects:
 		'Get the collection of padstack objects in the group'
 		ret = self._oleobj_.InvokeTypes(50, LCID, 2, (9, 0), ((3, 49),),eSelectType
 			)
@@ -17264,7 +17263,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPins
 	# The method GetPins is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPins(self, Name='*'):
+	def GetPins(self, Name='*') -> IMGCPCBPins:
 		"Returns the Group's pin collection."
 		return self._ApplyTypes_(5, 2, (9, 32), ((8, 49),), 'GetPins', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED08}',Name
 			)
@@ -17289,14 +17288,14 @@ class IMGCPCBGroup(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserLayerGfxs
 	# The method GetUserLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerGfxs(self, eSelectOnly=0, sLayerOnly='*'):
+	def GetUserLayerGfxs(self, eSelectOnly=0, sLayerOnly='*') -> IMGCPCBUserLayerGfxs:
 		"Returns the Group's user layer gfx collection."
 		return self._ApplyTypes_(28, 2, (9, 32), ((3, 49), (8, 49)), 'GetUserLayerGfxs', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED51}',eSelectOnly
 			, sLayerOnly)
 
 	# Result is of type IMGCPCBUserLayerTexts
 	# The method GetUserLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*'):
+	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*') -> IMGCPCBUserLayerTexts:
 		"Returns the Group's user text collection."
 		return self._ApplyTypes_(31, 2, (9, 32), ((3, 49), (8, 49)), 'GetUserLayerTexts', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED5A}',eSelectOnly
 			, sLayerOnly)
@@ -17321,7 +17320,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 			, OffsetY, eUnit)
 
 	# Result is of type IMGCPCBGroup
-	def PublishPhysicalReuseSource(self, bSuppressMsg=False):
+	def PublishPhysicalReuseSource(self, bSuppressMsg=False) -> IMGCPCBGroup:
 		'Publish the given physical reuse circuit source. Property used only for group type epcbGroupPhysicalReuseSource.'
 		ret = self._oleobj_.InvokeTypes(89, LCID, 1, (9, 0), ((11, 49),),bSuppressMsg
 			)
@@ -17330,7 +17329,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBGroup
-	def PutGroup(self, eGroupType=defaultNamedNotOptArg, sGroupName=defaultNamedNotOptArg):
+	def PutGroup(self, eGroupType=defaultNamedNotOptArg, sGroupName=defaultNamedNotOptArg) -> IMGCPCBGroup:
 		'Creates a new Group.'
 		ret = self._oleobj_.InvokeTypes(63, LCID, 1, (9, 0), ((3, 1), (8, 1)),eGroupType
 			, sGroupName)
@@ -17339,7 +17338,7 @@ class IMGCPCBGroup(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this pin.'
 		ret = self._oleobj_.InvokeTypes(39, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -17627,7 +17626,7 @@ class IMGCPCBGroupOutline(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -17645,7 +17644,7 @@ class IMGCPCBGroupOutline(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -17735,7 +17734,7 @@ class IMGCPCBGroups(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGroup
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBGroup:
 		'Returns the group of a given index in the groups collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -17873,7 +17872,7 @@ class IMGCPCBGui(DispatchBaseClass):
 			, title)
 
 	# Result is of type IMGCPCBDialog
-	def FindDialog(self, vDialog=defaultNamedNotOptArg):
+	def FindDialog(self, vDialog=defaultNamedNotOptArg) -> IMGCPCBDialog:
 		'Find the specified open dialog.'
 		ret = self._oleobj_.InvokeTypes(9, LCID, 1, (9, 0), ((12, 1),),vDialog
 			)
@@ -17950,7 +17949,7 @@ class IMGCPCBGui(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBCommand
-	def RegisterCommand(self, cmdName=defaultNamedNotOptArg, bTerminateCurrent=True):
+	def RegisterCommand(self, cmdName=defaultNamedNotOptArg, bTerminateCurrent=True) -> IMGCPCBCommand:
 		'Start a new interactive command.'
 		ret = self._oleobj_.InvokeTypes(10, LCID, 1, (9, 0), ((8, 1), (11, 49)),cmdName
 			, bTerminateCurrent)
@@ -18042,7 +18041,7 @@ class IMGCPCBHThing(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(29, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property, on this HThing, by name.'
 		ret = self._oleobj_.InvokeTypes(32, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -18064,7 +18063,7 @@ class IMGCPCBHThing(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerGfxs
 	# The method GetConductorLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerGfxs(self, eSelectType=-1, eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerGfxs(self, eSelectType=-1, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerGfxs:
 		"Returns the HThing's board layer gfx collection. (Deprecated) Use ConductorLayerGfxs2."
 		ret = self._oleobj_.InvokeTypes(22, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, nLayerOnly)
@@ -18074,14 +18073,14 @@ class IMGCPCBHThing(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerGfxs
 	# The method GetConductorLayerGfxs2 is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerGfxs2(self, pArrayOfSelectType='', eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerGfxs2(self, pArrayOfSelectType='', eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerGfxs:
 		"Returns the HThing's board layer gfx collection."
 		return self._ApplyTypes_(37, 2, (9, 32), ((16396, 49), (3, 49), (3, 49)), 'GetConductorLayerGfxs2', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED21}',pArrayOfSelectType
 			, eSelectOnly, nLayerOnly)
 
 	# Result is of type IMGCPCBConductorLayerTexts
 	# The method GetConductorLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerTexts:
 		"Returns the HThing's board text collection."
 		ret = self._oleobj_.InvokeTypes(25, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -18091,7 +18090,7 @@ class IMGCPCBHThing(DispatchBaseClass):
 
 	# Result is of type IMGCPCBEmbeddedPassiveShapes
 	# The method GetEmbeddedPassiveShapes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetEmbeddedPassiveShapes(self, eSelectOnly=0, eType=-1, nLayerOnly=0):
+	def GetEmbeddedPassiveShapes(self, eSelectOnly=0, eType=-1, nLayerOnly=0) -> IMGCPCBEmbeddedPassiveShapes:
 		"Returns the component's collection of embedded passive shapes."
 		ret = self._oleobj_.InvokeTypes(34, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectOnly
 			, eType, nLayerOnly)
@@ -18101,7 +18100,7 @@ class IMGCPCBHThing(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerGfxs
 	# The method GetFabricationLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerGfxs(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0):
+	def GetFabricationLayerGfxs(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0) -> IMGCPCBFabricationLayerGfxs:
 		"Returns the HThing's fabrication layer graphics collection."
 		ret = self._oleobj_.InvokeTypes(23, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, eLayerOnly)
@@ -18111,7 +18110,7 @@ class IMGCPCBHThing(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerTexts
 	# The method GetFabricationLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0):
+	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0) -> IMGCPCBFabricationLayerTexts:
 		"Returns the HThing's fabrication text collection."
 		ret = self._oleobj_.InvokeTypes(26, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, eLayerOnly)
@@ -18121,7 +18120,7 @@ class IMGCPCBHThing(DispatchBaseClass):
 
 	# Result is of type IMGCPCBObstructs
 	# The method GetObstructs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObstructs(self, eSelectType=-1):
+	def GetObstructs(self, eSelectType=-1) -> IMGCPCBObstructs:
 		"Returns the HThing's obstruct collection."
 		ret = self._oleobj_.InvokeTypes(12, LCID, 2, (9, 0), ((3, 49),),eSelectType
 			)
@@ -18131,21 +18130,21 @@ class IMGCPCBHThing(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPins
 	# The method GetPins is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPins(self, Name='*'):
+	def GetPins(self, Name='*') -> IMGCPCBPins:
 		"Returns the HThing's pin collection."
 		return self._ApplyTypes_(2, 2, (9, 32), ((8, 49),), 'GetPins', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED08}',Name
 			)
 
 	# Result is of type IMGCPCBUserLayerGfxs
 	# The method GetUserLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerGfxs(self, eSelectOnly=0, sLayerOnly='*'):
+	def GetUserLayerGfxs(self, eSelectOnly=0, sLayerOnly='*') -> IMGCPCBUserLayerGfxs:
 		"Returns the HThing's user layer gfx collection."
 		return self._ApplyTypes_(24, 2, (9, 32), ((3, 49), (8, 49)), 'GetUserLayerGfxs', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED51}',eSelectOnly
 			, sLayerOnly)
 
 	# Result is of type IMGCPCBUserLayerTexts
 	# The method GetUserLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*'):
+	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*') -> IMGCPCBUserLayerTexts:
 		"Returns the HThing's user text collection."
 		return self._ApplyTypes_(27, 2, (9, 32), ((3, 49), (8, 49)), 'GetUserLayerTexts', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED5A}',eSelectOnly
 			, sLayerOnly)
@@ -18179,7 +18178,7 @@ class IMGCPCBHThing(DispatchBaseClass):
 			, eAngleUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this pin.'
 		ret = self._oleobj_.InvokeTypes(33, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -18188,7 +18187,7 @@ class IMGCPCBHThing(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBProperty
-	def PutPropertyEx(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg, sSource=defaultNamedNotOptArg):
+	def PutPropertyEx(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg, sSource=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property with source defined.'
 		ret = self._oleobj_.InvokeTypes(46, LCID, 1, (9, 0), ((8, 1), (8, 1), (8, 1)),sName
 			, sValue, sSource)
@@ -18460,7 +18459,7 @@ class IMGCPCBHazardExplorer(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBHazardTreeItem
-	def RegisterHazardType(self, ppHzdType=defaultNamedNotOptArg):
+	def RegisterHazardType(self, ppHzdType=defaultNamedNotOptArg) -> IMGCPCBHazardTreeItem:
 		'Register Hazard Type.'
 		ret = self._oleobj_.InvokeTypes(2, LCID, 1, (9, 0), ((9, 1),),ppHzdType
 			)
@@ -18627,7 +18626,7 @@ class IMGCPCBHazardTreeItem(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBHazardSymbol
-	def PutSymbol(self, hzd_id=defaultNamedNotOptArg, x=defaultNamedNotOptArg, y=defaultNamedNotOptArg, eUnit=0):
+	def PutSymbol(self, hzd_id=defaultNamedNotOptArg, x=defaultNamedNotOptArg, y=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBHazardSymbol:
 		'Add a Hazard Symbol'
 		ret = self._oleobj_.InvokeTypes(6, LCID, 1, (9, 0), ((8, 1), (5, 1), (5, 1), (3, 49)),hzd_id
 			, x, y, eUnit)
@@ -18688,7 +18687,7 @@ class IMGCPCBHazards(DispatchBaseClass):
 
 	# Result is of type IMGCPCBHazard
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBHazard:
 		'Returns the hazard of a given index in the collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -18815,7 +18814,7 @@ class IMGCPCBHoles(DispatchBaseClass):
 
 	# Result is of type IMGCPCBHole
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBHole:
 		'Returns the pad of a given index in the pad collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -19065,7 +19064,7 @@ class IMGCPCBImages(DispatchBaseClass):
 
 	# Result is of type IMGCPCBImage
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, Index=defaultNamedNotOptArg):
+	def Item(self, Index=defaultNamedNotOptArg) -> IMGCPCBImage:
 		'Returns the detailed view of a given index in the detailed view collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),Index
 			)
@@ -19129,7 +19128,7 @@ class IMGCPCBInsertionOutline(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -19147,7 +19146,7 @@ class IMGCPCBInsertionOutline(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -19243,7 +19242,7 @@ class IMGCPCBInsertionOutlines(DispatchBaseClass):
 
 	# Result is of type IMGCPCBInsertionOutline
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBInsertionOutline:
 		'Returns the insertion outline of a given index in the insertion outlines collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -19304,7 +19303,7 @@ class IMGCPCBJumperTableEntries(DispatchBaseClass):
 
 	# Result is of type IMGCPCBJumperTableEntry
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBJumperTableEntry:
 		'Returns the jumper table of a given index in the collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -19462,7 +19461,7 @@ class IMGCPCBLayerObjects(DispatchBaseClass):
 
 	# Result is of type IMGCPCBLayerObject
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBLayerObject:
 		'Returns the object of a given index in the layer informations collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -19612,7 +19611,7 @@ class IMGCPCBLayerRanges(DispatchBaseClass):
 
 	# Result is of type IMGCPCBLayerRange
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, Index=defaultNamedNotOptArg):
+	def Item(self, Index=defaultNamedNotOptArg) -> IMGCPCBLayerRange:
 		'Returns the via span of a given index in the collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),Index
 			)
@@ -19670,7 +19669,7 @@ class IMGCPCBManufacturingOutline(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -19688,7 +19687,7 @@ class IMGCPCBManufacturingOutline(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -19844,7 +19843,7 @@ class IMGCPCBMarkers(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMarker
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBMarker:
 		'Returns the marker of a given index in the marker collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -19949,7 +19948,7 @@ class IMGCPCBMatchLengthGroups(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMatchLengthGroup
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBMatchLengthGroup:
 		'Returns the match length group of a given index in the match length groups collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -20043,7 +20042,7 @@ class IMGCPCBMaterials(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMaterial
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBMaterial:
 		'Returns the material of a given index in the Materials collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -20105,7 +20104,7 @@ class IMGCPCBMetalizationArea(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -20123,7 +20122,7 @@ class IMGCPCBMetalizationArea(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -20232,7 +20231,7 @@ class IMGCPCBMetalizationAreas(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMetalizationArea
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBMetalizationArea:
 		'Returns the metalization area of a given index in the metalization area collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -20374,7 +20373,7 @@ class IMGCPCBMountingHole(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(19, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -20384,7 +20383,7 @@ class IMGCPCBMountingHole(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBreakoutDefaults
 	# The method GetBreakoutDefaults is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBreakoutDefaults(self, nLayer=0):
+	def GetBreakoutDefaults(self, nLayer=0) -> IMGCPCBBreakoutDefaults:
 		"Returns this mounting hole's breakout defaults.  A single layer can be specified."
 		ret = self._oleobj_.InvokeTypes(41, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -20400,7 +20399,7 @@ class IMGCPCBMountingHole(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, nLayer=0, bIncludeNegativePads=False):
+	def GetPads(self, nLayer=0, bIncludeNegativePads=False) -> IMGCPCBPads:
 		'Returns the pad collection for this padstack object on the specified layer (0=all layers). May optionally return the negative pads too, the presence of a negative pad on a layer will override the regular pad on that layer.'
 		ret = self._oleobj_.InvokeTypes(20, LCID, 2, (9, 0), ((3, 49), (11, 49)),nLayer
 			, bIncludeNegativePads)
@@ -20427,7 +20426,7 @@ class IMGCPCBMountingHole(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTeardropDefaults
 	# The method GetTeardropDefaults is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTeardropDefaults(self, nLayer=0):
+	def GetTeardropDefaults(self, nLayer=0) -> IMGCPCBTeardropDefaults:
 		"Returns this mounting hole's teardrop defaults.  A single layer can be specified."
 		ret = self._oleobj_.InvokeTypes(42, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -20437,7 +20436,7 @@ class IMGCPCBMountingHole(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserPads
 	# The method GetUserPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserPads(self, sLayerOnly='*'):
+	def GetUserPads(self, sLayerOnly='*') -> IMGCPCBUserPads:
 		'Returns the collection of user pads.'
 		return self._ApplyTypes_(47, 2, (9, 32), ((8, 49),), 'GetUserPads', '{ACC37237-2F98-403B-8783-C21D7026F5B4}',sLayerOnly
 			)
@@ -20482,7 +20481,7 @@ class IMGCPCBMountingHole(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this padstack object.'
 		ret = self._oleobj_.InvokeTypes(31, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -20648,7 +20647,7 @@ class IMGCPCBMountingHoles(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMountingHole
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBMountingHole:
 		'Returns the mountingHole of a given index in the mountingHole collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -20714,7 +20713,7 @@ class IMGCPCBMultiBoardOutline(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -20732,7 +20731,7 @@ class IMGCPCBMultiBoardOutline(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -20741,7 +20740,7 @@ class IMGCPCBMultiBoardOutline(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBRouteBorder
-	def PutRouteBorder(self, nPnts=defaultNamedNotOptArg, pSafeArrayOfPnts=defaultNamedNotOptArg, dGraphicsWidth=defaultNamedNotOptArg, eUnit=0):
+	def PutRouteBorder(self, nPnts=defaultNamedNotOptArg, pSafeArrayOfPnts=defaultNamedNotOptArg, dGraphicsWidth=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBRouteBorder:
 		'Adds or replaces the route border for this board outline.'
 		ret = self._oleobj_.InvokeTypes(55, LCID, 1, (9, 0), ((3, 1), (16396, 1), (5, 1), (3, 49)),nPnts
 			, pSafeArrayOfPnts, dGraphicsWidth, eUnit)
@@ -20864,7 +20863,7 @@ class IMGCPCBMultiBoardOutlines(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMultiBoardOutline
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBMultiBoardOutline:
 		'Returns multi board outline of a given index/name in the Multi board outlines collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -20932,7 +20931,7 @@ class IMGCPCBMultiVia(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(53, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -20942,7 +20941,7 @@ class IMGCPCBMultiVia(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBreakoutDefaults
 	# The method GetBreakoutDefaults is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBreakoutDefaults(self, nLayer=0):
+	def GetBreakoutDefaults(self, nLayer=0) -> IMGCPCBBreakoutDefaults:
 		"Returns this multi via's breakout defaults.  A single layer can be specified."
 		ret = self._oleobj_.InvokeTypes(42, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -20958,7 +20957,7 @@ class IMGCPCBMultiVia(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, nLayer=0, bIncludeNegativePads=False):
+	def GetPads(self, nLayer=0, bIncludeNegativePads=False) -> IMGCPCBPads:
 		'Returns the pad collection for this padstack object on the specified layer (0=all layers). May optionally return the negative pads too, the presence of a negative pad on a layer will override the regular pad on that layer.'
 		ret = self._oleobj_.InvokeTypes(20, LCID, 2, (9, 0), ((3, 49), (11, 49)),nLayer
 			, bIncludeNegativePads)
@@ -20980,7 +20979,7 @@ class IMGCPCBMultiVia(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTeardropDefaults
 	# The method GetTeardropDefaults is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTeardropDefaults(self, nLayer=0):
+	def GetTeardropDefaults(self, nLayer=0) -> IMGCPCBTeardropDefaults:
 		"Returns this multi via's teardrop defaults.  A single layer can be specified."
 		ret = self._oleobj_.InvokeTypes(43, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -21016,7 +21015,7 @@ class IMGCPCBMultiVia(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this padstack object.'
 		ret = self._oleobj_.InvokeTypes(31, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -21193,7 +21192,7 @@ class IMGCPCBMultiVias(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMultiVia
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBMultiVia:
 		'Returns the multi via of a given index in the multi via collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -21260,7 +21259,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBActualPlaneShapes
 	# The method GetActualPlaneShapes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetActualPlaneShapes(self, eSelectOnly=0, nLayerOnly=0):
+	def GetActualPlaneShapes(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBActualPlaneShapes:
 		"Returns the net's actual plane shape collection."
 		ret = self._oleobj_.InvokeTypes(24, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -21270,7 +21269,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBondPads
 	# The method GetBondPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBondPads(self, SelectType=0):
+	def GetBondPads(self, SelectType=0) -> IMGCPCBBondPads:
 		"Returns the Net's collection of bond pads."
 		ret = self._oleobj_.InvokeTypes(34, LCID, 2, (9, 0), ((3, 49),),SelectType
 			)
@@ -21280,7 +21279,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBObjects
 	# The method GetBondWires is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBondWires(self, SelectType=0):
+	def GetBondWires(self, SelectType=0) -> IMGCPCBObjects:
 		"Returns the Net's collection of bond wires."
 		ret = self._oleobj_.InvokeTypes(33, LCID, 2, (9, 0), ((3, 49),),SelectType
 			)
@@ -21290,7 +21289,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductiveAreas
 	# The method GetConductiveAreas is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductiveAreas(self, eSelectOnly=0, nLayerOnly=0):
+	def GetConductiveAreas(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductiveAreas:
 		'Returns conductive areas on this Net.'
 		ret = self._oleobj_.InvokeTypes(15, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -21300,7 +21299,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFromTos
 	# The method GetFromTos is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFromTos(self, eSelectOnly=0, eFromToType=1):
+	def GetFromTos(self, eSelectOnly=0, eFromToType=1) -> IMGCPCBFromTos:
 		'Returns fromtos on this Net.'
 		ret = self._oleobj_.InvokeTypes(16, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, eFromToType)
@@ -21310,7 +21309,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGeneratedPlanes
 	# The method GetGeneratedPlaneOutlines is actually a property, but must be used as a method to correctly pass the arguments
-	def GetGeneratedPlaneOutlines(self, eSelectOnly=0, nLayerOnly=0):
+	def GetGeneratedPlaneOutlines(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBGeneratedPlanes:
 		'Returns generated plane outlines on this Net.'
 		ret = self._oleobj_.InvokeTypes(28, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -21320,7 +21319,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGeneratedPlanes
 	# The method GetGeneratedPlanes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetGeneratedPlanes(self, eSelectOnly=0, nLayerOnly=0):
+	def GetGeneratedPlanes(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBGeneratedPlanes:
 		'Returns generated planes on this Net.'
 		ret = self._oleobj_.InvokeTypes(13, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -21330,7 +21329,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBMountingHoles
 	# The method GetMountingHoles is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMountingHoles(self, eSelectOnly=0):
+	def GetMountingHoles(self, eSelectOnly=0) -> IMGCPCBMountingHoles:
 		'Returns mounting holes on this Net.'
 		ret = self._oleobj_.InvokeTypes(14, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -21340,7 +21339,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPins
 	# The method GetPins is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPins(self, eSelectOnly=0):
+	def GetPins(self, eSelectOnly=0) -> IMGCPCBPins:
 		"Returns the Net's collection of pins."
 		ret = self._oleobj_.InvokeTypes(9, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -21350,7 +21349,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPins
 	# The method GetPinsEx is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPinsEx(self, eSelectOnly=0):
+	def GetPinsEx(self, eSelectOnly=0) -> IMGCPCBPins:
 		"Returns the Net's collection of pins, allows user to pass in epcbSelectUnplaced to only get unplaced or epcbSelectAll and get all pins including unplaced for use in design tool."
 		ret = self._oleobj_.InvokeTypes(47, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -21360,7 +21359,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlaneAssignments
 	# The method GetPlaneAssignments is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPlaneAssignments(self, Layer=0):
+	def GetPlaneAssignments(self, Layer=0) -> IMGCPCBPlaneAssignments:
 		'Returns the collection of plane assignments.'
 		ret = self._oleobj_.InvokeTypes(203, LCID, 2, (9, 0), ((3, 49),),Layer
 			)
@@ -21370,7 +21369,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlaneShapes
 	# The method GetPlaneShapes is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPlaneShapes(self, eSelectOnly=0, nLayerOnly=0):
+	def GetPlaneShapes(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBPlaneShapes:
 		'Returns plane shapes on this Net.'
 		ret = self._oleobj_.InvokeTypes(17, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -21380,7 +21379,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTieLegs
 	# The method GetTieLegs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTieLegs(self, eSelectOnly=0, nLayerOnly=0):
+	def GetTieLegs(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBTieLegs:
 		"Returns the net's tie leg collection. (Deprecated)"
 		ret = self._oleobj_.InvokeTypes(25, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -21390,7 +21389,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTraces
 	# The method GetTraces is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTraces(self, eSelectOnly=0, nLayerOnly=0):
+	def GetTraces(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBTraces:
 		"Returns the Net's collection of traces."
 		ret = self._oleobj_.InvokeTypes(10, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -21400,7 +21399,7 @@ class IMGCPCBNet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBVias
 	# The method GetVias is actually a property, but must be used as a method to correctly pass the arguments
-	def GetVias(self, eSelectOnly=0):
+	def GetVias(self, eSelectOnly=0) -> IMGCPCBVias:
 		"Returns the Net's collection of vias."
 		ret = self._oleobj_.InvokeTypes(11, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -21430,7 +21429,7 @@ class IMGCPCBNet(DispatchBaseClass):
 			, OtherNet, OtherPin)
 
 	# Result is of type IMGCPCBNet
-	def Split(self, OldNetPin=defaultNamedNotOptArg, NewNetPin=defaultNamedNotOptArg, NetName=defaultNamedNotOptArg):
+	def Split(self, OldNetPin=defaultNamedNotOptArg, NewNetPin=defaultNamedNotOptArg, NetName=defaultNamedNotOptArg) -> IMGCPCBNet:
 		'Splits this net between 2 pins.  OldNetPin will keep this net.  NewNetPin will have a new net.'
 		ret = self._oleobj_.InvokeTypes(44, LCID, 1, (9, 0), ((9, 1), (9, 1), (8, 1)),OldNetPin
 			, NewNetPin, NetName)
@@ -21613,7 +21612,7 @@ class IMGCPCBNetClass(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPadstack
 	# The method ViaPadstackToUse is actually a property, but must be used as a method to correctly pass the arguments
-	def ViaPadstackToUse(self, nFromLayer=defaultNamedNotOptArg, nToLayer=defaultNamedNotOptArg, sScheme='(Master)'):
+	def ViaPadstackToUse(self, nFromLayer=defaultNamedNotOptArg, nToLayer=defaultNamedNotOptArg, sScheme='(Master)') -> IMGCPCBPadstack:
 		'Returns the via padstack to use for the specified layer range and scheme.'
 		return self._ApplyTypes_(11, 2, (9, 32), ((3, 1), (3, 1), (8, 49)), 'ViaPadstackToUse', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED0E}',nFromLayer
 			, nToLayer, sScheme)
@@ -21660,7 +21659,7 @@ class IMGCPCBNetClasses(DispatchBaseClass):
 
 	# Result is of type IMGCPCBNetClass
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBNetClass:
 		'Returns the netclass of a given index in the netclass collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -21849,7 +21848,7 @@ class IMGCPCBNetGroups(DispatchBaseClass):
 
 	# Result is of type IMGCPCBNetGroup
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBNetGroup:
 		'Returns the net group of a given index in the net group collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -21913,7 +21912,7 @@ class IMGCPCBNets(DispatchBaseClass):
 
 	# Result is of type IMGCPCBNet
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBNet:
 		'Returns the net of a given index in the nets collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -22111,7 +22110,7 @@ class IMGCPCBObstruct(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -22141,7 +22140,7 @@ class IMGCPCBObstruct(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -22263,7 +22262,7 @@ class IMGCPCBObstructs(DispatchBaseClass):
 
 	# Result is of type IMGCPCBObstruct
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBObstruct:
 		'Returns the obstruct of a given index in the obstruct collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -22441,7 +22440,7 @@ class IMGCPCBPads(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPad
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPad:
 		'Returns the pad of a given index in the pad collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -22499,7 +22498,7 @@ class IMGCPCBPadstack(DispatchBaseClass):
 	coclass_clsid = IID('{EDEDED11-D5F6-4B04-8FE7-EDEDEDEDED00}')
 
 	# Result is of type IMGCPCBPadstack
-	def Clone(self, bMirror=False):
+	def Clone(self, bMirror=False) -> IMGCPCBPadstack:
 		'Clone the padstack and optionally mirror it.'
 		ret = self._oleobj_.InvokeTypes(11, LCID, 1, (9, 0), ((11, 49),),bMirror
 			)
@@ -22521,7 +22520,7 @@ class IMGCPCBPadstack(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, nLayer=0):
+	def GetPads(self, nLayer=0) -> IMGCPCBPads:
 		'Get the collection of copper pads in this padstack on the specified layer (0=all layers).'
 		ret = self._oleobj_.InvokeTypes(4, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -22531,7 +22530,7 @@ class IMGCPCBPadstack(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserPads
 	# The method GetUserPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserPads(self, sLayerOnly='*'):
+	def GetUserPads(self, sLayerOnly='*') -> IMGCPCBUserPads:
 		'Returns the collection of user pads.'
 		return self._ApplyTypes_(16, 2, (9, 32), ((8, 49),), 'GetUserPads', '{ACC37237-2F98-403B-8783-C21D7026F5B4}',sLayerOnly
 			)
@@ -22631,7 +22630,7 @@ class IMGCPCBPadstackObject(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(19, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -22647,7 +22646,7 @@ class IMGCPCBPadstackObject(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, nLayer=0, bIncludeNegativePads=False):
+	def GetPads(self, nLayer=0, bIncludeNegativePads=False) -> IMGCPCBPads:
 		'Returns the pad collection for this padstack object on the specified layer (0=all layers). May optionally return the negative pads too, the presence of a negative pad on a layer will override the regular pad on that layer.'
 		ret = self._oleobj_.InvokeTypes(20, LCID, 2, (9, 0), ((3, 49), (11, 49)),nLayer
 			, bIncludeNegativePads)
@@ -22695,7 +22694,7 @@ class IMGCPCBPadstackObject(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this padstack object.'
 		ret = self._oleobj_.InvokeTypes(31, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -22819,7 +22818,7 @@ class IMGCPCBPadstackObjects(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPadstackObject
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPadstackObject:
 		'Returns the pin of a given index in the padstack object collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -22889,7 +22888,7 @@ class IMGCPCBPadstacks(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPadstack
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPadstack:
 		'Returns the padstack of a given index in the padstack collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -23085,7 +23084,7 @@ class IMGCPCBPanelBorder(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -23103,7 +23102,7 @@ class IMGCPCBPanelBorder(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -23184,7 +23183,7 @@ class IMGCPCBPanelOutline(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -23202,7 +23201,7 @@ class IMGCPCBPanelOutline(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -23289,7 +23288,7 @@ class IMGCPCBPanels(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPanel
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPanel:
 		'Returns the panel of a given index in the boards collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -23416,7 +23415,7 @@ class IMGCPCBParts(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPart
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPart:
 		'Returns the part of a given index in the part collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -23543,7 +23542,7 @@ class IMGCPCBPhysicalReuseLibraryCircuits(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPhysicalReuseLibraryCircuit
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPhysicalReuseLibraryCircuit:
 		'Returns the physical reuse library circuit of a given index in the physical reuse library circuit collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -23623,7 +23622,7 @@ class IMGCPCBPin(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(63, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -23633,7 +23632,7 @@ class IMGCPCBPin(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBreakoutDefaults
 	# The method GetBreakoutDefaults is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBreakoutDefaults(self, nLayer=0):
+	def GetBreakoutDefaults(self, nLayer=0) -> IMGCPCBBreakoutDefaults:
 		"Returns this pin's breakout defaults.  A single layer can be specified."
 		ret = self._oleobj_.InvokeTypes(40, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -23643,7 +23642,7 @@ class IMGCPCBPin(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerTexts
 	# The method GetConductorLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerTexts:
 		"Returns the pin's collection of conductor layer texts that match the supplied criteria."
 		ret = self._oleobj_.InvokeTypes(70, LCID, 2, (9, 0), ((3, 49), (3, 49)),eSelectOnly
 			, nLayerOnly)
@@ -23653,7 +23652,7 @@ class IMGCPCBPin(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerTexts
 	# The method GetFabricationLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0):
+	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0) -> IMGCPCBFabricationLayerTexts:
 		"Returns the pin's collection of fabrication texts that match the supplied criteria."
 		ret = self._oleobj_.InvokeTypes(68, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, eLayerOnly)
@@ -23669,7 +23668,7 @@ class IMGCPCBPin(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, nLayer=0, bIncludeNegativePads=False):
+	def GetPads(self, nLayer=0, bIncludeNegativePads=False) -> IMGCPCBPads:
 		'Returns the pad collection for this padstack object on the specified layer (0=all layers). May optionally return the negative pads too, the presence of a negative pad on a layer will override the regular pad on that layer.'
 		ret = self._oleobj_.InvokeTypes(20, LCID, 2, (9, 0), ((3, 49), (11, 49)),nLayer
 			, bIncludeNegativePads)
@@ -23696,7 +23695,7 @@ class IMGCPCBPin(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTeardropDefaults
 	# The method GetTeardropDefaults is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTeardropDefaults(self, nLayer=0):
+	def GetTeardropDefaults(self, nLayer=0) -> IMGCPCBTeardropDefaults:
 		"Returns this pin's teardrop defaults.  A single layer can be specified."
 		ret = self._oleobj_.InvokeTypes(41, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -23706,14 +23705,14 @@ class IMGCPCBPin(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserLayerTexts
 	# The method GetUserLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*'):
+	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*') -> IMGCPCBUserLayerTexts:
 		"Returns the pin's collection of user layer texts that match the supplied criteria."
 		return self._ApplyTypes_(72, 2, (9, 32), ((3, 49), (8, 49)), 'GetUserLayerTexts', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED5A}',eSelectOnly
 			, sLayerOnly)
 
 	# Result is of type IMGCPCBUserPads
 	# The method GetUserPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserPads(self, sLayerOnly='*'):
+	def GetUserPads(self, sLayerOnly='*') -> IMGCPCBUserPads:
 		'Returns the collection of user pads.'
 		return self._ApplyTypes_(53, 2, (9, 32), ((8, 49),), 'GetUserPads', '{ACC37237-2F98-403B-8783-C21D7026F5B4}',sLayerOnly
 			)
@@ -23807,7 +23806,7 @@ class IMGCPCBPin(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this padstack object.'
 		ret = self._oleobj_.InvokeTypes(31, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -23821,7 +23820,7 @@ class IMGCPCBPin(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBComponent
-	def PutTestPoint(self):
+	def PutTestPoint(self) -> IMGCPCBComponent:
 		'Place a testpoint on the pin in BoardStationRE'
 		ret = self._oleobj_.InvokeTypes(47, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -23839,7 +23838,7 @@ class IMGCPCBPin(DispatchBaseClass):
 			ret = Dispatch(ret, 'PutUserLayerText', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED59}')
 		return ret
 
-	def RemoveShortedNets(self, nLayer=defaultNamedNotOptArg, shortedNets=defaultNamedNotOptArg):
+	def RemoveShortedNets(self, nLayer=defaultNamedNotOptArg, shortedNets=defaultNamedNotOptArg) -> IMGCPCBUserLayerText:
 		'Remove shorted nets from a given layer.'
 		return self._oleobj_.InvokeTypes(84, LCID, 1, (24, 0), ((3, 1), (12, 1)),nLayer
 			, shortedNets)
@@ -24095,7 +24094,7 @@ class IMGCPCBPins(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPin
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPin:
 		'Returns the pin of a given index in the pins collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -24165,7 +24164,7 @@ class IMGCPCBPlacementObstruct(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -24189,7 +24188,7 @@ class IMGCPCBPlacementObstruct(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -24298,7 +24297,7 @@ class IMGCPCBPlacementObstructs(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlacementObstruct
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPlacementObstruct:
 		'Returns the placement obstruct of a given index in the placement obstructs collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -24362,7 +24361,7 @@ class IMGCPCBPlacementOutline(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -24392,7 +24391,7 @@ class IMGCPCBPlacementOutline(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -24506,7 +24505,7 @@ class IMGCPCBPlacementOutlines(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlacementOutline
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPlacementOutline:
 		'Returns the placement outline of a given index in the placement outlines collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -24609,7 +24608,7 @@ class IMGCPCBPlaneAssignments(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlaneAssignment
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPlaneAssignment:
 		'Returns the Plane Assignment of a given index in the Plane Assignment collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -24955,7 +24954,7 @@ class IMGCPCBPlaneClasses(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlaneClass
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPlaneClass:
 		'Returns the plane class of a given index in the plane class collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -25017,7 +25016,7 @@ class IMGCPCBPlaneEditingSketch(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -25035,7 +25034,7 @@ class IMGCPCBPlaneEditingSketch(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -25127,7 +25126,7 @@ class IMGCPCBPlaneEditingSketches(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlaneEditingSketch
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPlaneEditingSketch:
 		'Returns the plane editing sketch of a given index in the plane editing sketch collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -25193,7 +25192,7 @@ class IMGCPCBPlaneShape(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -25235,7 +25234,7 @@ class IMGCPCBPlaneShape(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -25405,7 +25404,7 @@ class IMGCPCBPlaneShapes(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPlaneShape
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBPlaneShape:
 		'Returns the plane shape of a given index in the plane shape collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -25507,14 +25506,14 @@ class IMGCPCBPlowUtilities(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBPoint
-	def NewPoint(self):
+	def NewPoint(self) -> IMGCPCBPoint:
 		ret = self._oleobj_.InvokeTypes(3, LCID, 1, (9, 0), (),)
 		if ret is not None:
 			ret = Dispatch(ret, 'NewPoint', '{6ADF1858-A878-47E5-B3B2-5820C27712DB}')
 		return ret
 
 	# Result is of type IMGCPCBTraces
-	def ReRoute(self, pStart=defaultNamedNotOptArg, pEnd=defaultNamedNotOptArg, pTrace=defaultNamedNotOptArg):
+	def ReRoute(self, pStart=defaultNamedNotOptArg, pEnd=defaultNamedNotOptArg, pTrace=defaultNamedNotOptArg) -> IMGCPCBTraces:
 		ret = self._oleobj_.InvokeTypes(14, LCID, 1, (9, 0), ((9, 1), (9, 1), (9, 1)),pStart
 			, pEnd, pTrace)
 		if ret is not None:
@@ -25563,7 +25562,7 @@ class IMGCPCBPlowUtilities(DispatchBaseClass):
 	PushAndShoveMode: str # read/write
 
 	# Default property for this class is 'ExpansionMode'
-	def __call__(self):
+	def __call__(self) -> IMGCPCBPoint:
 		return self._ApplyTypes_(*(0, 2, (9, 0), (), "ExpansionMode", '{90BA08EC-F7F1-4338-9AAA-F2384EB35423}'))
 	def __str__(self, *args):
 		return str(self.__call__(*args))
@@ -25655,7 +25654,7 @@ class IMGCPCBProperties(DispatchBaseClass):
 
 	# Result is of type IMGCPCBProperty
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Returns the property of a given index in the property collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -25917,7 +25916,7 @@ class IMGCPCBReservedArea(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -25935,7 +25934,7 @@ class IMGCPCBReservedArea(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -26016,7 +26015,7 @@ class IMGCPCBReservedAreas(DispatchBaseClass):
 
 	# Result is of type IMGCPCBReservedArea
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBReservedArea:
 		'Returns the reserved area of a given index in the reserved areas collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -26080,7 +26079,7 @@ class IMGCPCBResistorShape(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -26098,7 +26097,7 @@ class IMGCPCBResistorShape(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -26183,7 +26182,7 @@ class IMGCPCBResistorShapes(DispatchBaseClass):
 
 	# Result is of type IMGCPCBResistorShape
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBResistorShape:
 		'Returns the insertion outline of a given index in the resistor shapes collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -26302,7 +26301,7 @@ class IMGCPCBReuseArea(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -26320,7 +26319,7 @@ class IMGCPCBReuseArea(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -26411,7 +26410,7 @@ class IMGCPCBReuseAreas(DispatchBaseClass):
 
 	# Result is of type IMGCPCBReuseArea
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBReuseArea:
 		'Returns the Reuse Area(Managed Block area) of a given index in the Reuse Area(Managed Block area) collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -26475,7 +26474,7 @@ class IMGCPCBRoom(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -26507,7 +26506,7 @@ class IMGCPCBRoom(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -26606,7 +26605,7 @@ class IMGCPCBRooms(DispatchBaseClass):
 
 	# Result is of type IMGCPCBRoom
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBRoom:
 		'Returns the room of a given index in the room collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -26670,7 +26669,7 @@ class IMGCPCBRouteBorder(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -26688,7 +26687,7 @@ class IMGCPCBRouteBorder(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -26774,7 +26773,7 @@ class IMGCPCBRouteFence(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -26792,7 +26791,7 @@ class IMGCPCBRouteFence(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -26884,7 +26883,7 @@ class IMGCPCBRouteFences(DispatchBaseClass):
 
 	# Result is of type IMGCPCBRouteFence
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBRouteFence:
 		'Returns the route fence of a given index in the collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -27080,7 +27079,7 @@ class IMGCPCBRouteTargets(DispatchBaseClass):
 
 	# Result is of type IMGCPCBRouteTarget
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBRouteTarget:
 		'Returns the route target of a given index in the collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -27142,7 +27141,7 @@ class IMGCPCBRuleArea(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -27160,7 +27159,7 @@ class IMGCPCBRuleArea(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -27267,7 +27266,7 @@ class IMGCPCBRuleAreas(DispatchBaseClass):
 
 	# Result is of type IMGCPCBRuleArea
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBRuleArea:
 		'Returns the ruleArea of a given index in the ruleArea collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -27331,7 +27330,7 @@ class IMGCPCBSandbox(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -27355,7 +27354,7 @@ class IMGCPCBSandbox(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -27474,7 +27473,7 @@ class IMGCPCBSandboxes(DispatchBaseClass):
 
 	# Result is of type IMGCPCBSandbox
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBSandbox:
 		'Returns the sandbox of a given index in the sandbox collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -27611,7 +27610,7 @@ class IMGCPCBSetupParameter(DispatchBaseClass):
 	coclass_clsid = IID('{EDEDED6F-D5F6-4B04-8FE7-EDEDEDEDED00}')
 
 	# Result is of type IMGCPCBUserLayer
-	def PutUserLayer(self, sName=defaultNamedNotOptArg):
+	def PutUserLayer(self, sName=defaultNamedNotOptArg) -> IMGCPCBUserLayer:
 		'Creates a new user layer with the specified name.'
 		ret = self._oleobj_.InvokeTypes(1, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -27620,7 +27619,7 @@ class IMGCPCBSetupParameter(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBViaSpan
-	def PutViaSpan(self, StartLayer=defaultNamedNotOptArg, EndLayer=defaultNamedNotOptArg, pDefaultViaPadstack=defaultNamedNotOptArg):
+	def PutViaSpan(self, StartLayer=defaultNamedNotOptArg, EndLayer=defaultNamedNotOptArg, pDefaultViaPadstack=defaultNamedNotOptArg) -> IMGCPCBViaSpan:
 		'Adds a new via span and returns the created object. Default padstack must be a Via Padstack'
 		ret = self._oleobj_.InvokeTypes(8, LCID, 1, (9, 0), ((3, 1), (3, 1), (9, 1)),StartLayer
 			, EndLayer, pDefaultViaPadstack)
@@ -27671,7 +27670,7 @@ class IMGCPCBShearingHole(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(19, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -27687,7 +27686,7 @@ class IMGCPCBShearingHole(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, nLayer=0, bIncludeNegativePads=False):
+	def GetPads(self, nLayer=0, bIncludeNegativePads=False) -> IMGCPCBPads:
 		'Returns the pad collection for this padstack object on the specified layer (0=all layers). May optionally return the negative pads too, the presence of a negative pad on a layer will override the regular pad on that layer.'
 		ret = self._oleobj_.InvokeTypes(20, LCID, 2, (9, 0), ((3, 49), (11, 49)),nLayer
 			, bIncludeNegativePads)
@@ -27709,7 +27708,7 @@ class IMGCPCBShearingHole(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserPads
 	# The method GetUserPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserPads(self, sLayerOnly='*'):
+	def GetUserPads(self, sLayerOnly='*') -> IMGCPCBUserPads:
 		'Returns the collection of user pads.'
 		return self._ApplyTypes_(40, 2, (9, 32), ((8, 49),), 'GetUserPads', '{ACC37237-2F98-403B-8783-C21D7026F5B4}',sLayerOnly
 			)
@@ -27742,7 +27741,7 @@ class IMGCPCBShearingHole(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this padstack object.'
 		ret = self._oleobj_.InvokeTypes(31, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -27880,7 +27879,7 @@ class IMGCPCBShearingHoles(DispatchBaseClass):
 
 	# Result is of type IMGCPCBShearingHole
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, Index=defaultNamedNotOptArg):
+	def Item(self, Index=defaultNamedNotOptArg) -> IMGCPCBShearingHole:
 		'Returns the shearing hole of a given index in the shearing hole collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),Index
 			)
@@ -27947,7 +27946,7 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBoards
 	# The method GetBoards is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBoards(self, eSelectOnly=0):
+	def GetBoards(self, eSelectOnly=0) -> IMGCPCBBoards:
 		"Returns the Sheet's collection of boards."
 		ret = self._oleobj_.InvokeTypes(6, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -27957,7 +27956,7 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBComponents
 	# The method GetComponents is actually a property, but must be used as a method to correctly pass the arguments
-	def GetComponents(self, eSelectOnly=0, eCompType=-1, eCelltype=4):
+	def GetComponents(self, eSelectOnly=0, eCompType=-1, eCelltype=4) -> IMGCPCBComponents:
 		"Returns the collection of components that match the supplied criteria placed on this sheet. The refDes may contain the '*' and '?' wildcards."
 		ret = self._oleobj_.InvokeTypes(22, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectOnly
 			, eCompType, eCelltype)
@@ -27967,14 +27966,14 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBConductorLayerGfxs
 	# The method GetConductorLayerGfxs2 is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerGfxs2(self, pArrayOfSelectType='', eSelectOnly=0, nLayerOnly=0):
+	def GetConductorLayerGfxs2(self, pArrayOfSelectType='', eSelectOnly=0, nLayerOnly=0) -> IMGCPCBConductorLayerGfxs:
 		'Returns the board layer gfx collection placed on this sheet.'
 		return self._ApplyTypes_(14, 2, (9, 32), ((16396, 49), (3, 49), (3, 49)), 'GetConductorLayerGfxs2', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED21}',pArrayOfSelectType
 			, eSelectOnly, nLayerOnly)
 
 	# Result is of type IMGCPCBConductorLayerTexts
 	# The method GetConductorLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0, bIncludeComponentText=True):
+	def GetConductorLayerTexts(self, eSelectOnly=0, nLayerOnly=0, bIncludeComponentText=True) -> IMGCPCBConductorLayerTexts:
 		'Returns the board layer text collection placed on this sheet.'
 		ret = self._oleobj_.InvokeTypes(16, LCID, 2, (9, 0), ((3, 49), (3, 49), (11, 49)),eSelectOnly
 			, nLayerOnly, bIncludeComponentText)
@@ -27984,7 +27983,7 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBContours
 	# The method GetContours is actually a property, but must be used as a method to correctly pass the arguments
-	def GetContours(self, eSelectOnly=0):
+	def GetContours(self, eSelectOnly=0) -> IMGCPCBContours:
 		"Returns the document's contour collection."
 		ret = self._oleobj_.InvokeTypes(24, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -27994,7 +27993,7 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDetailedViews
 	# The method GetDetailedViews is actually a property, but must be used as a method to correctly pass the arguments
-	def GetDetailedViews(self, eSelectOnly=0):
+	def GetDetailedViews(self, eSelectOnly=0) -> IMGCPCBDetailedViews:
 		"Returns the Sheet's collection of detail views."
 		ret = self._oleobj_.InvokeTypes(27, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -28004,7 +28003,7 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBDrillDrawings
 	# The method GetDrillDrawings is actually a property, but must be used as a method to correctly pass the arguments
-	def GetDrillDrawings(self, eSelectOnly=0):
+	def GetDrillDrawings(self, eSelectOnly=0) -> IMGCPCBDrillDrawings:
 		"Returns the sheet's drill drawing collection."
 		ret = self._oleobj_.InvokeTypes(26, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -28014,7 +28013,7 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerGfxs
 	# The method GetFabricationLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerGfxs(self, eSelectType=-1, eSelectOnly=0, Side=0):
+	def GetFabricationLayerGfxs(self, eSelectType=-1, eSelectOnly=0, Side=0) -> IMGCPCBFabricationLayerGfxs:
 		'Returns the fabrication layer graphics collection placed on this sheet.'
 		ret = self._oleobj_.InvokeTypes(15, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49)),eSelectType
 			, eSelectOnly, Side)
@@ -28024,7 +28023,7 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBFabricationLayerTexts
 	# The method GetFabricationLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0, bIncludeComponentText=True):
+	def GetFabricationLayerTexts(self, eSelectType=-1, eSelectOnly=0, eLayerOnly=0, bIncludeComponentText=True) -> IMGCPCBFabricationLayerTexts:
 		'Returns the fabrication layer text collection placed on this sheet.'
 		ret = self._oleobj_.InvokeTypes(17, LCID, 2, (9, 0), ((3, 49), (3, 49), (3, 49), (11, 49)),eSelectType
 			, eSelectOnly, eLayerOnly, bIncludeComponentText)
@@ -28034,7 +28033,7 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBGroups
 	# The method GetGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetGroups(self, eSelectOnly=0, topMostRootGroup=False):
+	def GetGroups(self, eSelectOnly=0, topMostRootGroup=False) -> IMGCPCBGroups:
 		'Returns the collection of groups that match the supplied criteria and are placed on this sheet.'
 		ret = self._oleobj_.InvokeTypes(25, LCID, 2, (9, 0), ((3, 49), (11, 49)),eSelectOnly
 			, topMostRootGroup)
@@ -28044,7 +28043,7 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPanels
 	# The method GetPanels is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPanels(self, eSelectOnly=0):
+	def GetPanels(self, eSelectOnly=0) -> IMGCPCBPanels:
 		'Returns the collection of Panels associated with this sheet'
 		ret = self._oleobj_.InvokeTypes(7, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -28054,14 +28053,14 @@ class IMGCPCBSheet(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserLayerGfxs
 	# The method GetUserLayerGfxs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerGfxs(self, eSelectOnly=0, sLayerOnly='*'):
+	def GetUserLayerGfxs(self, eSelectOnly=0, sLayerOnly='*') -> IMGCPCBUserLayerGfxs:
 		'Returns the user layer gfx collection on this sheet only.'
 		return self._ApplyTypes_(8, 2, (9, 32), ((3, 49), (8, 49)), 'GetUserLayerGfxs', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED51}',eSelectOnly
 			, sLayerOnly)
 
 	# Result is of type IMGCPCBUserLayerTexts
 	# The method GetUserLayerTexts is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*', bIncludeComponentText=True):
+	def GetUserLayerTexts(self, eSelectOnly=0, sLayerOnly='*', bIncludeComponentText=True) -> IMGCPCBUserLayerTexts:
 		'Returns the user texts collection associated with this sheet.  LayerOnly can be a regular expression.'
 		return self._ApplyTypes_(9, 2, (9, 32), ((3, 49), (8, 49), (11, 49)), 'GetUserLayerTexts', '{E972C9A3-D5F6-4B04-8FE7-EDEDEDEDED5A}',eSelectOnly
 			, sLayerOnly, bIncludeComponentText)
@@ -28162,7 +28161,7 @@ class IMGCPCBSheetOutline(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -28180,7 +28179,7 @@ class IMGCPCBSheetOutline(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -28267,7 +28266,7 @@ class IMGCPCBSheets(DispatchBaseClass):
 
 	# Result is of type IMGCPCBSheet
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBSheet:
 		'Returns the Sheet of a given index in the Sheets collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -28329,7 +28328,7 @@ class IMGCPCBSketchPlan(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -28351,7 +28350,7 @@ class IMGCPCBSketchPlan(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -28531,7 +28530,7 @@ class IMGCPCBSketchPlanVias(DispatchBaseClass):
 
 	# Result is of type IMGCPCBSketchPlanVia
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBSketchPlanVia:
 		'Returns the sketch plan via of a given index in the sketch plan via collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -28597,7 +28596,7 @@ class IMGCPCBSketchPlans(DispatchBaseClass):
 
 	# Result is of type IMGCPCBSketchPlan
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBSketchPlan:
 		'Returns the bus path of a given index in the sketch plan ollection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -28701,7 +28700,7 @@ class IMGCPCBStackupSchemes(DispatchBaseClass):
 
 	# Result is of type IMGCPCBStackupScheme
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBStackupScheme:
 		'Returns the stackup scheme of a given index in the stackup schemes collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -28809,7 +28808,7 @@ class IMGCPCBTargetArea(DispatchBaseClass):
 	UniqueId: str # read_only
 
 	# Default property for this class is 'Name'
-	def __call__(self):
+	def __call__(self) -> IMGCPCBRouteTarget:
 		return self._ApplyTypes_(*(0, 2, (8, 0), (), "Name", None))
 	def __str__(self, *args):
 		return str(self.__call__(*args))
@@ -28839,7 +28838,7 @@ class IMGCPCBTargetAreas(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTargetArea
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBTargetArea:
 		'Returns the target area of a given index in the target area collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -28903,7 +28902,7 @@ class IMGCPCBTeardrop(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -28921,7 +28920,7 @@ class IMGCPCBTeardrop(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -29113,7 +29112,7 @@ class IMGCPCBTeardropDefaults(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTeardropDefault
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBTeardropDefault:
 		'Returns the teardrop default of a given index in the teardrop defaults collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -29181,7 +29180,7 @@ class IMGCPCBTeardrops(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTeardrop
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBTeardrop:
 		'Returns the teardrop of a given index in the teardrop collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -29247,7 +29246,7 @@ class IMGCPCBTestFixtureOutline(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -29265,7 +29264,7 @@ class IMGCPCBTestFixtureOutline(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -29346,7 +29345,7 @@ class IMGCPCBTieLeg(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -29368,7 +29367,7 @@ class IMGCPCBTieLeg(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -29474,7 +29473,7 @@ class IMGCPCBTieLegs(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTieLeg
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBTieLeg:
 		'Returns the tie leg of a given index in the tie leg collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -29540,7 +29539,7 @@ class IMGCPCBTiebar(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -29574,7 +29573,7 @@ class IMGCPCBTiebar(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -29650,7 +29649,7 @@ class IMGCPCBTiebars(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTiebar
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBTiebar:
 		'Returns the tiebar of a given index in the tiebars collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -29712,7 +29711,7 @@ class IMGCPCBToolingHole(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(19, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -29728,7 +29727,7 @@ class IMGCPCBToolingHole(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, nLayer=0, bIncludeNegativePads=False):
+	def GetPads(self, nLayer=0, bIncludeNegativePads=False) -> IMGCPCBPads:
 		'Returns the pad collection for this padstack object on the specified layer (0=all layers). May optionally return the negative pads too, the presence of a negative pad on a layer will override the regular pad on that layer.'
 		ret = self._oleobj_.InvokeTypes(20, LCID, 2, (9, 0), ((3, 49), (11, 49)),nLayer
 			, bIncludeNegativePads)
@@ -29750,7 +29749,7 @@ class IMGCPCBToolingHole(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserPads
 	# The method GetUserPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserPads(self, sLayerOnly='*'):
+	def GetUserPads(self, sLayerOnly='*') -> IMGCPCBUserPads:
 		'Returns the collection of user pads.'
 		return self._ApplyTypes_(40, 2, (9, 32), ((8, 49),), 'GetUserPads', '{ACC37237-2F98-403B-8783-C21D7026F5B4}',sLayerOnly
 			)
@@ -29783,7 +29782,7 @@ class IMGCPCBToolingHole(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this padstack object.'
 		ret = self._oleobj_.InvokeTypes(31, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -29921,7 +29920,7 @@ class IMGCPCBToolingHoles(DispatchBaseClass):
 
 	# Result is of type IMGCPCBToolingHole
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, Index=defaultNamedNotOptArg):
+	def Item(self, Index=defaultNamedNotOptArg) -> IMGCPCBToolingHole:
 		'Returns the tooling hole of a given index in the tooling hole collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),Index
 			)
@@ -29992,7 +29991,7 @@ class IMGCPCBTrace(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -30008,7 +30007,7 @@ class IMGCPCBTrace(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTraceSegments
 	# The method GetTraceSegments is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTraceSegments(self, eSelectOnly=0):
+	def GetTraceSegments(self, eSelectOnly=0) -> IMGCPCBTraceSegments:
 		"Returns the Trace's collection of trace segments."
 		ret = self._oleobj_.InvokeTypes(53, LCID, 2, (9, 0), ((3, 49),),eSelectOnly
 			)
@@ -30032,7 +30031,7 @@ class IMGCPCBTrace(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -30041,7 +30040,7 @@ class IMGCPCBTrace(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBTraces
-	def Split(self, x=defaultNamedNotOptArg, y=defaultNamedNotOptArg, eUnit=0):
+	def Split(self, x=defaultNamedNotOptArg, y=defaultNamedNotOptArg, eUnit=0) -> IMGCPCBTraces:
 		'Given an x, y location, the current trace is split at that point.  A collection of traces is returned'
 		ret = self._oleobj_.InvokeTypes(54, LCID, 1, (9, 0), ((5, 1), (5, 1), (3, 49)),x
 			, y, eUnit)
@@ -30228,7 +30227,7 @@ class IMGCPCBTraceSegments(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTraceSegment
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBTraceSegment:
 		'Returns the trace segment of a given index in the trace segment collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -30290,7 +30289,7 @@ class IMGCPCBTracedrop(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -30308,7 +30307,7 @@ class IMGCPCBTracedrop(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -30409,7 +30408,7 @@ class IMGCPCBTracedrops(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTracedrop
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBTracedrop:
 		'Returns the tracedrop of a given index in the breakout trace collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -30487,7 +30486,7 @@ class IMGCPCBTraces(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTrace
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBTrace:
 		'Returns the trace of a given index in the trace collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -30635,7 +30634,7 @@ class IMGCPCBUserLayerGfx(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(9, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(34, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -30673,7 +30672,7 @@ class IMGCPCBUserLayerGfx(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this graphics object.'
 		ret = self._oleobj_.InvokeTypes(35, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -30774,7 +30773,7 @@ class IMGCPCBUserLayerGfxs(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserLayerGfx
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBUserLayerGfx:
 		'Returns the gfx of a given index in the gfx collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -30848,7 +30847,7 @@ class IMGCPCBUserLayerText(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(10, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property, on the text object, by name.'
 		ret = self._oleobj_.InvokeTypes(41, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -30887,7 +30886,7 @@ class IMGCPCBUserLayerText(DispatchBaseClass):
 			, YOffset, eUnit)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this text.'
 		ret = self._oleobj_.InvokeTypes(42, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -31017,7 +31016,7 @@ class IMGCPCBUserLayerTexts(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserLayerText
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBUserLayerText:
 		'Returns the text of a given index in the text collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -31083,7 +31082,7 @@ class IMGCPCBUserLayers(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserLayer
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBUserLayer:
 		'Returns the user layer of a given index in the UserLayers collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -31195,7 +31194,7 @@ class IMGCPCBUserPads(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserPad
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBUserPad:
 		'Returns the pad of a given index in the pad collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -31284,7 +31283,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(1, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBApplication
-	def FindApplication(self, vAppDescriptor=defaultNamedNotOptArg):
+	def FindApplication(self, vAppDescriptor=defaultNamedNotOptArg) -> IMGCPCBApplication:
 		'Returns the Application object of a running application instance.  The input can be a string that specifies a document(full path only) or an integer that specifies the index of the application instance(0 based indexing)'
 		ret = self._oleobj_.InvokeTypes(18, LCID, 1, (9, 0), ((12, 1),),vAppDescriptor
 			)
@@ -31312,7 +31311,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(4, LCID, 1, (3, 0), (),)
 
 	# Result is of type IMGCPCBColor
-	def NewColor(self, nRed=255, nGreen=255, nBlue=255):
+	def NewColor(self, nRed=255, nGreen=255, nBlue=255) -> IMGCPCBColor:
 		'Returns a new Color object.'
 		ret = self._oleobj_.InvokeTypes(7, LCID, 1, (9, 0), ((2, 49), (2, 49), (2, 49)),nRed
 			, nGreen, nBlue)
@@ -31332,7 +31331,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBComponents
-	def NewComponents(self):
+	def NewComponents(self) -> IMGCPCBComponents:
 		'Returns a new empty Components collection.'
 		ret = self._oleobj_.InvokeTypes(10, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -31350,7 +31349,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBFromTos
-	def NewFromTos(self):
+	def NewFromTos(self) -> IMGCPCBFromTos:
 		'Returns a new empty collection of FromTos.'
 		ret = self._oleobj_.InvokeTypes(29, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -31358,7 +31357,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBGroups
-	def NewGroups(self):
+	def NewGroups(self) -> IMGCPCBGroups:
 		'Returns a new empty Groups collection.'
 		ret = self._oleobj_.InvokeTypes(27, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -31366,7 +31365,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBLayerObject
-	def NewLayerObject(self):
+	def NewLayerObject(self) -> IMGCPCBLayerObject:
 		'Returns a new, uninitialized LayerObject object.'
 		ret = self._oleobj_.InvokeTypes(12, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -31374,7 +31373,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBLayerObjects
-	def NewLayerObjects(self):
+	def NewLayerObjects(self) -> IMGCPCBLayerObjects:
 		'Returns a new, empty LayerObjects collection.'
 		ret = self._oleobj_.InvokeTypes(13, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -31382,7 +31381,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBLayerRange
-	def NewLayerRange(self, StartLayer=defaultNamedNotOptArg, EndLayer=defaultNamedNotOptArg):
+	def NewLayerRange(self, StartLayer=defaultNamedNotOptArg, EndLayer=defaultNamedNotOptArg) -> IMGCPCBLayerRange:
 		'Returns a new LayerRange object.'
 		ret = self._oleobj_.InvokeTypes(22, LCID, 1, (9, 0), ((3, 1), (3, 1)),StartLayer
 			, EndLayer)
@@ -31391,7 +31390,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBLayerRanges
-	def NewLayerRanges(self):
+	def NewLayerRanges(self) -> IMGCPCBLayerRanges:
 		'Returns a new, empty LayerRanges collection.'
 		ret = self._oleobj_.InvokeTypes(21, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -31399,7 +31398,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBNets
-	def NewNets(self):
+	def NewNets(self) -> IMGCPCBNets:
 		'Returns a new empty Nets collection.'
 		ret = self._oleobj_.InvokeTypes(11, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -31407,7 +31406,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBObjectFilter
-	def NewObjectFilter(self):
+	def NewObjectFilter(self) -> IMGCPCBObjectFilter:
 		'Creates a filter object initialized to contian the set of all objects.'
 		ret = self._oleobj_.InvokeTypes(25, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -31415,7 +31414,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBObjects
-	def NewObjects(self):
+	def NewObjects(self) -> IMGCPCBObjects:
 		'Returns a new, empty Objects collection.'
 		ret = self._oleobj_.InvokeTypes(19, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -31423,7 +31422,7 @@ class IMGCPCBUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBPhysicalReuseLibraryCircuits
-	def NewPhysicalReuseLibraryCircuits(self):
+	def NewPhysicalReuseLibraryCircuits(self) -> IMGCPCBPhysicalReuseLibraryCircuits:
 		'Returns a new empty PhysicalReuseLibraryCircuits collection.'
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -31498,7 +31497,7 @@ class IMGCPCBVia(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(19, LCID, 1, (24, 0), (),)
 
 	# Result is of type IMGCPCBProperty
-	def FindProperty(self, sName=defaultNamedNotOptArg):
+	def FindProperty(self, sName=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Find the property by name.'
 		ret = self._oleobj_.InvokeTypes(30, LCID, 1, (9, 0), ((8, 1),),sName
 			)
@@ -31508,7 +31507,7 @@ class IMGCPCBVia(DispatchBaseClass):
 
 	# Result is of type IMGCPCBBreakoutDefaults
 	# The method GetBreakoutDefaults is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBreakoutDefaults(self, nLayer=0):
+	def GetBreakoutDefaults(self, nLayer=0) -> IMGCPCBBreakoutDefaults:
 		"Returns this via's breakout defaults.  A single layer can be specified."
 		ret = self._oleobj_.InvokeTypes(42, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -31524,7 +31523,7 @@ class IMGCPCBVia(DispatchBaseClass):
 
 	# Result is of type IMGCPCBPads
 	# The method GetPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPads(self, nLayer=0, bIncludeNegativePads=False):
+	def GetPads(self, nLayer=0, bIncludeNegativePads=False) -> IMGCPCBPads:
 		'Returns the pad collection for this padstack object on the specified layer (0=all layers). May optionally return the negative pads too, the presence of a negative pad on a layer will override the regular pad on that layer.'
 		ret = self._oleobj_.InvokeTypes(20, LCID, 2, (9, 0), ((3, 49), (11, 49)),nLayer
 			, bIncludeNegativePads)
@@ -31551,7 +31550,7 @@ class IMGCPCBVia(DispatchBaseClass):
 
 	# Result is of type IMGCPCBTeardropDefaults
 	# The method GetTeardropDefaults is actually a property, but must be used as a method to correctly pass the arguments
-	def GetTeardropDefaults(self, nLayer=0):
+	def GetTeardropDefaults(self, nLayer=0) -> IMGCPCBTeardropDefaults:
 		"Returns this via's teardrop defaults.  A single layer can be specified."
 		ret = self._oleobj_.InvokeTypes(43, LCID, 2, (9, 0), ((3, 49),),nLayer
 			)
@@ -31561,7 +31560,7 @@ class IMGCPCBVia(DispatchBaseClass):
 
 	# Result is of type IMGCPCBUserPads
 	# The method GetUserPads is actually a property, but must be used as a method to correctly pass the arguments
-	def GetUserPads(self, sLayerOnly='*'):
+	def GetUserPads(self, sLayerOnly='*') -> IMGCPCBUserPads:
 		'Returns the collection of user pads.'
 		return self._ApplyTypes_(52, 2, (9, 32), ((8, 49),), 'GetUserPads', '{ACC37237-2F98-403B-8783-C21D7026F5B4}',sLayerOnly
 			)
@@ -31618,7 +31617,7 @@ class IMGCPCBVia(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCPCBProperty
-	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg):
+	def PutProperty(self, sName=defaultNamedNotOptArg, sValue=defaultNamedNotOptArg) -> IMGCPCBProperty:
 		'Create a new property and bind it to this padstack object.'
 		ret = self._oleobj_.InvokeTypes(31, LCID, 1, (9, 0), ((8, 1), (8, 1)),sName
 			, sValue)
@@ -31627,7 +31626,7 @@ class IMGCPCBVia(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCPCBComponent
-	def PutTestPoint(self):
+	def PutTestPoint(self) -> IMGCPCBComponent:
 		'Place a testpoint on the via in BoardStationRE'
 		ret = self._oleobj_.InvokeTypes(48, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -32016,7 +32015,7 @@ class IMGCPCBVias(DispatchBaseClass):
 
 	# Result is of type IMGCPCBVia
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBVia:
 		'Returns the via of a given index in the via collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -32363,7 +32362,7 @@ class IMGCPCBViews(DispatchBaseClass):
 
 	# Result is of type IMGCPCBView
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBView:
 		'Returns the View of a given index in the Views collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
@@ -32510,7 +32509,7 @@ class IMGCPCBWireBondGuides(DispatchBaseClass):
 
 	# Result is of type IMGCPCBWireBondGuide
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, vIndex=defaultNamedNotOptArg):
+	def Item(self, vIndex=defaultNamedNotOptArg) -> IMGCPCBWireBondGuide:
 		'Returns the wire bond guide of a given index in the wire bond guides collection.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),vIndex
 			)
