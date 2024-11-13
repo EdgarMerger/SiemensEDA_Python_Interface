@@ -1,11 +1,11 @@
 # -*- coding: mbcs -*-
 # Created by makepy.py version 0.5.01
-# By python version 3.11.1 (tags/v3.11.1:a7a450f, Dec  6 2022, 19:58:39) [MSC v.1934 64 bit (AMD64)]
+# By python version 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)]
 # From type library 'viewdraw.tlb'
-# On Thu Jan 18 11:23:23 2024
+# On Tue Nov 12 13:47:25 2024
 ''
 makepy_version = '0.5.01'
-python_version = 0x30b01f0
+python_version = 0x3090af0
 
 import win32com.client.CLSIDToClass, pythoncom, pywintypes
 import win32com.client.util
@@ -1288,6 +1288,18 @@ class IAddinInfo(DispatchBaseClass):
 		"ShortCutKey": ((7, LCID, 4, 0),()),
 		"ToolbarButton": ((8, LCID, 4, 0),()),
 	}
+
+	InitiallyDisabled: str # read/write
+	InitiallyVisible: str # read/write
+	LicenseFeature: str # read/write
+	Name: str # read/write
+	Placement: str # read/write
+	ProgId: str # read/write
+	RuntimeCreateDecision: str # read/write
+	Script: str # read/write
+	ShortCutKey: str # read/write
+	ToolbarButton: str # read/write
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -1307,6 +1319,10 @@ class IAutoString(DispatchBaseClass):
 	_prop_map_put_ = {
 		"Text": ((1, LCID, 4, 0),()),
 	}
+
+	Text: str # read/write
+	_Text: str # read_only
+
 	# Default property for this class is '_Text'
 	def __call__(self):
 		return self._ApplyTypes_(*(0, 2, (8, 0), (), "_Text", None))
@@ -1336,6 +1352,11 @@ class IColor(DispatchBaseClass):
 		"g": ((2, LCID, 4, 0),()),
 		"r": ((1, LCID, 4, 0),()),
 	}
+
+	b: str # read/write
+	g: str # read/write
+	r: str # read/write
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -1610,6 +1631,10 @@ class IHDLSourceDocument(DispatchBaseClass):
 		"Name" : ((3, LCID, 4, 0),()),
 		"Path" : ((4, LCID, 4, 0),()),
 	}
+
+	Name: str # read/write
+	Path: str # read/write
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -1662,6 +1687,9 @@ class IHDLSourceDocuments(DispatchBaseClass):
 	_prop_map_put_ = {
 		"Count" : ((1, LCID, 4, 0),()),
 	}
+
+	Count: int # read/write
+
 	# Default method for this class is 'Item'
 	def __call__(self, Index=defaultNamedNotOptArg):
 		ret = self._oleobj_.InvokeTypes(0, LCID, 1, (9, 0), ((12, 0),),Index
@@ -1702,6 +1730,11 @@ class IHTMLSourceDocument(DispatchBaseClass):
 		"Name" : ((1, LCID, 4, 0),()),
 		"URL" : ((2, LCID, 4, 0),()),
 	}
+
+	Document: str # read/write
+	Name: str # read/write
+	URL: str # read/write
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -1720,6 +1753,9 @@ class IHTMLSourceDocuments(DispatchBaseClass):
 	_prop_map_put_ = {
 		"Count" : ((1, LCID, 4, 0),()),
 	}
+
+	Count: int # read/write
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -2556,6 +2592,10 @@ class IProjectData(DispatchBaseClass):
 	_prop_map_put_ = {
 		"CentralLibraryPath": ((5, LCID, 4, 0),()),
 	}
+
+	CentralLibraryPath: str # read/write
+	iCDBDir: str # read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -2634,6 +2674,9 @@ class IStringCollection(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Count: int # read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -3507,6 +3550,44 @@ class IVdApp(DispatchBaseClass):
 		"SynchronizesViewBase": ((66, LCID, 4, 0),()),
 		"Visible": ((204, LCID, 4, 0),()),
 	}
+
+	ActiveDocument: str # read_only
+	ActiveICTView: str # IVdICTView; read_only
+	ActiveView: str # IVdView; read_only
+	ActiveViewHandle: str # read_only
+	Addins: str # read_only
+	Application: str # IVdApp; read_only
+	BusyCursor: str # read/write
+	ClientAdvisorFlags: str # read/write
+	CnsFileString: str # read_only
+	CommandBars: str # ICommandBars; read_only
+	CommandLineArguments: str # read_only
+	Cookies: str # read_only
+	CurrentProject: str # read/write
+	Documents: str # IVdDocs; read_only
+	EDXEngine: str # read_only
+	Flows: str # read_only
+	FullName: str # read_only
+	HTMLDocuments: str # IHTMLSourceDocuments; read_only
+	Interactive: str # read/write
+	LicenseMode: str # read_only
+	Name: str # read_only
+	OptionLevel: str # read_only
+	Parent: str # IVdApp; read_only
+	PrimaryDirectory: str # read_only
+	ProjMan: str # read_only
+	QueueSelectEvents: str # read/write
+	SheetsEditMode: str # read/write
+	ShellCmd: str # read_only
+	SilentMode: str # read/write
+	SourceDocuments: str # IHDLSourceDocuments; read_only
+	StatusBarText: str # read/write
+	SynchronizesViewBase: str # read/write
+	Version: str # read_only
+	ViewBaseSession: str # read_only
+	Visible: bool # read/write
+	project: str # read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -4387,6 +4468,44 @@ class IVdAppProtectionProxy(DispatchBaseClass):
 		"SynchronizesViewBase": ((66, LCID, 4, 0),()),
 		"Visible": ((204, LCID, 4, 0),()),
 	}
+
+	ActiveDocument: str # read_only
+	ActiveICTView: str # IVdICTView; read_only
+	ActiveView: str # IVdView; read_only
+	ActiveViewHandle: str # read_only
+	Addins: str # read_only
+	Application: str # IVdApp; read_only
+	BusyCursor: str # read/write
+	ClientAdvisorFlags: str # read/write
+	CnsFileString: str # read_only
+	CommandBars: str # ICommandBars; read_only
+	CommandLineArguments: str # read_only
+	Cookies: str # read_only
+	CurrentProject: str # read/write
+	Documents: str # IVdDocs; read_only
+	EDXEngine: str # read_only
+	Flows: str # read_only
+	FullName: str # read_only
+	HTMLDocuments: str # IHTMLSourceDocuments; read_only
+	Interactive: str # read/write
+	LicenseMode: str # read_only
+	Name: str # read_only
+	OptionLevel: str # read_only
+	Parent: str # IVdApp; read_only
+	PrimaryDirectory: str # read_only
+	ProjMan: str # read_only
+	QueueSelectEvents: str # read/write
+	SheetsEditMode: str # read/write
+	ShellCmd: str # read_only
+	SilentMode: str # read/write
+	SourceDocuments: str # IHDLSourceDocuments; read_only
+	StatusBarText: str # read/write
+	SynchronizesViewBase: str # read/write
+	Version: str # read_only
+	ViewBaseSession: str # read_only
+	Visible: bool # read/write
+	project: str # read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -4520,6 +4639,14 @@ class IVdArc(DispatchBaseClass):
 		"LineStyle": ((2, LCID, 4, 0),()),
 		"Selected": ((11, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Color: str # read/write
+	LineStyle: str # read/write
+	Parent: str # IVdBlock; read_only
+	Type: str # read_only
+	Selected: bool # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -4634,6 +4761,26 @@ class IVdAttr(DispatchBaseClass):
 		"Value": ((2, LCID, 4, 0),()),
 		"Visible": ((4, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Child: str # read_only
+	Color: str # read/write
+	EitherValue: str # read/write
+	Font: str # read/write
+	InstanceValue: str # read/write
+	Name: str # read_only
+	OatValue: str # read/write
+	Orientation: str # read/write
+	Origin: str # read/write
+	Parent: str # read_only
+	Printable: str # read/write
+	Size: str # read/write
+	TextString: str # read/write
+	Type: str # read_only
+	Value: str # read/write
+	Visible: bool # read/write
+	Selected: bool # write_only
+
 	# Default property for this class is 'Value'
 	def __call__(self):
 		return self._ApplyTypes_(*(2, 2, (8, 0), (), "Value", None))
@@ -5031,6 +5178,25 @@ class IVdBlock(DispatchBaseClass):
 		"SheetSize": ((9, LCID, 4, 0),()),
 		"SymbolType": ((7, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Attributes: str # IVdObjs; read_only
+	ConstraintObjectDefinitions: str # read_only
+	DataType: str # read_only
+	DisplayType: str # read/write
+	IsBorderSymbol: str # read_only
+	IsFub: str # read_only
+	LibraryName: str # read_only
+	LibraryType: str # read_only
+	OpenMode: str # read_only
+	Parent: str # IVdView; read_only
+	Path: str # read_only
+	SheetNum: str # read_only
+	SheetSize: str # read/write
+	SymbolType: str # read/write
+	Type: str # read_only
+	UserData: str # IStruct; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5161,6 +5327,15 @@ class IVdBox(DispatchBaseClass):
 		"LineStyle": ((3, LCID, 4, 0),()),
 		"Selected": ((12, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Color: str # read/write
+	FillStyle: str # read/write
+	LineStyle: str # read/write
+	Parent: str # IVdBlock; read_only
+	Type: str # read_only
+	Selected: bool # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5249,6 +5424,16 @@ class IVdCircle(DispatchBaseClass):
 		"Radius": ((6, LCID, 4, 0),()),
 		"Selected": ((13, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Color: str # read/write
+	FillStyle: str # read/write
+	LineStyle: str # read/write
+	Parent: str # IVdBlock; read_only
+	Radius: str # read/write
+	Type: str # read_only
+	Selected: bool # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5331,6 +5516,18 @@ class IVdCmpPin(DispatchBaseClass):
 		"Number": ((5, LCID, 4, 0),()),
 		"Selected": ((14, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Attributes: str # IVdObjs; read_only
+	Component: str # IVdComp; read_only
+	Connection: str # IVdConnection; read_only
+	Number: str # read/write
+	Parent: str # IVdComp; read_only
+	Pin: str # IVdPin; read_only
+	Side: str # read_only
+	Type: str # read_only
+	Selected: bool # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5339,137 +5536,151 @@ class IVdCmpPin(DispatchBaseClass):
 			raise TypeError("This object does not support enumeration")
 		return win32com.client.util.Iterator(ob, None)
 
-class IVdComp(DispatchBaseClass):
-	CLSID = IID('{AE72948A-9683-11CE-8246-00001B4D36B5}')
-	coclass_clsid = IID('{8B36976A-6CF5-1014-9D62-FFC3EECCF0AC}')
+# class IVdComp(DispatchBaseClass):
+	# CLSID = IID('{AE72948A-9683-11CE-8246-00001B4D36B5}')
+	# coclass_clsid = IID('{8B36976A-6CF5-1014-9D62-FFC3EECCF0AC}')
 
-	def ActivateMoveMode(self):
-		return self._oleobj_.InvokeTypes(27, LCID, 1, (11, 0), (),)
+	# def ActivateMoveMode(self):
+		# return self._oleobj_.InvokeTypes(27, LCID, 1, (11, 0), (),)
 
-	# Result is of type IVdAttr
-	def AddAttribute(self, String=defaultNamedNotOptArg, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg, Visibility=defaultNamedNotOptArg):
-		ret = self._oleobj_.InvokeTypes(17, LCID, 1, (9, 0), ((8, 1), (3, 1), (3, 1), (3, 1)),String
-			, X, Y, Visibility)
-		if ret is not None:
-			ret = Dispatch(ret, 'AddAttribute', '{AE729482-9683-11CE-8246-00001B4D36B5}')
-		return ret
+	# # Result is of type IVdAttr
+	# def AddAttribute(self, String=defaultNamedNotOptArg, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg, Visibility=defaultNamedNotOptArg):
+		# ret = self._oleobj_.InvokeTypes(17, LCID, 1, (9, 0), ((8, 1), (3, 1), (3, 1), (3, 1)),String
+			# , X, Y, Visibility)
+		# if ret is not None:
+			# ret = Dispatch(ret, 'AddAttribute', '{AE729482-9683-11CE-8246-00001B4D36B5}')
+		# return ret
 
-	def AddBatchAttributes(self, AttributeListSting=defaultNamedNotOptArg):
-		return self._oleobj_.InvokeTypes(20, LCID, 1, (11, 0), ((8, 1),),AttributeListSting
-			)
+	# def AddBatchAttributes(self, AttributeListSting=defaultNamedNotOptArg):
+		# return self._oleobj_.InvokeTypes(20, LCID, 1, (11, 0), ((8, 1),),AttributeListSting
+			# )
 
-	def AddBatchOats(self, AttributeListSting=defaultNamedNotOptArg):
-		return self._oleobj_.InvokeTypes(24, LCID, 1, (11, 0), ((8, 1),),AttributeListSting
-			)
+	# def AddBatchOats(self, AttributeListSting=defaultNamedNotOptArg):
+		# return self._oleobj_.InvokeTypes(24, LCID, 1, (11, 0), ((8, 1),),AttributeListSting
+			# )
 
-	# Result is of type IVdLabel
-	def AddLabel(self, String=defaultNamedNotOptArg, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg):
-		ret = self._oleobj_.InvokeTypes(18, LCID, 1, (9, 0), ((8, 1), (3, 1), (3, 1)),String
-			, X, Y)
-		if ret is not None:
-			ret = Dispatch(ret, 'AddLabel', '{AE72948E-9683-11CE-8246-00001B4D36B5}')
-		return ret
+	# # Result is of type IVdLabel
+	# def AddLabel(self, String=defaultNamedNotOptArg, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg):
+		# ret = self._oleobj_.InvokeTypes(18, LCID, 1, (9, 0), ((8, 1), (3, 1), (3, 1)),String
+			# , X, Y)
+		# if ret is not None:
+			# ret = Dispatch(ret, 'AddLabel', '{AE72948E-9683-11CE-8246-00001B4D36B5}')
+		# return ret
 
-	# Result is of type IVdAttr
-	def AddOat(self, String=defaultNamedNotOptArg):
-		ret = self._oleobj_.InvokeTypes(19, LCID, 1, (9, 0), ((8, 1),),String
-			)
-		if ret is not None:
-			ret = Dispatch(ret, 'AddOat', '{AE729482-9683-11CE-8246-00001B4D36B5}')
-		return ret
+	# # Result is of type IVdAttr
+	# def AddOat(self, String=defaultNamedNotOptArg):
+		# ret = self._oleobj_.InvokeTypes(19, LCID, 1, (9, 0), ((8, 1),),String
+			# )
+		# if ret is not None:
+			# ret = Dispatch(ret, 'AddOat', '{AE729482-9683-11CE-8246-00001B4D36B5}')
+		# return ret
 
-	def ExtractSchematic(self):
-		return self._oleobj_.InvokeTypes(30, LCID, 1, (24, 0), (),)
+	# def ExtractSchematic(self):
+		# return self._oleobj_.InvokeTypes(30, LCID, 1, (24, 0), (),)
 
-	# Result is of type IVdAttr
-	def FindAttribute(self, AttributeString=defaultNamedNotOptArg):
-		ret = self._oleobj_.InvokeTypes(23, LCID, 1, (9, 0), ((8, 1),),AttributeString
-			)
-		if ret is not None:
-			ret = Dispatch(ret, 'FindAttribute', '{AE729482-9683-11CE-8246-00001B4D36B5}')
-		return ret
+	# # Result is of type IVdAttr
+	# def FindAttribute(self, AttributeString=defaultNamedNotOptArg):
+		# ret = self._oleobj_.InvokeTypes(23, LCID, 1, (9, 0), ((8, 1),),AttributeString
+			# )
+		# if ret is not None:
+			# ret = Dispatch(ret, 'FindAttribute', '{AE729482-9683-11CE-8246-00001B4D36B5}')
+		# return ret
 
-	def GetBatchAttributes(self):
-		# Result is a Unicode object
-		return self._oleobj_.InvokeTypes(21, LCID, 1, (8, 0), (),)
+	# def GetBatchAttributes(self):
+		# # Result is a Unicode object
+		# return self._oleobj_.InvokeTypes(21, LCID, 1, (8, 0), (),)
 
-	def GetBatchOats(self):
-		# Result is a Unicode object
-		return self._oleobj_.InvokeTypes(25, LCID, 1, (8, 0), (),)
+	# def GetBatchOats(self):
+		# # Result is a Unicode object
+		# return self._oleobj_.InvokeTypes(25, LCID, 1, (8, 0), (),)
 
-	# Result is of type IVdPoint
-	def GetBboxPoint(self, Location=defaultNamedNotOptArg):
-		ret = self._oleobj_.InvokeTypes(16, LCID, 1, (9, 0), ((3, 1),),Location
-			)
-		if ret is not None:
-			ret = Dispatch(ret, 'GetBboxPoint', '{AE729498-9683-11CE-8246-00001B4D36B5}')
-		return ret
+	# # Result is of type IVdPoint
+	# def GetBboxPoint(self, Location=defaultNamedNotOptArg):
+		# ret = self._oleobj_.InvokeTypes(16, LCID, 1, (9, 0), ((3, 1),),Location
+			# )
+		# if ret is not None:
+			# ret = Dispatch(ret, 'GetBboxPoint', '{AE729498-9683-11CE-8246-00001B4D36B5}')
+		# return ret
 
-	# Result is of type IVdObjs
-	def GetConnections(self):
-		ret = self._oleobj_.InvokeTypes(22, LCID, 1, (9, 0), (),)
-		if ret is not None:
-			ret = Dispatch(ret, 'GetConnections', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
-		return ret
+	# # Result is of type IVdObjs
+	# def GetConnections(self):
+		# ret = self._oleobj_.InvokeTypes(22, LCID, 1, (9, 0), (),)
+		# if ret is not None:
+			# ret = Dispatch(ret, 'GetConnections', '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}')
+		# return ret
 
-	def GetForwardPCB(self):
-		return self._oleobj_.InvokeTypes(28, LCID, 1, (3, 0), (),)
+	# def GetForwardPCB(self):
+		# return self._oleobj_.InvokeTypes(28, LCID, 1, (3, 0), (),)
 
-	# Result is of type IVdPoint
-	def GetLocation(self):
-		ret = self._oleobj_.InvokeTypes(13, LCID, 1, (9, 0), (),)
-		if ret is not None:
-			ret = Dispatch(ret, 'GetLocation', '{AE729498-9683-11CE-8246-00001B4D36B5}')
-		return ret
+	# # Result is of type IVdPoint
+	# def GetLocation(self):
+		# ret = self._oleobj_.InvokeTypes(13, LCID, 1, (9, 0), (),)
+		# if ret is not None:
+			# ret = Dispatch(ret, 'GetLocation', '{AE729498-9683-11CE-8246-00001B4D36B5}')
+		# return ret
 
-	def GetName(self, Flag=defaultNamedNotOptArg):
-		# Result is a Unicode object
-		return self._oleobj_.InvokeTypes(15, LCID, 1, (8, 0), ((3, 1),),Flag
-			)
+	# def GetName(self, Flag=defaultNamedNotOptArg):
+		# # Result is a Unicode object
+		# return self._oleobj_.InvokeTypes(15, LCID, 1, (8, 0), ((3, 1),),Flag
+			# )
 
-	def SetForwardPCB(self, forwardPCBValue=defaultNamedNotOptArg):
-		return self._oleobj_.InvokeTypes(29, LCID, 1, (24, 0), ((3, 1),),forwardPCBValue
-			)
+	# def SetForwardPCB(self, forwardPCBValue=defaultNamedNotOptArg):
+		# return self._oleobj_.InvokeTypes(29, LCID, 1, (24, 0), ((3, 1),),forwardPCBValue
+			# )
 
-	def SetLocation(self, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg):
-		return self._oleobj_.InvokeTypes(14, LCID, 1, (24, 0), ((3, 1), (3, 1)),X
-			, Y)
+	# def SetLocation(self, X=defaultNamedNotOptArg, Y=defaultNamedNotOptArg):
+		# return self._oleobj_.InvokeTypes(14, LCID, 1, (24, 0), ((3, 1), (3, 1)),X
+			# , Y)
 
-	def _SetSelected(self, Flag=defaultNamedNotOptArg):
-		return self._oleobj_.InvokeTypes(12, LCID, 1, (24, 0), ((3, 1),),Flag
-			)
+	# def _SetSelected(self, Flag=defaultNamedNotOptArg):
+		# return self._oleobj_.InvokeTypes(12, LCID, 1, (24, 0), ((3, 1),),Flag
+			# )
 
-	_prop_map_get_ = {
-		# Method 'Application' returns object of type 'IVdApp'
-		"Application": (9, 2, (9, 0), (), "Application", '{EA4ABD71-84B0-11CE-8237-00001B4D36B5}'),
-		# Method 'Attributes' returns object of type 'IVdObjs'
-		"Attributes": (1, 2, (9, 0), (), "Attributes", '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}'),
-		"Id": (6, 2, (3, 0), (), "Id", None),
-		# Method 'Label' returns object of type 'IVdLabel'
-		"Label": (2, 2, (9, 0), (), "Label", '{AE72948E-9683-11CE-8246-00001B4D36B5}'),
-		"Orientation": (4, 2, (3, 0), (), "Orientation", None),
-		# Method 'Parent' returns object of type 'IVdBlock'
-		"Parent": (10, 2, (9, 0), (), "Parent", '{AE729484-9683-11CE-8246-00001B4D36B5}'),
-		"Refdes": (8, 2, (8, 0), (), "Refdes", None),
-		"Scale": (7, 2, (5, 0), (), "Scale", None),
-		# Method 'SymbolBlock' returns object of type 'IVdBlock'
-		"SymbolBlock": (11, 2, (9, 0), (), "SymbolBlock", '{AE729484-9683-11CE-8246-00001B4D36B5}'),
-		"Type": (3, 2, (3, 0), (), "Type", None),
-		"UID": (5, 2, (8, 0), (), "UID", None),
-	}
-	_prop_map_put_ = {
-		"Orientation": ((4, LCID, 4, 0),()),
-		"Refdes": ((8, LCID, 4, 0),()),
-		"Scale": ((7, LCID, 4, 0),()),
-		"Selected": ((26, LCID, 4, 0),()),
-	}
-	def __iter__(self):
-		"Return a Python iterator for this object"
-		try:
-			ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
-		except pythoncom.error:
-			raise TypeError("This object does not support enumeration")
-		return win32com.client.util.Iterator(ob, None)
+	# _prop_map_get_ = {
+		# # Method 'Application' returns object of type 'IVdApp'
+		# "Application": (9, 2, (9, 0), (), "Application", '{EA4ABD71-84B0-11CE-8237-00001B4D36B5}'),
+		# # Method 'Attributes' returns object of type 'IVdObjs'
+		# "Attributes": (1, 2, (9, 0), (), "Attributes", '{BD2EDF77-7E28-11CE-822D-00001B4D36B7}'),
+		# "Id": (6, 2, (3, 0), (), "Id", None),
+		# # Method 'Label' returns object of type 'IVdLabel'
+		# "Label": (2, 2, (9, 0), (), "Label", '{AE72948E-9683-11CE-8246-00001B4D36B5}'),
+		# "Orientation": (4, 2, (3, 0), (), "Orientation", None),
+		# # Method 'Parent' returns object of type 'IVdBlock'
+		# "Parent": (10, 2, (9, 0), (), "Parent", '{AE729484-9683-11CE-8246-00001B4D36B5}'),
+		# "Refdes": (8, 2, (8, 0), (), "Refdes", None),
+		# "Scale": (7, 2, (5, 0), (), "Scale", None),
+		# # Method 'SymbolBlock' returns object of type 'IVdBlock'
+		# "SymbolBlock": (11, 2, (9, 0), (), "SymbolBlock", '{AE729484-9683-11CE-8246-00001B4D36B5}'),
+		# "Type": (3, 2, (3, 0), (), "Type", None),
+		# "UID": (5, 2, (8, 0), (), "UID", None),
+	# }
+	# _prop_map_put_ = {
+		# "Orientation": ((4, LCID, 4, 0),()),
+		# "Refdes": ((8, LCID, 4, 0),()),
+		# "Scale": ((7, LCID, 4, 0),()),
+		# "Selected": ((26, LCID, 4, 0),()),
+	# }
+
+	# Application: str # IVdApp; read_only
+	# Attributes: str # IVdObjs; read_only
+	# Id: str # read_only
+	# Label: str # IVdLabel; read_only
+	# Orientation: str # read/write
+	# Parent: str # IVdBlock; read_only
+	# Refdes: str # read/write
+	# Scale: str # read/write
+	# SymbolBlock: str # IVdBlock; read_only
+	# Type: str # read_only
+	# UID: str # read_only
+	# Selected: bool # write_only
+
+	# def __iter__(self):
+		# "Return a Python iterator for this object"
+		# try:
+			# ob = self._oleobj_.InvokeTypes(-4,LCID,3,(13, 10),())
+		# except pythoncom.error:
+			# raise TypeError("This object does not support enumeration")
+		# return win32com.client.util.Iterator(ob, None)
 
 class IVdConnection(DispatchBaseClass):
 	CLSID = IID('{1446F3C0-2169-11D0-91A7-7A9695000000}')
@@ -5508,6 +5719,12 @@ class IVdConnection(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	CompPin: str # IVdCmpPin; read_only
+	Net: str # IVdNet; read_only
+	Ripper: str # IRipper; read_only
+	Segment: str # IVdSegment; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5600,6 +5817,16 @@ class IVdDoc(DispatchBaseClass):
 	_prop_map_put_ = {
 		"Visible": ((2, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	DataType: str # read_only
+	FullName: str # read_only
+	Name: str # read_only
+	Parent: str # IVdDocs; read_only
+	Path: str # read_only
+	Saved: str # read_only
+	Visible: bool # read/write
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5659,6 +5886,11 @@ class IVdDocs(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Application: str # IVdApp; read_only
+	Count: int # read_only
+	Parent: str # IVdApp; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5723,6 +5955,15 @@ class IVdFrameBoard(DispatchBaseClass):
 	_prop_map_put_ = {
 		"Selected": ((7, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Attributes: str # IVdObjs; read_only
+	Id: str # read_only
+	Parent: str # IVdBlock; read_only
+	Type: str # read_only
+	UID: str # read_only
+	Selected: bool # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5800,6 +6041,9 @@ class IVdICTAttr(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Parent: str # read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5877,6 +6121,10 @@ class IVdICTBlock(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Parent: str # IVdICTView; read_only
+	ParentObject: str # IVdICTObj; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5940,6 +6188,10 @@ class IVdICTComp(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Parent: str # IVdICTBlock; read_only
+	ParentObject: str # IVdICTObj; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -5987,6 +6239,12 @@ class IVdICTDocument(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Application: str # IVdApp; read_only
+	FullName: str # read_only
+	Name: str # read_only
+	Parent: str # IICTDocuments; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6021,6 +6279,10 @@ class IVdICTNet(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Parent: str # IVdICTBlock; read_only
+	ParentObject: str # IVdICTObj; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6046,6 +6308,9 @@ class IVdICTObj(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	ParentObject: str # IVdICTObj; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6080,6 +6345,10 @@ class IVdICTPin(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Parent: str # IVdICTComp; read_only
+	ParentObject: str # IVdICTObj; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6129,6 +6398,9 @@ class IVdICTView(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Block: str # IVdICTBlock; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6158,6 +6430,11 @@ class IVdICTViews(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Application: str # IVdApp; read_only
+	Count: int # read_only
+	Parent: str # IVdDoc; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6251,6 +6528,23 @@ class IVdLabel(DispatchBaseClass):
 		"TextString": ((1, LCID, 4, 0),()),
 		"Visible": ((2, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Color: str # read/write
+	Font: str # read/write
+	Orientation: str # read/write
+	Origin: str # read/write
+	Parent: str # read_only
+	Printable: str # read/write
+	ResolvedName: str # read_only
+	Scope: str # read/write
+	Sense: str # read/write
+	Size: str # read/write
+	TextString: str # read/write
+	Type: str # read_only
+	Visible: bool # read/write
+	Selected: bool # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6273,6 +6567,11 @@ class IVdLibrary(DispatchBaseClass):
 		"Path": ((1, LCID, 4, 0),()),
 		"Type": ((3, LCID, 4, 0),()),
 	}
+
+	Alias: str # read/write
+	Path: str # read/write
+	Type: str # read/write
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6363,6 +6662,15 @@ class IVdLine(DispatchBaseClass):
 		"LineStyle": ((3, LCID, 4, 0),()),
 		"Selected": ((13, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Color: str # read/write
+	FillStyle: str # read/write
+	LineStyle: str # read/write
+	Parent: str # IVdBlock; read_only
+	Type: str # read_only
+	Selected: bool # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6526,6 +6834,20 @@ class IVdNet(DispatchBaseClass):
 		"Selected": ((22, LCID, 4, 0),()),
 		"Width": ((34, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Attributes: str # IVdObjs; read_only
+	Color: str # read/write
+	FillStyle: str # read/write
+	Id: str # read_only
+	LineStyle: str # read/write
+	LogicalNetName: str # read_only
+	Parent: str # IVdBlock; read_only
+	Type: str # read_only
+	UID: str # read_only
+	Width: str # read/write
+	Selected: bool # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6557,6 +6879,11 @@ class IVdObjs(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Application: str # IVdApp; read_only
+	Count: int # read_only
+	Parent: str # read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6660,6 +6987,19 @@ class IVdPin(DispatchBaseClass):
 		"Selected": ((20, LCID, 4, 0),()),
 		"Sense": ((6, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Attributes: str # IVdObjs; read_only
+	Color: str # read/write
+	Id: str # read_only
+	Label: str # IVdLabel; read_only
+	Parent: str # IVdBlock; read_only
+	Sense: str # read/write
+	Side: str # read_only
+	Type: str # read_only
+	UID: str # read_only
+	Selected: bool # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6680,6 +7020,10 @@ class IVdPoint(DispatchBaseClass):
 		"X": ((1, LCID, 4, 0),()),
 		"Y": ((2, LCID, 4, 0),()),
 	}
+
+	X: str # read/write
+	Y: str # read/write
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6704,6 +7048,12 @@ class IVdRect(DispatchBaseClass):
 		"Right": ((3, LCID, 4, 0),()),
 		"Top": ((4, LCID, 4, 0),()),
 	}
+
+	Bottom: str # read/write
+	Left: str # read/write
+	Right: str # read/write
+	Top: str # read/write
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6804,6 +7154,13 @@ class IVdSchematicSheetDocument(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Application: str # IVdApp; read_only
+	DataType: str # read_only
+	FullName: str # read_only
+	Name: str # read_only
+	Parent: str # IVdSchematicSheetDocuments; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6935,6 +7292,11 @@ class IVdSchematicSheetDocuments(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Application: str # IVdApp; read_only
+	Count: int # read_only
+	Parent: str # IVdApp; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -6988,6 +7350,12 @@ class IVdSegment(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Application: str # IVdApp; read_only
+	Attributes: str # IVdObjs; read_only
+	Parent: str # IVdNet; read_only
+	Type: str # read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -7064,6 +7432,19 @@ class IVdText(DispatchBaseClass):
 		"Size": ((6, LCID, 4, 0),()),
 		"TextString": ((1, LCID, 4, 0),()),
 	}
+
+	Application: str # IVdApp; read_only
+	Color: str # read/write
+	Font: str # read/write
+	Orientation: str # read/write
+	Origin: str # read/write
+	Parent: str # IVdBlock; read_only
+	Printable: str # read/write
+	Size: str # read/write
+	TextString: str # read/write
+	Type: str # read_only
+	Selected: bool # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -7218,6 +7599,11 @@ class IVdView(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Block: str # IVdBlock; read_only
+	TopBlock: str # IVdBlock; read_only
+	Viewport: str # IViewport; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -7288,6 +7674,11 @@ class IVdViews(DispatchBaseClass):
 	}
 	_prop_map_put_ = {
 	}
+
+	Application: str # IVdApp; read_only
+	Count: int # read_only
+	Parent: str # IVdDoc; read_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -7416,6 +7807,18 @@ class IViewport(DispatchBaseClass):
 		"TextFont": ((8, LCID, 4, 0),()),
 		"TextSize": ((9, LCID, 4, 0),()),
 	}
+
+	Color: str # read/write
+	FillStyle: str # read/write
+	LineCap: str # read/write
+	LineJoin: str # read/write
+	LinePattern: str # read/write
+	LineThickness: str # read/write
+	RasterMode: str # read/write
+	TextAngle: str # write_only
+	TextFont: str # write_only
+	TextSize: str # write_only
+
 	def __iter__(self):
 		"Return a Python iterator for this object"
 		try:
@@ -10732,3 +11135,5 @@ NamesToIIDMap = {
 }
 
 win32com.client.constants.__dicts__.append(constants.__dict__)
+
+__all__ = ['IAddinInfo','IAutoString','IColor','ICommandsManager','ICommonPropertyDefinition','ICommonPropertyManager','IDesignSearcherAutomation','IFramework','IHDLSourceDocument','IHDLSourceDocuments','IHTMLSourceDocument','IHTMLSourceDocuments','IICTDocuments','IMGCDesignerDataManagement','IMGCDesignerDataManagementAdditionalProperties','IMGCDesignerDataManagementAdditionalProperty','IMGCDesignerDataManagementEntities','IMGCDesignerDataManagementEntity','IMergeData','IODProjectData','IPDBPartitions','IPredicate','IProjectData','IProjectManagerEventSink','IRipper','IStringCollection','IStringList','ISymbolPartitions','IVdApp','IVdAppProtectionProxy','IVdApplicationAtTest','IVdArc','IVdAttr','IVdBlock','IVdBox','IVdCircle','IVdCmpPin','IVdComp','IVdConnection','IVdDoc','IVdDocs','IVdFrameBoard','IVdHighPrecisionObject','IVdICTAttr','IVdICTBlock','IVdICTComp','IVdICTDocument','IVdICTNet','IVdICTObj','IVdICTPin','IVdICTView','IVdICTViews','IVdLabel','IVdLibrary','IVdLine','IVdNet','IVdObjs','IVdPin','IVdPoint','IVdRect','IVdSchematicSheetDocument','IVdSchematicSheetDocuments','IVdSegment','IVdText','IVdView','IVdViews','IViewport']
