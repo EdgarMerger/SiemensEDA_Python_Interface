@@ -52,6 +52,9 @@ Example for autocompletion:
 ![autocompletion](images/VSCode_autocompletion_example.JPG)
 Annotation in the code is required to get this to work. See designer_template.py for annotation examples (objApplalication and objComp).
 
+Example for deeper autocompletion:
+![deeper_autocompletion](images/VSCode_deeper_autocompletion_example.JPG)
+
 ### 3. Use the designer_template.py as starting point for your code
 ```
 python designer_template.py
