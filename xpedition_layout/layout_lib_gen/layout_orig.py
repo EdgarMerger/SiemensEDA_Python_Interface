@@ -1,10 +1,10 @@
 # -*- coding: mbcs -*-
 # Created by makepy.py version 0.5.01
-# By python version 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)]
-# On Thu Nov 14 09:43:47 2024
+# By python version 3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)]
+# On Thu Nov 14 17:25:01 2024
 'MGCPCB (AutoActive series) Type Library'
 makepy_version = '0.5.01'
-python_version = 0x3090af0
+python_version = 0x30b06f0
 
 import win32com.client.CLSIDToClass, pythoncom, pywintypes
 import win32com.client.util

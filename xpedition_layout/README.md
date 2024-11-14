@@ -17,7 +17,7 @@ Directory structure:
 python -m pip install pywin32
 ```
 The following illustrates the data flow of the toolbox
-![Layout](images/flowchart.JPG)
+![Layout](images/flowchart.jpg)
 
 ### 1. Generate COM interface classes
 ```
