@@ -163,11 +163,34 @@ def cleanup():
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     print(result)
     
+def add_future_annotations():
+    # Define the file to be 
+    filename = './designer_ifc.py'
+
+    # Define the line to be added
+    future_import_line = "from __future__ import annotations  # In order that Python does not evaluate any type hints immediately\n"
+    
+    # Read the existing file content
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+
+    # Check if the line already exists
+    if future_import_line.strip() not in (line.strip() for line in lines):
+        # Add the future import line to the top
+        lines.insert(0, future_import_line)
         
+        # Write the modified content back to the file
+        with open(filename, 'w') as file:
+            file.writelines(lines)
+        print(f"Added future import line to {filename}.")
+    else:
+        print(f"The future import line already exists in {filename}.")
+
 def run() -> None:
     generate_input()
     generate_output()
     add_type_hints_to_methods()
+    add_future_annotations()
     copy_result()
     #cleanup()
 
