@@ -1,10 +1,10 @@
 # -*- coding: mbcs -*-
 # Created by makepy.py version 0.5.01
-# By python version 3.11.6 (tags/v3.11.6:8b6ee5b, Oct  2 2023, 14:57:12) [MSC v.1935 64 bit (AMD64)]
-# On Sun Nov  3 00:47:40 2024
+# By python version 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)]
+# On Thu Nov 14 09:57:34 2024
 'MGCVARIANTMGR Variant Manager Type Library'
 makepy_version = '0.5.01'
-python_version = 0x30b06f0
+python_version = 0x3090af0
 
 import win32com.client.CLSIDToClass, pythoncom, pywintypes
 import win32com.client.util
@@ -306,7 +306,7 @@ class IMGCVariantMgrApplication(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrDocument
-	def OpenDocument(self, jobPath=defaultNamedNotOptArg, revision=defaultNamedNotOptArg, clientType=0):
+	def OpenDocument(self, jobPath=defaultNamedNotOptArg, revision=defaultNamedNotOptArg, clientType=0) -> IMGCVariantMgrDocument:
 		'Opens a document'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 1, (9, 0), ((8, 1), (8, 1), (3, 49)),jobPath
 			, revision, clientType)
@@ -371,7 +371,7 @@ class IMGCVariantMgrBPropModsUtility(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrBorderPropModifications
 	# The method BorderPropModifications is actually a property, but must be used as a method to correctly pass the arguments
-	def BorderPropModifications(self, filter=defaultNamedNotOptArg):
+	def BorderPropModifications(self, filter=defaultNamedNotOptArg) -> IMGCVariantMgrBorderPropModifications:
 		'Returns the package modifications for the variants.'
 		ret = self._oleobj_.InvokeTypes(103, LCID, 2, (9, 0), ((12, 1),),filter
 			)
@@ -385,7 +385,7 @@ class IMGCVariantMgrBPropModsUtility(DispatchBaseClass):
 			, objectID, objectType)
 
 	# Result is of type IMGCVariantMgrBorderPropModification
-	def FindBorderPropModification(self, prpName=defaultNamedNotOptArg, variantDef=defaultNamedNotOptArg, symbolDef=defaultNamedNotOptArg):
+	def FindBorderPropModification(self, prpName=defaultNamedNotOptArg, variantDef=defaultNamedNotOptArg, symbolDef=defaultNamedNotOptArg) -> IMGCVariantMgrBorderPropModification:
 		'Finds a symbol modification record'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 1, (9, 0), ((8, 1), (12, 1), (12, 1)),prpName
 			, variantDef, symbolDef)
@@ -394,7 +394,7 @@ class IMGCVariantMgrBPropModsUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrBorderPropModification
-	def FindBorderPropModificationByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg):
+	def FindBorderPropModificationByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg) -> IMGCVariantMgrBorderPropModification:
 		'Finds a package modification record'
 		ret = self._oleobj_.InvokeTypes(104, LCID, 1, (9, 0), ((3, 1), (3, 1), (3, 1)),userID
 			, objectID, objectType)
@@ -412,7 +412,7 @@ class IMGCVariantMgrBPropModsUtility(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrBorderPropModification
-	def PutBorderPropModification(self, variantDefinition=defaultNamedNotOptArg, symbolDefinition=defaultNamedNotOptArg, prpName=defaultNamedNotOptArg, prpValue=defaultNamedNotOptArg):
+	def PutBorderPropModification(self, variantDefinition=defaultNamedNotOptArg, symbolDefinition=defaultNamedNotOptArg, prpName=defaultNamedNotOptArg, prpValue=defaultNamedNotOptArg) -> IMGCVariantMgrBorderPropModification:
 		'Creates a new border property modification.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 1, (9, 0), ((12, 1), (12, 1), (8, 1), (8, 1)),variantDefinition
 			, symbolDefinition, prpName, prpValue)
@@ -1019,7 +1019,7 @@ class IMGCVariantMgrBlockData(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrPackages
 	# The method AllPackages is actually a property, but must be used as a method to correctly pass the arguments
-	def AllPackages(self, bIncludeRBs=defaultNamedNotOptArg, filter=defaultNamedOptArg):
+	def AllPackages(self, bIncludeRBs=defaultNamedNotOptArg, filter=defaultNamedOptArg) -> IMGCVariantMgrPackages:
 		'Returns the all packages that are part of the block and all sub-blocks'
 		ret = self._oleobj_.InvokeTypes(112, LCID, 2, (9, 0), ((11, 1), (12, 17)),bIncludeRBs
 			, filter)
@@ -1049,7 +1049,7 @@ class IMGCVariantMgrBlockData(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrBlocks
 	# The method GetBlocks is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBlocks(self, filter=defaultNamedOptArg):
+	def GetBlocks(self, filter=defaultNamedOptArg) -> IMGCVariantMgrBlocks:
 		'Returns the blocks that are part of the block'
 		ret = self._oleobj_.InvokeTypes(104, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -1059,7 +1059,7 @@ class IMGCVariantMgrBlockData(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrPackages
 	# The method GetPackages is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPackages(self, filter=defaultNamedOptArg):
+	def GetPackages(self, filter=defaultNamedOptArg) -> IMGCVariantMgrPackages:
 		'Returns the packages that are part of the block'
 		ret = self._oleobj_.InvokeTypes(103, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -1069,7 +1069,7 @@ class IMGCVariantMgrBlockData(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrReusedBlocks
 	# The method GetReusedBlocks is actually a property, but must be used as a method to correctly pass the arguments
-	def GetReusedBlocks(self, filter=defaultNamedOptArg):
+	def GetReusedBlocks(self, filter=defaultNamedOptArg) -> IMGCVariantMgrReusedBlocks:
 		'Returns the reused blocks taht are part of the block'
 		ret = self._oleobj_.InvokeTypes(105, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -1079,7 +1079,7 @@ class IMGCVariantMgrBlockData(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrSymbols
 	# The method GetSymbols is actually a property, but must be used as a method to correctly pass the arguments
-	def GetSymbols(self, filter=defaultNamedOptArg):
+	def GetSymbols(self, filter=defaultNamedOptArg) -> IMGCVariantMgrSymbols:
 		'Returns the packages that are part of the block'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -1380,7 +1380,7 @@ class IMGCVariantMgrBlockDataModifications(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrBlockDataModification
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrBlockDataModification:
 		'Returns a block data modification object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -1486,7 +1486,7 @@ class IMGCVariantMgrBlocks(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrBlock
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrBlock:
 		'Returns a block definition'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -1750,7 +1750,7 @@ class IMGCVariantMgrBorderPropModifications(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrBorderPropModification
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrBorderPropModification:
 		'Returns a border property modification object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -1840,7 +1840,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 			, objectID, objectType)
 
 	# Result is of type IMGCVariantMgrPackage
-	def FindPackage(self, packName=defaultNamedNotOptArg):
+	def FindPackage(self, packName=defaultNamedNotOptArg) -> IMGCVariantMgrPackage:
 		'Returns a package object for the requested package'
 		ret = self._oleobj_.InvokeTypes(112, LCID, 1, (9, 0), ((8, 1),),packName
 			)
@@ -1849,7 +1849,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrPackage
-	def FindPackageBySID(self, SID=defaultNamedNotOptArg):
+	def FindPackageBySID(self, SID=defaultNamedNotOptArg) -> IMGCVariantMgrPackage:
 		'Returns a package object by its sid'
 		ret = self._oleobj_.InvokeTypes(119, LCID, 1, (9, 0), ((8, 1),),SID
 			)
@@ -1858,7 +1858,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrPackage
-	def FindPackageByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg):
+	def FindPackageByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg) -> IMGCVariantMgrPackage:
 		'Returns a package object by its id'
 		ret = self._oleobj_.InvokeTypes(117, LCID, 1, (9, 0), ((3, 1), (3, 1), (3, 1)),userID
 			, objectID, objectType)
@@ -1867,7 +1867,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrSymbol
-	def FindSymbol(self, symbolNameAndPath=defaultNamedNotOptArg):
+	def FindSymbol(self, symbolNameAndPath=defaultNamedNotOptArg) -> IMGCVariantMgrSymbol:
 		'Returns a symbol object using full name'
 		ret = self._oleobj_.InvokeTypes(118, LCID, 1, (9, 0), ((8, 1),),symbolNameAndPath
 			)
@@ -1876,7 +1876,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrSymbol
-	def FindSymbolByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg):
+	def FindSymbolByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg) -> IMGCVariantMgrSymbol:
 		'Returns a symbol by its UID.'
 		ret = self._oleobj_.InvokeTypes(114, LCID, 1, (9, 0), ((3, 1), (3, 1), (3, 1)),userID
 			, objectID, objectType)
@@ -1886,7 +1886,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrBlocks
 	# The method GetBlocks is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBlocks(self, filter=defaultNamedOptArg):
+	def GetBlocks(self, filter=defaultNamedOptArg) -> IMGCVariantMgrBlocks:
 		'Returns a collection of blocks in the design.'
 		ret = self._oleobj_.InvokeTypes(104, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -1896,7 +1896,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrEquivalentBlockGroups
 	# The method GetEquivalentBlockGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetEquivalentBlockGroups(self, filter=defaultNamedOptArg):
+	def GetEquivalentBlockGroups(self, filter=defaultNamedOptArg) -> IMGCVariantMgrEquivalentBlockGroups:
 		'Returns a collection of symbol locations'
 		ret = self._oleobj_.InvokeTypes(106, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -1906,7 +1906,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrPackages
 	# The method GetPackages is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPackages(self, filter=defaultNamedOptArg):
+	def GetPackages(self, filter=defaultNamedOptArg) -> IMGCVariantMgrPackages:
 		'Returns a collection of packages in the design'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -1916,7 +1916,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrReusedBlocks
 	# The method GetReusedBlocks is actually a property, but must be used as a method to correctly pass the arguments
-	def GetReusedBlocks(self, filter=defaultNamedOptArg):
+	def GetReusedBlocks(self, filter=defaultNamedOptArg) -> IMGCVariantMgrReusedBlocks:
 		'Returns a collection of reused blocks in the design.'
 		ret = self._oleobj_.InvokeTypes(103, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -1931,7 +1931,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrSymbolLocations
 	# The method GetSymbolLocations is actually a property, but must be used as a method to correctly pass the arguments
-	def GetSymbolLocations(self, filter=defaultNamedOptArg):
+	def GetSymbolLocations(self, filter=defaultNamedOptArg) -> IMGCVariantMgrSymbolLocations:
 		'Returns a collection of symbol locations'
 		ret = self._oleobj_.InvokeTypes(105, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -1941,7 +1941,7 @@ class IMGCVariantMgrConnectivity(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrSymbols
 	# The method GetSymbols is actually a property, but must be used as a method to correctly pass the arguments
-	def GetSymbols(self, filter=defaultNamedOptArg):
+	def GetSymbols(self, filter=defaultNamedOptArg) -> IMGCVariantMgrSymbols:
 		'Returns a collection of symbols in the design'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -2092,7 +2092,7 @@ class IMGCVariantMgrDocument(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCVariantMgrFMVFunction
-	def FindFMVFunction(self, Name=defaultNamedNotOptArg):
+	def FindFMVFunction(self, Name=defaultNamedNotOptArg) -> IMGCVariantMgrFMVFunction:
 		'Finds an FMV function object'
 		ret = self._oleobj_.InvokeTypes(136, LCID, 1, (9, 0), ((8, 1),),Name
 			)
@@ -2101,7 +2101,7 @@ class IMGCVariantMgrDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrFMVFunction
-	def FindFMVFunctionByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg):
+	def FindFMVFunctionByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg) -> IMGCVariantMgrFMVFunction:
 		'Finds a FMV function object bu UID'
 		ret = self._oleobj_.InvokeTypes(153, LCID, 1, (9, 0), ((3, 1), (3, 1), (3, 1)),userID
 			, objectID, objectType)
@@ -2110,7 +2110,7 @@ class IMGCVariantMgrDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrVariant
-	def FindVariant(self, Name=defaultNamedNotOptArg):
+	def FindVariant(self, Name=defaultNamedNotOptArg) -> IMGCVariantMgrVariant:
 		'Finds a variant object'
 		ret = self._oleobj_.InvokeTypes(117, LCID, 1, (9, 0), ((8, 1),),Name
 			)
@@ -2119,7 +2119,7 @@ class IMGCVariantMgrDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrVariant
-	def FindVariantByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg):
+	def FindVariantByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg) -> IMGCVariantMgrVariant:
 		'Finds a variant object bu UID'
 		ret = self._oleobj_.InvokeTypes(152, LCID, 1, (9, 0), ((3, 1), (3, 1), (3, 1)),userID
 			, objectID, objectType)
@@ -2135,7 +2135,7 @@ class IMGCVariantMgrDocument(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrFMVFunctions
 	# The method GetFMVFunctions is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFMVFunctions(self, filter=defaultNamedOptArg):
+	def GetFMVFunctions(self, filter=defaultNamedOptArg) -> IMGCVariantMgrFMVFunctions:
 		"Returns a collection of FMV's."
 		ret = self._oleobj_.InvokeTypes(103, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -2166,7 +2166,7 @@ class IMGCVariantMgrDocument(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariants
 	# The method GetVariants is actually a property, but must be used as a method to correctly pass the arguments
-	def GetVariants(self, filter=defaultNamedOptArg):
+	def GetVariants(self, filter=defaultNamedOptArg) -> IMGCVariantMgrVariants:
 		'Returns the collection of variants.'
 		ret = self._oleobj_.InvokeTypes(104, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -2226,7 +2226,7 @@ class IMGCVariantMgrDocument(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCVariantMgrFMVFunction
-	def PutFMVFunction(self, functionName=defaultNamedNotOptArg, functionNumber=defaultNamedNotOptArg, functionDescription=defaultNamedNotOptArg, sourceForContents=defaultNamedOptArg):
+	def PutFMVFunction(self, functionName=defaultNamedNotOptArg, functionNumber=defaultNamedNotOptArg, functionDescription=defaultNamedNotOptArg, sourceForContents=defaultNamedOptArg) -> IMGCVariantMgrFMVFunction:
 		'Creates a new FMV function.'
 		ret = self._oleobj_.InvokeTypes(135, LCID, 1, (9, 0), ((8, 1), (8, 1), (8, 1), (12, 17)),functionName
 			, functionNumber, functionDescription, sourceForContents)
@@ -2235,7 +2235,7 @@ class IMGCVariantMgrDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrPackage
-	def PutPackage(self):
+	def PutPackage(self) -> IMGCVariantMgrPackage:
 		'Creates a new package.'
 		ret = self._oleobj_.InvokeTypes(167, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -2243,7 +2243,7 @@ class IMGCVariantMgrDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrSymbol
-	def PutSymbol(self):
+	def PutSymbol(self) -> IMGCVariantMgrSymbol:
 		'Creates a new symbol.'
 		ret = self._oleobj_.InvokeTypes(168, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -2251,7 +2251,7 @@ class IMGCVariantMgrDocument(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrVariant
-	def PutVariant(self, variantName=defaultNamedNotOptArg, variantNumber=defaultNamedNotOptArg, variantDescription=defaultNamedNotOptArg, sourceForContents=defaultNamedOptArg):
+	def PutVariant(self, variantName=defaultNamedNotOptArg, variantNumber=defaultNamedNotOptArg, variantDescription=defaultNamedNotOptArg, sourceForContents=defaultNamedOptArg) -> IMGCVariantMgrVariant:
 		'Creates a new variant.'
 		ret = self._oleobj_.InvokeTypes(122, LCID, 1, (9, 0), ((8, 1), (8, 1), (8, 1), (12, 17)),variantName
 			, variantNumber, variantDescription, sourceForContents)
@@ -2496,7 +2496,7 @@ class IMGCVariantMgrDocuments(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrDocument
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrDocument:
 		'Returns a document object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -2652,7 +2652,7 @@ class IMGCVariantMgrEditors(DispatchBaseClass):
 			, objectID, objectType)
 
 	# Result is of type IMGCVariantMgrEditor
-	def CreateInstance(self, pEditorHost=defaultNamedNotOptArg):
+	def CreateInstance(self, pEditorHost=defaultNamedNotOptArg) -> IMGCVariantMgrEditor:
 		'Adds a variant to the collection.'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 1, (9, 0), ((9, 1),),pEditorHost
 			)
@@ -2676,7 +2676,7 @@ class IMGCVariantMgrEditors(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrEditor
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrEditor:
 		'Returns an object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -2895,7 +2895,7 @@ class IMGCVariantMgrEquivalentBlockGroup(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrEquivalentBlocks
 	# The method GetEquivalentBlocks is actually a property, but must be used as a method to correctly pass the arguments
-	def GetEquivalentBlocks(self, filter=defaultNamedOptArg):
+	def GetEquivalentBlocks(self, filter=defaultNamedOptArg) -> IMGCVariantMgrEquivalentBlocks:
 		'Returns a collection of equivalent blocks for this equivalent block group.'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -2979,7 +2979,7 @@ class IMGCVariantMgrEquivalentBlockGroups(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrEquivalentBlockGroup
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrEquivalentBlockGroup:
 		'Returns an equivalent block group definition.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -3080,7 +3080,7 @@ class IMGCVariantMgrEquivalentBlocks(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrEquivalentBlock
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrEquivalentBlock:
 		'Returns an equivalent block definition.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -3175,7 +3175,7 @@ class IMGCVariantMgrFMVFunction(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCVariantMgrVariantAssignment
-	def FindVariantAssignment(self, variantDefinition=defaultNamedNotOptArg):
+	def FindVariantAssignment(self, variantDefinition=defaultNamedNotOptArg) -> IMGCVariantMgrVariantAssignment:
 		'Find a variant assignment for a variant.'
 		ret = self._oleobj_.InvokeTypes(109, LCID, 1, (9, 0), ((12, 1),),variantDefinition
 			)
@@ -3190,7 +3190,7 @@ class IMGCVariantMgrFMVFunction(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariantAssignments
 	# The method GetVariantAssignments is actually a property, but must be used as a method to correctly pass the arguments
-	def GetVariantAssignments(self, filter=defaultNamedOptArg):
+	def GetVariantAssignments(self, filter=defaultNamedOptArg) -> IMGCVariantMgrVariantAssignments:
 		'Returns a collection of variants that are assigned to this function'
 		ret = self._oleobj_.InvokeTypes(106, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -3213,7 +3213,7 @@ class IMGCVariantMgrFMVFunction(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCVariantMgrVariantAssignment
-	def PutVariantAssignment(self, variantDefinition=defaultNamedNotOptArg, position=-1):
+	def PutVariantAssignment(self, variantDefinition=defaultNamedNotOptArg, position=-1) -> IMGCVariantMgrVariantAssignment:
 		'Adds a new variant assignment to the function'
 		ret = self._oleobj_.InvokeTypes(108, LCID, 1, (9, 0), ((12, 1), (2, 49)),variantDefinition
 			, position)
@@ -3381,7 +3381,7 @@ class IMGCVariantMgrFMVFunctionAssignments(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrFMVFunctionAssignment
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrFMVFunctionAssignment:
 		'Returns a package object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -3480,7 +3480,7 @@ class IMGCVariantMgrFMVFunctionGroup(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(105, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrFMVFunctionAssignment
-	def FindFMVFunctionAssignment(self, variantDefinition=defaultNamedNotOptArg):
+	def FindFMVFunctionAssignment(self, variantDefinition=defaultNamedNotOptArg) -> IMGCVariantMgrFMVFunctionAssignment:
 		'Find a variant assignment for a variant.'
 		ret = self._oleobj_.InvokeTypes(104, LCID, 1, (9, 0), ((12, 1),),variantDefinition
 			)
@@ -3490,7 +3490,7 @@ class IMGCVariantMgrFMVFunctionGroup(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrFMVFunctionAssignments
 	# The method GetFMVFunctionAssignments is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFMVFunctionAssignments(self, filter=defaultNamedOptArg):
+	def GetFMVFunctionAssignments(self, filter=defaultNamedOptArg) -> IMGCVariantMgrFMVFunctionAssignments:
 		'Returns a collection of functions that are part of the group.'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -3513,7 +3513,7 @@ class IMGCVariantMgrFMVFunctionGroup(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrFMVFunctionAssignment
-	def PutFMVFunctionAssignment(self, variantDefinition=defaultNamedNotOptArg, position=-1):
+	def PutFMVFunctionAssignment(self, variantDefinition=defaultNamedNotOptArg, position=-1) -> IMGCVariantMgrFMVFunctionAssignment:
 		'Adds a new FMVFunction assignment to the group.'
 		ret = self._oleobj_.InvokeTypes(103, LCID, 1, (9, 0), ((12, 1), (2, 49)),variantDefinition
 			, position)
@@ -3605,7 +3605,7 @@ class IMGCVariantMgrFMVFunctionGroups(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrFMVFunctionGroup
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrFMVFunctionGroup:
 		'Returns a group object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -3711,7 +3711,7 @@ class IMGCVariantMgrFMVFunctions(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrFMVFunction
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrFMVFunction:
 		'Returns a function object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -3817,7 +3817,7 @@ class IMGCVariantMgrFMVProperties(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrFMVProperty
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrFMVProperty:
 		'Returns a symbol modification object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -4010,7 +4010,7 @@ class IMGCVariantMgrFilters(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrBlockDataModificationFilter
-	def NewBlockDataModificationFilter(self):
+	def NewBlockDataModificationFilter(self) -> IMGCVariantMgrBlockDataModificationFilter:
 		'Finds a variant object'
 		ret = self._oleobj_.InvokeTypes(118, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -4018,7 +4018,7 @@ class IMGCVariantMgrFilters(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrBorderPropModificationFilter
-	def NewBorderPropModificationFilter(self):
+	def NewBorderPropModificationFilter(self) -> IMGCVariantMgrBorderPropModificationFilter:
 		'Create new border prop modification filter'
 		ret = self._oleobj_.InvokeTypes(120, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -4026,7 +4026,7 @@ class IMGCVariantMgrFilters(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrPackageFilter
-	def NewPackageFilter(self):
+	def NewPackageFilter(self) -> IMGCVariantMgrPackageFilter:
 		'Finds a packages object'
 		ret = self._oleobj_.InvokeTypes(119, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -4034,7 +4034,7 @@ class IMGCVariantMgrFilters(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrPackageModificationFilter
-	def NewPackageModificationFilter(self):
+	def NewPackageModificationFilter(self) -> IMGCVariantMgrPackageModificationFilter:
 		'Finds a variant object'
 		ret = self._oleobj_.InvokeTypes(117, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -4042,7 +4042,7 @@ class IMGCVariantMgrFilters(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrSymbolFilter
-	def NewSymbolFilter(self):
+	def NewSymbolFilter(self) -> IMGCVariantMgrSymbolFilter:
 		'Finds a symbols object'
 		ret = self._oleobj_.InvokeTypes(121, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -4092,7 +4092,7 @@ class IMGCVariantMgrGroupings(DispatchBaseClass):
 			, objectID, objectType)
 
 	# Result is of type IMGCVariantMgrFMVFunctionGroup
-	def FindFMVFunctionGroup(self, groupName=defaultNamedNotOptArg):
+	def FindFMVFunctionGroup(self, groupName=defaultNamedNotOptArg) -> IMGCVariantMgrFMVFunctionGroup:
 		'Find a FMV function group in the list of FMV function groups.'
 		ret = self._oleobj_.InvokeTypes(105, LCID, 1, (9, 0), ((8, 1),),groupName
 			)
@@ -4101,7 +4101,7 @@ class IMGCVariantMgrGroupings(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrFMVFunctionGroup
-	def FindFMVFunctionGroupByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg):
+	def FindFMVFunctionGroupByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg) -> IMGCVariantMgrFMVFunctionGroup:
 		'Find a FMV function group in the list of FMV function groups.'
 		ret = self._oleobj_.InvokeTypes(108, LCID, 1, (9, 0), ((3, 1), (3, 1), (3, 1)),userID
 			, objectID, objectType)
@@ -4110,7 +4110,7 @@ class IMGCVariantMgrGroupings(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrVariantGroup
-	def FindVariantGroup(self, groupName=defaultNamedNotOptArg):
+	def FindVariantGroup(self, groupName=defaultNamedNotOptArg) -> IMGCVariantMgrVariantGroup:
 		'Find a variant group in the list of variant groups.'
 		ret = self._oleobj_.InvokeTypes(104, LCID, 1, (9, 0), ((8, 1),),groupName
 			)
@@ -4119,7 +4119,7 @@ class IMGCVariantMgrGroupings(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrVariantGroup
-	def FindVariantGroupByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg):
+	def FindVariantGroupByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg) -> IMGCVariantMgrVariantGroup:
 		'Find a variant group in the list of variant groups.'
 		ret = self._oleobj_.InvokeTypes(107, LCID, 1, (9, 0), ((3, 1), (3, 1), (3, 1)),userID
 			, objectID, objectType)
@@ -4129,7 +4129,7 @@ class IMGCVariantMgrGroupings(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrFMVFunctionGroups
 	# The method GetFMVFunctionGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFMVFunctionGroups(self, filter=defaultNamedOptArg):
+	def GetFMVFunctionGroups(self, filter=defaultNamedOptArg) -> IMGCVariantMgrFMVFunctionGroups:
 		'Returns a collection of FMV function groups.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -4144,7 +4144,7 @@ class IMGCVariantMgrGroupings(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariantGroups
 	# The method GetVariantGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetVariantGroups(self, filter=defaultNamedOptArg):
+	def GetVariantGroups(self, filter=defaultNamedOptArg) -> IMGCVariantMgrVariantGroups:
 		'Returns a collection of variant groups.'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -4162,7 +4162,7 @@ class IMGCVariantMgrGroupings(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrFMVFunctionGroup
-	def PutFMVFunctionGroup(self, groupName=defaultNamedNotOptArg, groupDescription=defaultNamedNotOptArg, sourceForContents=defaultNamedOptArg):
+	def PutFMVFunctionGroup(self, groupName=defaultNamedNotOptArg, groupDescription=defaultNamedNotOptArg, sourceForContents=defaultNamedOptArg) -> IMGCVariantMgrFMVFunctionGroup:
 		'Creates a new FMV Function group.'
 		ret = self._oleobj_.InvokeTypes(106, LCID, 1, (9, 0), ((8, 1), (8, 1), (12, 17)),groupName
 			, groupDescription, sourceForContents)
@@ -4171,7 +4171,7 @@ class IMGCVariantMgrGroupings(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrVariantGroup
-	def PutVariantGroup(self, groupName=defaultNamedNotOptArg, groupDescription=defaultNamedNotOptArg, sourceForContents=defaultNamedOptArg):
+	def PutVariantGroup(self, groupName=defaultNamedNotOptArg, groupDescription=defaultNamedNotOptArg, sourceForContents=defaultNamedOptArg) -> IMGCVariantMgrVariantGroup:
 		'Creates a new variant group.'
 		ret = self._oleobj_.InvokeTypes(103, LCID, 1, (9, 0), ((8, 1), (8, 1), (12, 17)),groupName
 			, groupDescription, sourceForContents)
@@ -4393,7 +4393,7 @@ class IMGCVariantMgrPModsUtility(DispatchBaseClass):
 			, objectID, objectType)
 
 	# Result is of type IMGCVariantMgrBlockDataModification
-	def FindBlockDataModification(self, variantDef=defaultNamedNotOptArg, blockDataDef=defaultNamedNotOptArg):
+	def FindBlockDataModification(self, variantDef=defaultNamedNotOptArg, blockDataDef=defaultNamedNotOptArg) -> IMGCVariantMgrBlockDataModification:
 		'Finds a package modification record'
 		ret = self._oleobj_.InvokeTypes(106, LCID, 1, (9, 0), ((12, 1), (12, 1)),variantDef
 			, blockDataDef)
@@ -4402,7 +4402,7 @@ class IMGCVariantMgrPModsUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrBlockDataModification
-	def FindBlockDataModificationByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg):
+	def FindBlockDataModificationByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg) -> IMGCVariantMgrBlockDataModification:
 		'Finds a block data modification record'
 		ret = self._oleobj_.InvokeTypes(108, LCID, 1, (9, 0), ((3, 1), (3, 1), (3, 1)),userID
 			, objectID, objectType)
@@ -4411,7 +4411,7 @@ class IMGCVariantMgrPModsUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrPackageModification
-	def FindPackageModification(self, variantDef=defaultNamedNotOptArg, packageDef=defaultNamedNotOptArg):
+	def FindPackageModification(self, variantDef=defaultNamedNotOptArg, packageDef=defaultNamedNotOptArg) -> IMGCVariantMgrPackageModification:
 		'Finds a package modification record'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 1, (9, 0), ((12, 1), (12, 1)),variantDef
 			, packageDef)
@@ -4420,7 +4420,7 @@ class IMGCVariantMgrPModsUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrPackageModification
-	def FindPackageModificationByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg):
+	def FindPackageModificationByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg) -> IMGCVariantMgrPackageModification:
 		'Finds a package modification record'
 		ret = self._oleobj_.InvokeTypes(104, LCID, 1, (9, 0), ((3, 1), (3, 1), (3, 1)),userID
 			, objectID, objectType)
@@ -4430,7 +4430,7 @@ class IMGCVariantMgrPModsUtility(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrBlockDataModifications
 	# The method GetBlockDataModifications is actually a property, but must be used as a method to correctly pass the arguments
-	def GetBlockDataModifications(self, filter=defaultNamedOptArg):
+	def GetBlockDataModifications(self, filter=defaultNamedOptArg) -> IMGCVariantMgrBlockDataModifications:
 		'Returns the block data modifications for the variants.'
 		ret = self._oleobj_.InvokeTypes(107, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -4440,7 +4440,7 @@ class IMGCVariantMgrPModsUtility(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrPackageModifications
 	# The method GetPackageModifications is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPackageModifications(self, filter=defaultNamedOptArg):
+	def GetPackageModifications(self, filter=defaultNamedOptArg) -> IMGCVariantMgrPackageModifications:
 		'Returns the package modifications for the variants.'
 		ret = self._oleobj_.InvokeTypes(103, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -4468,7 +4468,7 @@ class IMGCVariantMgrPModsUtility(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrBlockDataModification
-	def PutBlockDataModification(self, variantDefinition=defaultNamedNotOptArg, blockDataDefinition=defaultNamedNotOptArg, changeOper=defaultNamedNotOptArg, SubVariantName=''):
+	def PutBlockDataModification(self, variantDefinition=defaultNamedNotOptArg, blockDataDefinition=defaultNamedNotOptArg, changeOper=defaultNamedNotOptArg, SubVariantName='') -> IMGCVariantMgrBlockDataModification:
 		'Creates a new block data modification.'
 		return self._ApplyTypes_(105, 1, (9, 32), ((12, 1), (12, 1), (3, 1), (8, 49)), 'PutBlockDataModification', '{5F556342-9E5E-4B96-9002-9B148BA114DD}',variantDefinition
 			, blockDataDefinition, changeOper, SubVariantName)
@@ -4480,7 +4480,7 @@ class IMGCVariantMgrPModsUtility(DispatchBaseClass):
 		return self._ApplyTypes_(101, 1, (9, 32), ((12, 1), (12, 1), (3, 1), (8, 49), (8, 49)), 'PutPackageModification', '{786637FD-9407-11D2-89D9-0020184077E1}',variantDefinition
 			, packageDefinition, changeOper, PartNumber, cellName)
 
-	def SetInternalValue(self, id=defaultNamedNotOptArg, parm1=defaultNamedOptArg, parm2=defaultNamedOptArg, parm3=defaultNamedOptArg):
+	def SetInternalValue(self, id=defaultNamedNotOptArg, parm1=defaultNamedOptArg, parm2=defaultNamedOptArg, parm3=defaultNamedOptArg) -> IMGCVariantMgrPackageModification:
 		'Sets an internal value on an object'
 		return self._oleobj_.InvokeTypes(4, LCID, 1, (2, 0), ((8, 1), (12, 17), (12, 17), (12, 17)),id
 			, parm1, parm2, parm3)
@@ -4542,7 +4542,7 @@ class IMGCVariantMgrPackage(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrSymbols
 	# The method GetSymbols is actually a property, but must be used as a method to correctly pass the arguments
-	def GetSymbols(self, filter=defaultNamedOptArg):
+	def GetSymbols(self, filter=defaultNamedOptArg) -> IMGCVariantMgrSymbols:
 		'Gets the symbols that are assigned to the package'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -4927,7 +4927,7 @@ class IMGCVariantMgrPackageModifications(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrPackageModification
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrPackageModification:
 		'Returns a package modification object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -5033,7 +5033,7 @@ class IMGCVariantMgrPackages(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrPackage
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrPackage:
 		'Returns a package object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -5220,7 +5220,7 @@ class IMGCVariantMgrParameters(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrParameter
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrParameter:
 		'Returns a parameter object'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -5347,7 +5347,7 @@ class IMGCVariantMgrProperties(DispatchBaseClass):
 			, objectID, objectType)
 
 	# Result is of type IMGCVariantMgrProperty
-	def Find(self, Name=defaultNamedNotOptArg):
+	def Find(self, Name=defaultNamedNotOptArg) -> IMGCVariantMgrProperty:
 		'Returns a property object using name.'
 		ret = self._oleobj_.InvokeTypes(103, LCID, 1, (9, 0), ((8, 1),),Name
 			)
@@ -5371,7 +5371,7 @@ class IMGCVariantMgrProperties(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrProperty
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrProperty:
 		'Returns a property object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -5908,7 +5908,7 @@ class IMGCVariantMgrReusedBlock(DispatchBaseClass):
 			, objectID, objectType)
 
 	# Result is of type IMGCVariantMgrVariantMapping
-	def FindVariantMapping(self, mappingDefinition=defaultNamedNotOptArg):
+	def FindVariantMapping(self, mappingDefinition=defaultNamedNotOptArg) -> IMGCVariantMgrVariantMapping:
 		'Finds a variant mapping in the list of mappings.'
 		ret = self._oleobj_.InvokeTypes(126, LCID, 1, (9, 0), ((12, 1),),mappingDefinition
 			)
@@ -5918,7 +5918,7 @@ class IMGCVariantMgrReusedBlock(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariants
 	# The method GetReusedVariants is actually a property, but must be used as a method to correctly pass the arguments
-	def GetReusedVariants(self, filter=defaultNamedOptArg):
+	def GetReusedVariants(self, filter=defaultNamedOptArg) -> IMGCVariantMgrVariants:
 		'Returns a collection of variants of the reused block.'
 		ret = self._oleobj_.InvokeTypes(127, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -5933,7 +5933,7 @@ class IMGCVariantMgrReusedBlock(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariantMappings
 	# The method GetVariantMappings is actually a property, but must be used as a method to correctly pass the arguments
-	def GetVariantMappings(self, filter=defaultNamedOptArg):
+	def GetVariantMappings(self, filter=defaultNamedOptArg) -> IMGCVariantMgrVariantMappings:
 		'Get the collection of variant mappings for the reused block.'
 		ret = self._oleobj_.InvokeTypes(124, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -5956,7 +5956,7 @@ class IMGCVariantMgrReusedBlock(DispatchBaseClass):
 			)
 
 	# Result is of type IMGCVariantMgrVariantMapping
-	def PutVariantMapping(self, originalVariantName=defaultNamedNotOptArg, newVariantName=defaultNamedNotOptArg, MappingFlags=defaultNamedNotOptArg):
+	def PutVariantMapping(self, originalVariantName=defaultNamedNotOptArg, newVariantName=defaultNamedNotOptArg, MappingFlags=defaultNamedNotOptArg) -> IMGCVariantMgrVariantMapping:
 		'Adds a new variant mapping to the variant mappings collection.'
 		ret = self._oleobj_.InvokeTypes(125, LCID, 1, (9, 0), ((8, 1), (8, 1), (3, 1)),originalVariantName
 			, newVariantName, MappingFlags)
@@ -6074,7 +6074,7 @@ class IMGCVariantMgrReusedBlocks(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrReusedBlock
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrReusedBlock:
 		'Returns a reused block definition'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -6172,7 +6172,7 @@ class IMGCVariantMgrSInfoRecsUtility(DispatchBaseClass):
 			, objectID, objectType)
 
 	# Result is of type IMGCVariantMgrFMVProperty
-	def FindFMVPropertyByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg):
+	def FindFMVPropertyByUID(self, userID=defaultNamedNotOptArg, objectID=defaultNamedNotOptArg, objectType=defaultNamedNotOptArg) -> IMGCVariantMgrFMVProperty:
 		'Finds a fmv property record'
 		ret = self._oleobj_.InvokeTypes(110, LCID, 1, (9, 0), ((3, 1), (3, 1), (3, 1)),userID
 			, objectID, objectType)
@@ -6181,7 +6181,7 @@ class IMGCVariantMgrSInfoRecsUtility(DispatchBaseClass):
 		return ret
 
 	# Result is of type IMGCVariantMgrSymbolInfoRec
-	def FindSymbolInfoRec(self, symbolSpec=defaultNamedNotOptArg):
+	def FindSymbolInfoRec(self, symbolSpec=defaultNamedNotOptArg) -> IMGCVariantMgrSymbolInfoRec:
 		'Find a symbol information record'
 		ret = self._oleobj_.InvokeTypes(103, LCID, 1, (9, 0), ((12, 1),),symbolSpec
 			)
@@ -6196,7 +6196,7 @@ class IMGCVariantMgrSInfoRecsUtility(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrSymbolInfoRecs
 	# The method GetSymbolInfoRecs is actually a property, but must be used as a method to correctly pass the arguments
-	def GetSymbolInfoRecs(self, filter=defaultNamedOptArg):
+	def GetSymbolInfoRecs(self, filter=defaultNamedOptArg) -> IMGCVariantMgrSymbolInfoRecs:
 		'Returns the symbol modifications for the variants.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -6214,7 +6214,7 @@ class IMGCVariantMgrSInfoRecsUtility(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrSymbolInfoRec
-	def PutSymbolInfoRec(self, symbolDefinition=defaultNamedNotOptArg):
+	def PutSymbolInfoRec(self, symbolDefinition=defaultNamedNotOptArg) -> IMGCVariantMgrSymbolInfoRec:
 		'Creates a new symbol modification.'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 1, (9, 0), ((12, 1),),symbolDefinition
 			)
@@ -6568,7 +6568,7 @@ class IMGCVariantMgrSymbolInfoRec(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(103, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrFMVProperty
-	def FindFMVProperty(self, functionDefinition=defaultNamedNotOptArg):
+	def FindFMVProperty(self, functionDefinition=defaultNamedNotOptArg) -> IMGCVariantMgrFMVProperty:
 		'Finds an FMV property based on a function spec.'
 		ret = self._oleobj_.InvokeTypes(107, LCID, 1, (9, 0), ((12, 1),),functionDefinition
 			)
@@ -6578,7 +6578,7 @@ class IMGCVariantMgrSymbolInfoRec(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrFMVProperties
 	# The method GetFMVProperties is actually a property, but must be used as a method to correctly pass the arguments
-	def GetFMVProperties(self, filter=defaultNamedOptArg):
+	def GetFMVProperties(self, filter=defaultNamedOptArg) -> IMGCVariantMgrFMVProperties:
 		'Returns a collection of FMV properties'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -6601,7 +6601,7 @@ class IMGCVariantMgrSymbolInfoRec(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrFMVProperty
-	def PutFMVProperty(self, functionDefinition=defaultNamedNotOptArg, changeOper=defaultNamedNotOptArg, PartNumber='', cellName=''):
+	def PutFMVProperty(self, functionDefinition=defaultNamedNotOptArg, changeOper=defaultNamedNotOptArg, PartNumber='', cellName='') -> IMGCVariantMgrFMVProperty:
 		'Creates a FMV property.'
 		return self._ApplyTypes_(106, 1, (9, 32), ((12, 1), (3, 1), (8, 49), (8, 49)), 'PutFMVProperty', '{DD445D35-DC4B-413A-8781-F561D40D4CC5}',functionDefinition
 			, changeOper, PartNumber, cellName)
@@ -6697,7 +6697,7 @@ class IMGCVariantMgrSymbolInfoRecs(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrSymbolInfoRec
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrSymbolInfoRec:
 		'Returns a symbol modification object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -6867,7 +6867,7 @@ class IMGCVariantMgrSymbolLocations(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrSymbolLocation
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrSymbolLocation:
 		'Returns a schema location object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -6973,7 +6973,7 @@ class IMGCVariantMgrSymbols(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrSymbol
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrSymbol:
 		'Returns a symbol object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -7166,7 +7166,7 @@ class IMGCVariantMgrVariant(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrPackageModifications
 	# The method GetPackageModifications is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPackageModifications(self, filter=defaultNamedOptArg):
+	def GetPackageModifications(self, filter=defaultNamedOptArg) -> IMGCVariantMgrPackageModifications:
 		'Gets the collection of packages that are to be modified for this variant'
 		ret = self._oleobj_.InvokeTypes(104, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -7363,7 +7363,7 @@ class IMGCVariantMgrVariantAssignments(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariantAssignment
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrVariantAssignment:
 		'Returns a package object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -7462,7 +7462,7 @@ class IMGCVariantMgrVariantGroup(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(103, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrVariantAssignment
-	def FindVariantAssignment(self, variantDefinition=defaultNamedNotOptArg):
+	def FindVariantAssignment(self, variantDefinition=defaultNamedNotOptArg) -> IMGCVariantMgrVariantAssignment:
 		'Find a variant assignment for a variant.'
 		ret = self._oleobj_.InvokeTypes(105, LCID, 1, (9, 0), ((12, 1),),variantDefinition
 			)
@@ -7477,7 +7477,7 @@ class IMGCVariantMgrVariantGroup(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariantAssignments
 	# The method GetVariantAssignments is actually a property, but must be used as a method to correctly pass the arguments
-	def GetVariantAssignments(self, filter=defaultNamedOptArg):
+	def GetVariantAssignments(self, filter=defaultNamedOptArg) -> IMGCVariantMgrVariantAssignments:
 		'Returns a collection of variants that are part of the group.'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -7495,7 +7495,7 @@ class IMGCVariantMgrVariantGroup(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrVariantAssignment
-	def PutVariantAssignment(self, variantDefinition=defaultNamedNotOptArg, position=-1):
+	def PutVariantAssignment(self, variantDefinition=defaultNamedNotOptArg, position=-1) -> IMGCVariantMgrVariantAssignment:
 		'Adds a new variant assignment to the group.'
 		ret = self._oleobj_.InvokeTypes(104, LCID, 1, (9, 0), ((12, 1), (2, 49)),variantDefinition
 			, position)
@@ -7587,7 +7587,7 @@ class IMGCVariantMgrVariantGroups(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariantGroup
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrVariantGroup:
 		'Returns a group object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -7674,7 +7674,7 @@ class IMGCVariantMgrVariantInfoRec(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrProperties
 	# The method GetProperties is actually a property, but must be used as a method to correctly pass the arguments
-	def GetProperties(self, filter=defaultNamedOptArg):
+	def GetProperties(self, filter=defaultNamedOptArg) -> IMGCVariantMgrProperties:
 		'Returns a collection of properties'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 17),),filter
 			)
@@ -7697,7 +7697,7 @@ class IMGCVariantMgrVariantInfoRec(DispatchBaseClass):
 		return self._oleobj_.InvokeTypes(3, LCID, 1, (11, 0), (),)
 
 	# Result is of type IMGCVariantMgrProperty
-	def PutProperty(self, key=defaultNamedNotOptArg, value=defaultNamedNotOptArg):
+	def PutProperty(self, key=defaultNamedNotOptArg, value=defaultNamedNotOptArg) -> IMGCVariantMgrProperty:
 		'Adds/changes a property record to the collection.'
 		ret = self._oleobj_.InvokeTypes(102, LCID, 1, (9, 0), ((8, 1), (8, 1)),key
 			, value)
@@ -7786,7 +7786,7 @@ class IMGCVariantMgrVariantInfoRecs(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariantInfoRec
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrVariantInfoRec:
 		'Returns a symbol modification object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -7872,7 +7872,7 @@ class IMGCVariantMgrVariantInfoRecsUtility(DispatchBaseClass):
 			, objectID, objectType)
 
 	# Result is of type IMGCVariantMgrVariantInfoRec
-	def FindVariantInfoRec(self, variantSpec=defaultNamedNotOptArg):
+	def FindVariantInfoRec(self, variantSpec=defaultNamedNotOptArg) -> IMGCVariantMgrVariantInfoRec:
 		'Find a variant information record'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 1, (9, 0), ((12, 1),),variantSpec
 			)
@@ -8029,7 +8029,7 @@ class IMGCVariantMgrVariantMappings(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariantMapping
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrVariantMapping:
 		'Returns a variant mapping object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)
@@ -8135,7 +8135,7 @@ class IMGCVariantMgrVariants(DispatchBaseClass):
 
 	# Result is of type IMGCVariantMgrVariant
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, index=defaultNamedNotOptArg):
+	def Item(self, index=defaultNamedNotOptArg) -> IMGCVariantMgrVariant:
 		'Returns a variant object at a given index.'
 		ret = self._oleobj_.InvokeTypes(101, LCID, 2, (9, 0), ((12, 1),),index
 			)

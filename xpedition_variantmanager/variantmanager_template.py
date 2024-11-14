@@ -32,7 +32,7 @@ def main():
     intNumVariants = objDocument.Variants.Count
     print(f'number of Variants: {intNumVariants}')
     pass
-    
+
 
 if (__name__ == '__main__'):
 #    init() #run only when not having running makepy.py previously on your computer
