@@ -11,7 +11,7 @@ Directory structure:
 * xpedition_constraintmanager - This library contains commonly used functions and tools with regard to Siemens Xpedition Constraints Management Tool automation. (not tested)
 
 The following illustrates the data flow of the toolbox
-![Designer](xpedition_designer/images/flowchart.jpg)
+![Designer](xpedition_designer/images/flowchart.JPG)
 
 ## License
 
