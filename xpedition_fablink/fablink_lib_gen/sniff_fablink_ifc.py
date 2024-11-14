@@ -101,10 +101,10 @@ def process_file(input_file: TextIO, output_file: TextIO) -> None:
 
 def generate_input() -> None:
     # first generate some input starting point
-    cmd: str = 'python makepy.py -o fablink_orig.py -v MGCPCB'
+    cmd: str = 'python makepy.py -o fablink_orig.py -v MGCPCB.FablinkXEApplication'
     result = subprocess.run(shlex.split(cmd), shell=True, capture_output=True, text=True)
-    #result = subprocess.run('python makepy.py -o fablink_orig.py -v MGCPCB', shell=True, capture_output=True, text=True)
-    #result = subprocess.run(['python', 'makepy.py', '-o', 'fablink_orig.py', '-v', 'MGCPCB'], capture_output=True, text=True)
+    #result = subprocess.run('python makepy.py -o fablink_orig.py -v MGCPCB.FablinkXEApplication', shell=True, capture_output=True, text=True)
+    #result = subprocess.run(['python', 'makepy.py', '-o', 'fablink_orig.py', '-v', 'MGCPCB.FablinkXEApplication'], capture_output=True, text=True)
     print(result)
 
 def generate_output() -> None:
@@ -113,15 +113,47 @@ def generate_output() -> None:
             process_file(in_file, out_file)
 
 def copy_result():
-    cmd: str = 'move fablink_ifc.py ../fablink_ifc.py'
+    cmd: str = 'copy fablink_ifc.py ../fablink_ifc.py'
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     print(result)
-    # cmd: str = 'move fablink_orig.py ../fablink_orig.py'
+    # cmd: str = 'copy fablink_orig.py ../fablink_orig.py'
     # result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     # print(result)
     # result = subprocess.run(shlex.split(cmd), shell=True, capture_output=True, text=True)
-    # result = subprocess.run(['python', 'makepy.py', '-o', 'fablink_orig.py', '-v', 'MGCPCB'], capture_output=True, text=True)
+    # result = subprocess.run(['python', 'makepy.py', '-o', 'fablink_orig.py', '-v', 'MGCPCB.FablinkXEApplication'], capture_output=True, text=True)
     
+def add_type_hints_to_methods():
+    # Read the content of the file
+    with open('./fablink_ifc.py', 'r') as file:
+        lines = file.readlines()
+
+    updated_lines = []
+    method_pattern = re.compile(r'^\s*def\s+(\w+)\(.*\):', re.IGNORECASE)
+    type_comment_pattern = re.compile(r'^\s*#\s*Result\s+is\s+of\s+type\s+(\w+)\s*')
+
+    current_type = None
+    for line in lines:
+        # Check for type comment
+        type_comment_match = type_comment_pattern.match(line)
+        if type_comment_match:
+            # Extract type from comment and preserve the comment line
+            current_type = type_comment_match.group(1)
+            updated_lines.append(line)  # Keep the type comment
+            continue
+
+        # Check for method definition
+        method_match = method_pattern.match(line)
+        if method_match and current_type:
+            # Add the type hint to the method
+            method_name = method_match.group(1)
+            line = re.sub(r'(\))\s*:', f') -> {current_type}:', line)
+            current_type = None  # Reset current type after applying
+ 
+        updated_lines.append(line)
+
+    # Write the modified lines back to the file
+    with open('./fablink_ifc.py', 'w') as file:
+        file.writelines(updated_lines)                                 
 def cleanup():
     cmd: str = 'del fablink_orig.py'
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
@@ -131,8 +163,9 @@ def cleanup():
 def run() -> None:
     generate_input()
     generate_output()
+    add_type_hints_to_methods()                                                            
     copy_result()
-    cleanup()
+    #cleanup()
 
 def main():
     run()
