@@ -13,6 +13,11 @@ Directory structure:
 The following illustrates the data flow of the toolbox
 ![Designer](xpedition_designer/images/flowchart.JPG)
 
+The following illustrates the data flow of the toolbox
+![Layout](xpedition_layout/images/flowchart.JPG)
+
+It works similarly with the other applications.
+
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).

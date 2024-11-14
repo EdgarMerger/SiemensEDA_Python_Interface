@@ -16,6 +16,9 @@ Directory structure:
 # COM interface Python Module (start from installation Directory of the desired Python installation, e.g. C:\app\Python311)
 python -m pip install pywin32
 ```
+The following illustrates the data flow of the toolbox
+![Layout](images/flowchart.JPG)
+
 ### 1. Generate COM interface classes
 ```
 # Generate the Python file containing COM interface classes (already creating .py file for 'ViewDraw' (=Xpedition Desinger))
