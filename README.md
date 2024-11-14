@@ -10,6 +10,9 @@ Directory structure:
 * xpedition_variantmanager - This library contains commonly used functions and tools with regard to Siemens Xpedition Variant Management Tool automation.
 * xpedition_constraintmanager - This library contains commonly used functions and tools with regard to Siemens Xpedition Constraints Management Tool automation. (not tested)
 
+The following illustrates the data flow of the toolbox
+![Designer](xpedition_designer/images/flowchart.jpg)
+
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
