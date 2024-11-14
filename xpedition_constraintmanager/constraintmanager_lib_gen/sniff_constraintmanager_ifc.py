@@ -101,10 +101,10 @@ def process_file(input_file: TextIO, output_file: TextIO) -> None:
 
 def generate_input() -> None:
     # first generate some input starting point
-    cmd: str = 'python makepy.py -o constraintmanager_orig.py -v ConstraintsAuto70'
+    cmd: str = 'python makepy.py -o constraintmanager_orig.py -v ConstraintsAuto.119'
     result = subprocess.run(shlex.split(cmd), shell=True, capture_output=True, text=True)
-    #result = subprocess.run('python makepy.py -o constraintmanager_orig.py -v ConstraintsAuto', shell=True, capture_output=True, text=True)
-    #result = subprocess.run(['python', 'makepy.py', '-o', 'constraintmanager_orig.py', '-v', 'ConstraintsAuto'], capture_output=True, text=True)
+    #result = subprocess.run('python makepy.py -o constraintmanager_orig.py -v ConstraintsAuto.119', shell=True, capture_output=True, text=True)
+    #result = subprocess.run(['python', 'makepy.py', '-o', 'constraintmanager_orig.py', '-v', 'ConstraintsAuto.119'], capture_output=True, text=True)
     print(result)
 
 def generate_output() -> None:

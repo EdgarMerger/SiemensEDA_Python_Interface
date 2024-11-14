@@ -14,7 +14,7 @@ The following illustrates the data flow of the toolbox
 ![Designer](xpedition_designer/images/flowchart.JPG)
 
 The following illustrates the data flow of the toolbox
-![Layout](xpedition_layout/images/flowchart.JPG)
+![Layout](xpedition_layout/images/flowchart.jpg)
 
 It works similarly with the other applications.
 

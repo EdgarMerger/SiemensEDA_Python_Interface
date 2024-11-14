@@ -35,10 +35,10 @@ def main():
     pcbDoc : IMGCPCBDocument = None
     gfx : IMGCPCBUserLayerGfx = None
     #gfx.Geometry
-
+    objGui : IMGCPCBGui = None
     objApplication = win32.Dispatch('MGCPCB.ExpeditionPCBApplication', 'IVdApp')
     pcbDoc = GetLicensedDoc(objApplication)
-
+    objApplication.Gui.
     #Start programming here:
     #This sample script prints the names of all User Layers
     for gfx in pcbDoc.UserLayerGfxs:

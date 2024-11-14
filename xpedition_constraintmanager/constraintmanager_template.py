@@ -25,9 +25,9 @@ def main():
     # Validate a license for Constraints Automation
     oSeed = objConstraintsAuto.Validate(0)
     objConstraintsAuto.Validate(oSeed)
-
+    objConstraintsAuto.Design.
     # Here custom code can be entered
-    objDesign = objConstraintsAuto.Design
+    objDesign = objConstraintsAuto.Settings
     objDesignParams = objDesign.CreateDesignParams()
     objDesignParams.ProjectFile = "C:\\Users\\Z0118870\\OneDrive - ZF Friedrichshafen AG\\Desktop\\mentor_project\\A0079K6529.prj"
     pass
