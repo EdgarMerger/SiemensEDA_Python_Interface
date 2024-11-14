@@ -180,7 +180,8 @@ def add_future_annotations():
             file.writelines(lines)
         print(f"Added future import line to {filename}.")
     else:
-        print(f"The future import line already exists in {filename}.")                            
+        print(f"The future import line already exists in {filename}.")    
+        
 def run() -> None:
     #generate_input() # uncomment this line to generate constraintsauto object
     generate_output()
