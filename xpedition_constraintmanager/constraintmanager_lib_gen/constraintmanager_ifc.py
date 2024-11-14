@@ -2,7 +2,7 @@
 # Created by makepy.py version 0.5.01
 # By python version 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)]
 # From type library 'ConstraintsAuto70.dll'
-# On Sun Nov  3 23:01:02 2024
+# On Thu Nov 14 10:14:44 2024
 'Constraints Automation Type Library.'
 makepy_version = '0.5.01'
 python_version = 0x3090af0
@@ -610,7 +610,7 @@ class IClass(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -620,7 +620,7 @@ class IClass(DispatchBaseClass):
 
 	# Result is of type INets
 	# The method GetNets is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNets(self, p_nNetMask=1):
+	def GetNets(self, p_nNetMask=1) -> INets:
 		'Returns the collection of nets assigned to the class, filtered by ENetMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610874881, LCID, 2, (9, 0), ((3, 49),),p_nNetMask
 			)
@@ -630,7 +630,7 @@ class IClass(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -702,7 +702,7 @@ class IClassClearance(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -712,7 +712,7 @@ class IClassClearance(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -786,7 +786,7 @@ class IClassClearances(DispatchBaseClass):
 
 	# Result is of type IClassClearance
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IClassClearance:
 		'Returns the class clearance of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -844,14 +844,14 @@ class IClassClearancesMutable(DispatchBaseClass):
 			ret = Dispatch(ret, 'Add', '{77040253-C4BE-4037-B759-739678531FE8}')
 		return ret
 
-	def Delete(self, p_vIndex=defaultNamedNotOptArg):
+	def Delete(self, p_vIndex=defaultNamedNotOptArg) -> IClassClearance:
 		'Deletes the class clearance of the given index or name and removes it from the collection.'
 		return self._oleobj_.InvokeTypes(1610874881, LCID, 1, (24, 0), ((12, 1),),p_vIndex
 			)
 
 	# Result is of type IClassClearance
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IClassClearance:
 		'Returns the class clearance of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -900,7 +900,7 @@ class IClearanceRule(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -910,7 +910,7 @@ class IClearanceRule(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -982,7 +982,7 @@ class IClearanceRules(DispatchBaseClass):
 
 	# Result is of type IClearanceRule
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IClearanceRule:
 		'Returns the clearance rule of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -1030,7 +1030,7 @@ class IClearanceRulesMutable(DispatchBaseClass):
 	coclass_clsid = IID('{15582A4E-85ED-45F4-BA66-696181360E83}')
 
 	# Result is of type IClearanceRule
-	def Add(self, p_strName=defaultNamedNotOptArg):
+	def Add(self, p_strName=defaultNamedNotOptArg) -> IClearanceRule:
 		'Creates the clearance rule of the given name and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1),),p_strName
 			)
@@ -1045,7 +1045,7 @@ class IClearanceRulesMutable(DispatchBaseClass):
 
 	# Result is of type IClearanceRule
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IClearanceRule:
 		'Returns the clearance rule of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -1152,7 +1152,7 @@ class IComments(DispatchBaseClass):
 	coclass_clsid = IID('{F7269414-6A1B-4F30-9FA0-619B80717D2A}')
 
 	# Result is of type IComment
-	def FindItem(self, p_eType=defaultNamedNotOptArg):
+	def FindItem(self, p_eType=defaultNamedNotOptArg) -> IComment:
 		'Finds the comment of the given constraint type.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 1, (9, 0), ((3, 1),),p_eType
 			)
@@ -1162,7 +1162,7 @@ class IComments(DispatchBaseClass):
 
 	# Result is of type IComment
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IComment:
 		'Returns the comment of the given index or constraint name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -1210,7 +1210,7 @@ class ICommentsMutable(DispatchBaseClass):
 	coclass_clsid = IID('{65183681-9F46-4373-B909-A345126B459B}')
 
 	# Result is of type IComment
-	def Add(self, p_strName=defaultNamedNotOptArg, p_strValue=defaultNamedNotOptArg):
+	def Add(self, p_strName=defaultNamedNotOptArg, p_strValue=defaultNamedNotOptArg) -> IComment:
 		'Creates the comment of the given constraint name and value, and adds it to the collection. Empty constraint name creates comment on object.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1), (8, 1)),p_strName
 			, p_strValue)
@@ -1219,7 +1219,7 @@ class ICommentsMutable(DispatchBaseClass):
 		return ret
 
 	# Result is of type IComment
-	def AddByType(self, p_eType=defaultNamedNotOptArg, p_strValue=defaultNamedNotOptArg):
+	def AddByType(self, p_eType=defaultNamedNotOptArg, p_strValue=defaultNamedNotOptArg) -> IComment:
 		'Creates the comment of the given constraint type and value, and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874881, LCID, 1, (9, 0), ((3, 1), (8, 1)),p_eType
 			, p_strValue)
@@ -1238,7 +1238,7 @@ class ICommentsMutable(DispatchBaseClass):
 			)
 
 	# Result is of type IComment
-	def FindItem(self, p_eType=defaultNamedNotOptArg):
+	def FindItem(self, p_eType=defaultNamedNotOptArg) -> IComment:
 		'Finds the comment of the given constraint type.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 1, (9, 0), ((3, 1),),p_eType
 			)
@@ -1248,7 +1248,7 @@ class ICommentsMutable(DispatchBaseClass):
 
 	# Result is of type IComment
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IComment:
 		'Returns the comment of the given index or constraint name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -1297,7 +1297,7 @@ class IComponent(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -1307,7 +1307,7 @@ class IComponent(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -1369,7 +1369,7 @@ class IComponents(DispatchBaseClass):
 
 	# Result is of type IComponent
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IComponent:
 		'Returns the component of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -1418,7 +1418,7 @@ class IComponentsMutable(DispatchBaseClass):
 
 	# Result is of type IComponent
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IComponent:
 		'Returns the component of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -1467,7 +1467,7 @@ class IConstant(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -1477,7 +1477,7 @@ class IConstant(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -1544,7 +1544,7 @@ class IConstants(DispatchBaseClass):
 
 	# Result is of type IConstant
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IConstant:
 		'Returns the constant of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -1592,7 +1592,7 @@ class IConstantsMutable(DispatchBaseClass):
 	coclass_clsid = IID('{2FC31295-E0FE-453B-AE2D-1BD5726CE291}')
 
 	# Result is of type IConstant
-	def Add(self, p_strName=defaultNamedNotOptArg, p_strValue=defaultNamedNotOptArg):
+	def Add(self, p_strName=defaultNamedNotOptArg, p_strValue=defaultNamedNotOptArg) -> IConstant:
 		'Creates the constant of the given name and value, and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1), (8, 1)),p_strName
 			, p_strValue)
@@ -1607,7 +1607,7 @@ class IConstantsMutable(DispatchBaseClass):
 
 	# Result is of type IConstant
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IConstant:
 		'Returns the constant of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -1710,7 +1710,7 @@ class IConstraintClass(DispatchBaseClass):
 
 	# Result is of type IConstraintClassesMutable
 	# The method GetConstraintClasses is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraintClasses(self, p_nConstraintClassMask=2):
+	def GetConstraintClasses(self, p_nConstraintClassMask=2) -> IConstraintClassesMutable:
 		'Returns the collection of child constraint classes, filtered by EObjectMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610940420, LCID, 2, (9, 0), ((3, 49),),p_nConstraintClassMask
 			)
@@ -1720,7 +1720,7 @@ class IConstraintClass(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -1730,7 +1730,7 @@ class IConstraintClass(DispatchBaseClass):
 
 	# Result is of type INets
 	# The method GetNets is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNets(self, p_nNetMask=1):
+	def GetNets(self, p_nNetMask=1) -> INets:
 		'Returns the collection of nets assigned to the class, filtered by ENetMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610874881, LCID, 2, (9, 0), ((3, 49),),p_nNetMask
 			)
@@ -1740,7 +1740,7 @@ class IConstraintClass(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -1832,7 +1832,7 @@ class IConstraintClasses(DispatchBaseClass):
 
 	# Result is of type IConstraintClass
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IConstraintClass:
 		'Returns the constraint class of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -1880,7 +1880,7 @@ class IConstraintClassesMutable(DispatchBaseClass):
 	coclass_clsid = IID('{06CEF5AA-5BDB-4B33-8BBA-7E6A0E108A1B}')
 
 	# Result is of type IConstraintClass
-	def Add(self, p_strName=defaultNamedNotOptArg):
+	def Add(self, p_strName=defaultNamedNotOptArg) -> IConstraintClass:
 		'Creates the constraint class of the given name and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1),),p_strName
 			)
@@ -1900,7 +1900,7 @@ class IConstraintClassesMutable(DispatchBaseClass):
 
 	# Result is of type IConstraintClass
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IConstraintClass:
 		'Returns the constraint class of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -1953,7 +1953,7 @@ class IConstraints(DispatchBaseClass):
 	coclass_clsid = IID('{25937434-EBF2-42A3-B4C8-2EC32F4DEE6E}')
 
 	# Result is of type IConstraint
-	def FindItem(self, p_eType=defaultNamedNotOptArg):
+	def FindItem(self, p_eType=defaultNamedNotOptArg) -> IConstraint:
 		'Finds the constraint of the given constraint type.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 1, (9, 0), ((3, 1),),p_eType
 			)
@@ -1963,7 +1963,7 @@ class IConstraints(DispatchBaseClass):
 
 	# Result is of type IConstraint
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IConstraint:
 		'Returns the constraint of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -2040,7 +2040,7 @@ class IConstraintsMutable(DispatchBaseClass):
 	coclass_clsid = IID('{211695E1-560F-41E3-8125-5C41B4A1131B}')
 
 	# Result is of type IConstraint
-	def Add(self, p_strName=defaultNamedNotOptArg, p_vValue=defaultNamedNotOptArg):
+	def Add(self, p_strName=defaultNamedNotOptArg, p_vValue=defaultNamedNotOptArg) -> IConstraint:
 		'Creates the constraint of the given name and value, and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1), (12, 1)),p_strName
 			, p_vValue)
@@ -2049,7 +2049,7 @@ class IConstraintsMutable(DispatchBaseClass):
 		return ret
 
 	# Result is of type IConstraint
-	def AddByType(self, p_eType=defaultNamedNotOptArg, p_vValue=defaultNamedNotOptArg):
+	def AddByType(self, p_eType=defaultNamedNotOptArg, p_vValue=defaultNamedNotOptArg) -> IConstraint:
 		'Creates the constraint of the given constraint type and value, and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874881, LCID, 1, (9, 0), ((3, 1), (12, 1)),p_eType
 			, p_vValue)
@@ -2068,7 +2068,7 @@ class IConstraintsMutable(DispatchBaseClass):
 			)
 
 	# Result is of type IConstraint
-	def FindItem(self, p_eType=defaultNamedNotOptArg):
+	def FindItem(self, p_eType=defaultNamedNotOptArg) -> IConstraint:
 		'Finds the constraint of the given constraint type.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 1, (9, 0), ((3, 1),),p_eType
 			)
@@ -2078,7 +2078,7 @@ class IConstraintsMutable(DispatchBaseClass):
 
 	# Result is of type IConstraint
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IConstraint:
 		'Returns the constraint of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -2155,7 +2155,7 @@ class IDesign(DispatchBaseClass):
 	coclass_clsid = IID('{BD801DC8-79E4-45DE-ADB7-45E7918DF499}')
 
 	# Result is of type IDesignParams
-	def CreateDesignParams(self):
+	def CreateDesignParams(self) -> IDesignParams:
 		'Creates and returns the design parameters object. This object is used for specifying design parameters like path or context.'
 		ret = self._oleobj_.InvokeTypes(1610743808, LCID, 1, (9, 0), (),)
 		if ret is not None:
@@ -2164,7 +2164,7 @@ class IDesign(DispatchBaseClass):
 
 	# Result is of type IConstraintClassesMutable
 	# The method GetConstraintClasses is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraintClasses(self, p_nConstraintClassMask=2):
+	def GetConstraintClasses(self, p_nConstraintClassMask=2) -> IConstraintClassesMutable:
 		'Returns the collection of constraint classes, filtered by EObjectMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610743815, LCID, 2, (9, 0), ((3, 49),),p_nConstraintClassMask
 			)
@@ -2174,7 +2174,7 @@ class IDesign(DispatchBaseClass):
 
 	# Result is of type IMatchGroupsMutable
 	# The method GetMatchGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMatchGroups(self, p_nMatchGroupMask=3):
+	def GetMatchGroups(self, p_nMatchGroupMask=3) -> IMatchGroupsMutable:
 		'Returns the collection of match groups, filtered by EMatchGroupMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610743818, LCID, 2, (9, 0), ((3, 49),),p_nMatchGroupMask
 			)
@@ -2184,7 +2184,7 @@ class IDesign(DispatchBaseClass):
 
 	# Result is of type INetClassesMutable
 	# The method GetNetClasses is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNetClasses(self, p_nNetClassMask=2):
+	def GetNetClasses(self, p_nNetClassMask=2) -> INetClassesMutable:
 		'Returns the collection of net classes, filtered by EObjectMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610743816, LCID, 2, (9, 0), ((3, 49),),p_nNetClassMask
 			)
@@ -2194,7 +2194,7 @@ class IDesign(DispatchBaseClass):
 
 	# Result is of type INetsMutable
 	# The method GetNets is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNets(self, p_nNetMask=1):
+	def GetNets(self, p_nNetMask=1) -> INetsMutable:
 		'Returns the collection of nets, filtered by ENetMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610743811, LCID, 2, (9, 0), ((3, 49),),p_nNetMask
 			)
@@ -2204,7 +2204,7 @@ class IDesign(DispatchBaseClass):
 
 	# Result is of type INoiseRulesMutable
 	# The method GetNoiseRules is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNoiseRules(self, p_nNoiseRuleMask=3):
+	def GetNoiseRules(self, p_nNoiseRuleMask=3) -> INoiseRulesMutable:
 		'Returns the collection of noise rules, filtered by ENoiseRuleMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610743820, LCID, 2, (9, 0), ((3, 49),),p_nNoiseRuleMask
 			)
@@ -2325,7 +2325,7 @@ class IDifferentialPair(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -2335,7 +2335,7 @@ class IDifferentialPair(DispatchBaseClass):
 
 	# Result is of type IMatchGroups
 	# The method GetMatchGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMatchGroups(self, p_nMatchGroupMask=3):
+	def GetMatchGroups(self, p_nMatchGroupMask=3) -> IMatchGroups:
 		'Returns all match groups related to the net.'
 		ret = self._oleobj_.InvokeTypes(1610874887, LCID, 2, (9, 0), ((3, 49),),p_nMatchGroupMask
 			)
@@ -2345,7 +2345,7 @@ class IDifferentialPair(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -2445,7 +2445,7 @@ class IDifferentialPairs(DispatchBaseClass):
 
 	# Result is of type IDifferentialPair
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IDifferentialPair:
 		'Returns the differential pair of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -2493,7 +2493,7 @@ class IDifferentialPairsMutable(DispatchBaseClass):
 	coclass_clsid = IID('{B42E232E-C7ED-444C-81BC-4E88A3540DF3}')
 
 	# Result is of type IDifferentialPair
-	def Add(self, p_pNet1=defaultNamedNotOptArg, p_pNet2=defaultNamedNotOptArg):
+	def Add(self, p_pNet1=defaultNamedNotOptArg, p_pNet2=defaultNamedNotOptArg) -> IDifferentialPair:
 		'Creates the differential pair of the two given nets and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((9, 1), (9, 1)),p_pNet1
 			, p_pNet2)
@@ -2508,7 +2508,7 @@ class IDifferentialPairsMutable(DispatchBaseClass):
 
 	# Result is of type IDifferentialPair
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IDifferentialPair:
 		'Returns the differential pair of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -2557,7 +2557,7 @@ class IDisplayPattern(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -2567,7 +2567,7 @@ class IDisplayPattern(DispatchBaseClass):
 
 	# Result is of type INetsMutable
 	# The method GetNets is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNets(self, p_nNetMask=1):
+	def GetNets(self, p_nNetMask=1) -> INetsMutable:
 		'Returns the collection of nets associated with the display pattern, filtered by ENetMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 2, (9, 0), ((3, 49),),p_nNetMask
 			)
@@ -2577,7 +2577,7 @@ class IDisplayPattern(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -2660,7 +2660,7 @@ class IDisplayPatterns(DispatchBaseClass):
 
 	# Result is of type IDisplayPattern
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IDisplayPattern:
 		'Returns the display pattern of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -2718,7 +2718,7 @@ class IDisplayPatternsMutable(DispatchBaseClass):
 			ret = Dispatch(ret, 'Add', '{E6F44CAC-B61D-4437-971F-60F01875D6BB}')
 		return ret
 
-	def Delete(self, p_vIndex=defaultNamedNotOptArg):
+	def Delete(self, p_vIndex=defaultNamedNotOptArg) -> IDisplayPattern:
 		'Deletes the display pattern of the given index or name and removes it from the collection.'
 		return self._oleobj_.InvokeTypes(1610874881, LCID, 1, (24, 0), ((12, 1),),p_vIndex
 			)
@@ -2735,7 +2735,7 @@ class IDisplayPatternsMutable(DispatchBaseClass):
 
 	# Result is of type IDisplayPattern
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IDisplayPattern:
 		'Returns the display pattern of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -2784,7 +2784,7 @@ class IElectricalNet(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -2794,7 +2794,7 @@ class IElectricalNet(DispatchBaseClass):
 
 	# Result is of type IMatchGroups
 	# The method GetMatchGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMatchGroups(self, p_nMatchGroupMask=3):
+	def GetMatchGroups(self, p_nMatchGroupMask=3) -> IMatchGroups:
 		'Returns all match groups related to the net.'
 		ret = self._oleobj_.InvokeTypes(1610874887, LCID, 2, (9, 0), ((3, 49),),p_nMatchGroupMask
 			)
@@ -2804,7 +2804,7 @@ class IElectricalNet(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -2893,7 +2893,7 @@ class IElectricalNets(DispatchBaseClass):
 
 	# Result is of type IElectricalNet
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IElectricalNet:
 		'Returns the electrical net of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -2942,7 +2942,7 @@ class IElectricalNetsMutable(DispatchBaseClass):
 
 	# Result is of type IElectricalNet
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IElectricalNet:
 		'Returns the electrical net of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -3018,7 +3018,7 @@ class IFormula(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -3028,7 +3028,7 @@ class IFormula(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -3094,7 +3094,7 @@ class IFormulas(DispatchBaseClass):
 
 	# Result is of type IFormula
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IFormula:
 		'Returns the formula of the given index.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -3143,7 +3143,7 @@ class IFormulasMutable(DispatchBaseClass):
 
 	# Result is of type IFormula
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IFormula:
 		'Returns the formula of the given index.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -3192,7 +3192,7 @@ class IFromTo(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -3202,7 +3202,7 @@ class IFromTo(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -3270,7 +3270,7 @@ class IFromTos(DispatchBaseClass):
 
 	# Result is of type IFromTo
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IFromTo:
 		'Returns the from-to of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -3318,7 +3318,7 @@ class IFromTosMutable(DispatchBaseClass):
 	coclass_clsid = IID('{3925DBCB-CE2E-4FA2-8BD8-D60CC27BF192}')
 
 	# Result is of type IFromTo
-	def Add(self, p_pPin1=defaultNamedNotOptArg, p_pPin2=defaultNamedNotOptArg):
+	def Add(self, p_pPin1=defaultNamedNotOptArg, p_pPin2=defaultNamedNotOptArg) -> IFromTo:
 		'Creates the from-to and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((9, 1), (9, 1)),p_pPin1
 			, p_pPin2)
@@ -3333,7 +3333,7 @@ class IFromTosMutable(DispatchBaseClass):
 
 	# Result is of type IFromTo
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IFromTo:
 		'Returns the from-to of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -3382,7 +3382,7 @@ class IGeneralClearance(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -3392,7 +3392,7 @@ class IGeneralClearance(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -3454,7 +3454,7 @@ class IGeneralClearances(DispatchBaseClass):
 	coclass_clsid = IID('{E82C72F8-E994-46BB-8E9A-1A2815C34A4F}')
 
 	# Result is of type IGeneralClearance
-	def FindItem(self, p_eType=defaultNamedNotOptArg):
+	def FindItem(self, p_eType=defaultNamedNotOptArg) -> IGeneralClearance:
 		'Finds the general clearance of the given type.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 1, (9, 0), ((3, 1),),p_eType
 			)
@@ -3464,7 +3464,7 @@ class IGeneralClearances(DispatchBaseClass):
 
 	# Result is of type IGeneralClearance
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IGeneralClearance:
 		'Returns the general clearance of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -3512,7 +3512,7 @@ class IGeneralClearancesMutable(DispatchBaseClass):
 	coclass_clsid = IID('{7B50268E-5CD1-480D-B35F-E20A8430DD24}')
 
 	# Result is of type IGeneralClearance
-	def Add(self, p_strName=defaultNamedNotOptArg):
+	def Add(self, p_strName=defaultNamedNotOptArg) -> IGeneralClearance:
 		'Creates the general clearance of the given name and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1),),p_strName
 			)
@@ -3521,7 +3521,7 @@ class IGeneralClearancesMutable(DispatchBaseClass):
 		return ret
 
 	# Result is of type IGeneralClearance
-	def AddByType(self, p_eType=defaultNamedNotOptArg):
+	def AddByType(self, p_eType=defaultNamedNotOptArg) -> IGeneralClearance:
 		'Creates the general clearance of the given type and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874881, LCID, 1, (9, 0), ((3, 1),),p_eType
 			)
@@ -3540,7 +3540,7 @@ class IGeneralClearancesMutable(DispatchBaseClass):
 			)
 
 	# Result is of type IGeneralClearance
-	def FindItem(self, p_eType=defaultNamedNotOptArg):
+	def FindItem(self, p_eType=defaultNamedNotOptArg) -> IGeneralClearance:
 		'Finds the general clearance of the given type.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 1, (9, 0), ((3, 1),),p_eType
 			)
@@ -3550,7 +3550,7 @@ class IGeneralClearancesMutable(DispatchBaseClass):
 
 	# Result is of type IGeneralClearance
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IGeneralClearance:
 		'Returns the general clearance of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -3599,7 +3599,7 @@ class ILayer(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -3609,7 +3609,7 @@ class ILayer(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -3676,7 +3676,7 @@ class ILayers(DispatchBaseClass):
 
 	# Result is of type ILayer
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> ILayer:
 		'Returns the layer of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -3727,7 +3727,7 @@ class ILayersMutable(DispatchBaseClass):
 
 	# Result is of type ILayer
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> ILayer:
 		'Returns the layer of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -3778,7 +3778,7 @@ class IMatchGroup(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -3788,7 +3788,7 @@ class IMatchGroup(DispatchBaseClass):
 
 	# Result is of type INetsMutable
 	# The method GetNets is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNets(self, p_nNetMask=15):
+	def GetNets(self, p_nNetMask=15) -> INetsMutable:
 		'Returns the collection of nets assigned to the match group, filtered by ENetMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610874883, LCID, 2, (9, 0), ((3, 49),),p_nNetMask
 			)
@@ -3798,7 +3798,7 @@ class IMatchGroup(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -3872,7 +3872,7 @@ class IMatchGroups(DispatchBaseClass):
 	coclass_clsid = IID('{95AF9055-4360-4AD1-837E-8A4AEF81AF34}')
 
 	# Result is of type IMatchGroup
-	def FindItem(self, p_eType=defaultNamedNotOptArg, p_strName=defaultNamedNotOptArg):
+	def FindItem(self, p_eType=defaultNamedNotOptArg, p_strName=defaultNamedNotOptArg) -> IMatchGroup:
 		'Finds the match group of the given type and name.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 1, (9, 0), ((3, 1), (8, 1)),p_eType
 			, p_strName)
@@ -3882,7 +3882,7 @@ class IMatchGroups(DispatchBaseClass):
 
 	# Result is of type IMatchGroup
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IMatchGroup:
 		'Returns the match group of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -3930,7 +3930,7 @@ class IMatchGroupsMutable(DispatchBaseClass):
 	coclass_clsid = IID('{E4717647-28C9-420B-8624-6A0298314D93}')
 
 	# Result is of type IMatchGroup
-	def Add(self, p_eType=defaultNamedNotOptArg, p_strName=defaultNamedNotOptArg, p_vTolerance=defaultNamedOptArg):
+	def Add(self, p_eType=defaultNamedNotOptArg, p_strName=defaultNamedNotOptArg, p_vTolerance=defaultNamedOptArg) -> IMatchGroup:
 		'Creates the match group of the given type and name and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((3, 1), (8, 1), (12, 17)),p_eType
 			, p_strName, p_vTolerance)
@@ -3949,7 +3949,7 @@ class IMatchGroupsMutable(DispatchBaseClass):
 			, p_strName)
 
 	# Result is of type IMatchGroup
-	def FindItem(self, p_eType=defaultNamedNotOptArg, p_strName=defaultNamedNotOptArg):
+	def FindItem(self, p_eType=defaultNamedNotOptArg, p_strName=defaultNamedNotOptArg) -> IMatchGroup:
 		'Finds the match group of the given type and name.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 1, (9, 0), ((3, 1), (8, 1)),p_eType
 			, p_strName)
@@ -3959,7 +3959,7 @@ class IMatchGroupsMutable(DispatchBaseClass):
 
 	# Result is of type IMatchGroup
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IMatchGroup:
 		'Returns the match group of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -4008,7 +4008,7 @@ class INet(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -4018,7 +4018,7 @@ class INet(DispatchBaseClass):
 
 	# Result is of type IMatchGroups
 	# The method GetMatchGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMatchGroups(self, p_nMatchGroupMask=3):
+	def GetMatchGroups(self, p_nMatchGroupMask=3) -> IMatchGroups:
 		'Returns all match groups related to the net.'
 		ret = self._oleobj_.InvokeTypes(1610874887, LCID, 2, (9, 0), ((3, 49),),p_nMatchGroupMask
 			)
@@ -4028,7 +4028,7 @@ class INet(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -4124,7 +4124,7 @@ class INetClass(DispatchBaseClass):
 
 	# Result is of type IClassClearances
 	# The method GetClassClearances is actually a property, but must be used as a method to correctly pass the arguments
-	def GetClassClearances(self, p_nClassClearancesMask=3):
+	def GetClassClearances(self, p_nClassClearancesMask=3) -> IClassClearances:
 		'Returns the collection of all class clearances associated with the net class, filtered by EClassClearancesMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610940420, LCID, 2, (9, 0), ((3, 49),),p_nClassClearancesMask
 			)
@@ -4134,7 +4134,7 @@ class INetClass(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -4144,7 +4144,7 @@ class INetClass(DispatchBaseClass):
 
 	# Result is of type INetClassesMutable
 	# The method GetNetClasses is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNetClasses(self, p_nNetClassMask=2):
+	def GetNetClasses(self, p_nNetClassMask=2) -> INetClassesMutable:
 		'Returns the collection of child net classes, filtered by EObjectMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610940416, LCID, 2, (9, 0), ((3, 49),),p_nNetClassMask
 			)
@@ -4154,7 +4154,7 @@ class INetClass(DispatchBaseClass):
 
 	# Result is of type INets
 	# The method GetNets is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNets(self, p_nNetMask=1):
+	def GetNets(self, p_nNetMask=1) -> INets:
 		'Returns the collection of nets assigned to the class, filtered by ENetMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610874881, LCID, 2, (9, 0), ((3, 49),),p_nNetMask
 			)
@@ -4164,7 +4164,7 @@ class INetClass(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -4250,7 +4250,7 @@ class INetClasses(DispatchBaseClass):
 
 	# Result is of type INetClass
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> INetClass:
 		'Returns the net class of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -4298,7 +4298,7 @@ class INetClassesMutable(DispatchBaseClass):
 	coclass_clsid = IID('{38ABD376-70EE-45BF-B017-90DC59A9EB2F}')
 
 	# Result is of type INetClass
-	def Add(self, p_strName=defaultNamedNotOptArg):
+	def Add(self, p_strName=defaultNamedNotOptArg) -> INetClass:
 		'Creates the net class of the given name and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1),),p_strName
 			)
@@ -4318,7 +4318,7 @@ class INetClassesMutable(DispatchBaseClass):
 
 	# Result is of type INetClass
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> INetClass:
 		'Returns the net class of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -4372,7 +4372,7 @@ class INets(DispatchBaseClass):
 
 	# Result is of type INet
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> INet:
 		'Returns the net of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -4426,7 +4426,7 @@ class INetsMutable(DispatchBaseClass):
 
 	# Result is of type INet
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> INet:
 		'Returns the net of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -4480,7 +4480,7 @@ class INoiseRule(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -4490,7 +4490,7 @@ class INoiseRule(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -4566,7 +4566,7 @@ class INoiseRules(DispatchBaseClass):
 
 	# Result is of type INoiseRule
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> INoiseRule:
 		'Returns the noise rule of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -4614,7 +4614,7 @@ class INoiseRulesMutable(DispatchBaseClass):
 	coclass_clsid = IID('{1C7ACB33-918C-4071-BB73-471C94FDFA75}')
 
 	# Result is of type INoiseRule
-	def Add(self, p_eNoiseRuleType=defaultNamedNotOptArg, p_strName=defaultNamedNotOptArg, p_vVictim=defaultNamedNotOptArg, p_vAggressor=defaultNamedNotOptArg):
+	def Add(self, p_eNoiseRuleType=defaultNamedNotOptArg, p_strName=defaultNamedNotOptArg, p_vVictim=defaultNamedNotOptArg, p_vAggressor=defaultNamedNotOptArg) -> INoiseRule:
 		'Creates the noise rule and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((3, 1), (8, 1), (12, 1), (12, 1)),p_eNoiseRuleType
 			, p_strName, p_vVictim, p_vAggressor)
@@ -4629,7 +4629,7 @@ class INoiseRulesMutable(DispatchBaseClass):
 
 	# Result is of type INoiseRule
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> INoiseRule:
 		'Returns the noise rule of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -4717,7 +4717,7 @@ class IObject(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -4727,7 +4727,7 @@ class IObject(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -4785,7 +4785,7 @@ class IObjects(DispatchBaseClass):
 	coclass_clsid = IID('{26F1B6BC-D3D7-4A17-9387-53063A8F3E19}')
 
 	# Result is of type IObject
-	def FindItem(self, p_eType=defaultNamedNotOptArg, p_strName=defaultNamedNotOptArg):
+	def FindItem(self, p_eType=defaultNamedNotOptArg, p_strName=defaultNamedNotOptArg) -> IObject:
 		'Finds the object of the given object type and name.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 1, (9, 0), ((3, 1), (8, 1)),p_eType
 			, p_strName)
@@ -4795,7 +4795,7 @@ class IObjects(DispatchBaseClass):
 
 	# Result is of type IObject
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_nIndex=defaultNamedNotOptArg):
+	def Item(self, p_nIndex=defaultNamedNotOptArg) -> IObject:
 		'Returns the object of the given index.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((3, 1),),p_nIndex
 			)
@@ -4844,7 +4844,7 @@ class IPackageClearance(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -4854,7 +4854,7 @@ class IPackageClearance(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -4921,7 +4921,7 @@ class IPackageClearances(DispatchBaseClass):
 
 	# Result is of type IPackageClearance
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPackageClearance:
 		'Returns the package clearance of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -4976,14 +4976,14 @@ class IPackageClearancesMutable(DispatchBaseClass):
 			, p_strName, p_pSourcePackage, p_pTargetPackage, p_vSide, p_vDirection
 			)
 
-	def Delete(self, p_vIndex=defaultNamedNotOptArg):
+	def Delete(self, p_vIndex=defaultNamedNotOptArg) -> IPackageClearance:
 		'Deletes the package clearance of the given index or name and removes it from the collection.'
 		return self._oleobj_.InvokeTypes(1610874881, LCID, 1, (24, 0), ((12, 1),),p_vIndex
 			)
 
 	# Result is of type IPackageClearance
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPackageClearance:
 		'Returns the package clearance of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -5032,7 +5032,7 @@ class IPackageType(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -5042,7 +5042,7 @@ class IPackageType(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -5052,7 +5052,7 @@ class IPackageType(DispatchBaseClass):
 
 	# Result is of type IPackageClearances
 	# The method GetPackageClearances is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPackageClearances(self, p_nClearanceMask=3):
+	def GetPackageClearances(self, p_nClearanceMask=3) -> IPackageClearances:
 		'Returns the collection of all package clearances which the package type is assigned to, filtered by EClearanceMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 2, (9, 0), ((3, 49),),p_nClearanceMask
 			)
@@ -5114,7 +5114,7 @@ class IPackageTypes(DispatchBaseClass):
 
 	# Result is of type IPackageType
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPackageType:
 		'Returns the package type of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -5162,7 +5162,7 @@ class IPackageTypesMutable(DispatchBaseClass):
 	coclass_clsid = IID('{5515A13F-6AFA-45BA-BA6F-C291928DE332}')
 
 	# Result is of type IPackageType
-	def Add(self, p_strName=defaultNamedNotOptArg):
+	def Add(self, p_strName=defaultNamedNotOptArg) -> IPackageType:
 		'Creates the package type of the given name and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1),),p_strName
 			)
@@ -5177,7 +5177,7 @@ class IPackageTypesMutable(DispatchBaseClass):
 
 	# Result is of type IPackageType
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPackageType:
 		'Returns the package type of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -5226,7 +5226,7 @@ class IParallelismRule(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -5236,7 +5236,7 @@ class IParallelismRule(DispatchBaseClass):
 
 	# Result is of type INoiseRules
 	# The method GetNoiseRules is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNoiseRules(self, p_nNoiseRuleMask=3):
+	def GetNoiseRules(self, p_nNoiseRuleMask=3) -> INoiseRules:
 		'Returns the collection of noise rules, filtered by ENoiseRuleMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610874881, LCID, 2, (9, 0), ((3, 49),),p_nNoiseRuleMask
 			)
@@ -5246,7 +5246,7 @@ class IParallelismRule(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -5256,7 +5256,7 @@ class IParallelismRule(DispatchBaseClass):
 
 	# Result is of type IParallelismRuleSegmentsMutable
 	# The method GetSegments is actually a property, but must be used as a method to correctly pass the arguments
-	def GetSegments(self, p_nParallelismRuleSegmentMask=3):
+	def GetSegments(self, p_nParallelismRuleSegmentMask=3) -> IParallelismRuleSegmentsMutable:
 		'Returns the collection of parallelism rule segments, filtered by EParallelismRuleSegmentMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610874882, LCID, 2, (9, 0), ((3, 49),),p_nParallelismRuleSegmentMask
 			)
@@ -5326,7 +5326,7 @@ class IParallelismRuleSegment(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -5336,7 +5336,7 @@ class IParallelismRuleSegment(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -5397,7 +5397,7 @@ class IParallelismRuleSegments(DispatchBaseClass):
 
 	# Result is of type IParallelismRuleSegment
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IParallelismRuleSegment:
 		'Returns the parallelism rule segment of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -5445,7 +5445,7 @@ class IParallelismRuleSegmentsMutable(DispatchBaseClass):
 	coclass_clsid = IID('{6E18E1F9-1BCF-4EB3-B700-6A4D68349F92}')
 
 	# Result is of type IParallelismRuleSegment
-	def Add(self, p_eParallelismRuleSegmentType=defaultNamedNotOptArg, p_vEdge=defaultNamedNotOptArg, p_vMaxParallelLength=defaultNamedNotOptArg):
+	def Add(self, p_eParallelismRuleSegmentType=defaultNamedNotOptArg, p_vEdge=defaultNamedNotOptArg, p_vMaxParallelLength=defaultNamedNotOptArg) -> IParallelismRuleSegment:
 		'Creates the parallelism rule segment and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((3, 1), (12, 1), (12, 1)),p_eParallelismRuleSegmentType
 			, p_vEdge, p_vMaxParallelLength)
@@ -5460,7 +5460,7 @@ class IParallelismRuleSegmentsMutable(DispatchBaseClass):
 
 	# Result is of type IParallelismRuleSegment
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IParallelismRuleSegment:
 		'Returns the parallelism rule segment of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -5509,7 +5509,7 @@ class IParallelismRules(DispatchBaseClass):
 
 	# Result is of type IParallelismRule
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IParallelismRule:
 		'Returns the parallelism rule of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -5557,7 +5557,7 @@ class IParallelismRulesMutable(DispatchBaseClass):
 	coclass_clsid = IID('{DD6F53A1-D9F2-4E92-AD84-81C15D262F16}')
 
 	# Result is of type IParallelismRule
-	def Add(self, p_pName=defaultNamedNotOptArg):
+	def Add(self, p_pName=defaultNamedNotOptArg) -> IParallelismRule:
 		'Creates the parallelism rule and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1),),p_pName
 			)
@@ -5572,7 +5572,7 @@ class IParallelismRulesMutable(DispatchBaseClass):
 
 	# Result is of type IParallelismRule
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IParallelismRule:
 		'Returns the parallelism rule of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -5621,7 +5621,7 @@ class IPart(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -5631,7 +5631,7 @@ class IPart(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -5699,7 +5699,7 @@ class IPartPin(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -5709,7 +5709,7 @@ class IPartPin(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -5774,7 +5774,7 @@ class IPartPinPair(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -5784,7 +5784,7 @@ class IPartPinPair(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -5852,7 +5852,7 @@ class IPartPinPairs(DispatchBaseClass):
 
 	# Result is of type IPartPinPair
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPartPinPair:
 		'Returns the part pin pair of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -5900,7 +5900,7 @@ class IPartPinPairsMutable(DispatchBaseClass):
 	coclass_clsid = IID('{F86FDE27-D779-458D-A51D-56FC1186F818}')
 
 	# Result is of type IPartPinPair
-	def Add(self, p_pPartPin1=defaultNamedNotOptArg, p_pPartPin2=defaultNamedNotOptArg):
+	def Add(self, p_pPartPin1=defaultNamedNotOptArg, p_pPartPin2=defaultNamedNotOptArg) -> IPartPinPair:
 		'Creates the part pin pair and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((9, 1), (9, 1)),p_pPartPin1
 			, p_pPartPin2)
@@ -5915,7 +5915,7 @@ class IPartPinPairsMutable(DispatchBaseClass):
 
 	# Result is of type IPartPinPair
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPartPinPair:
 		'Returns the part pin pair of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -5964,7 +5964,7 @@ class IPartPins(DispatchBaseClass):
 
 	# Result is of type IPartPin
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPartPin:
 		'Returns the part pin of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6013,7 +6013,7 @@ class IPartPinsMutable(DispatchBaseClass):
 
 	# Result is of type IPartPin
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPartPin:
 		'Returns the part pin of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6062,7 +6062,7 @@ class IParts(DispatchBaseClass):
 
 	# Result is of type IPart
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPart:
 		'Returns the part of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6111,7 +6111,7 @@ class IPartsMutable(DispatchBaseClass):
 
 	# Result is of type IPart
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPart:
 		'Returns the part of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6160,7 +6160,7 @@ class IPhysicalRules(DispatchBaseClass):
 
 	# Result is of type IClassClearancesMutable
 	# The method GetClassClearances is actually a property, but must be used as a method to correctly pass the arguments
-	def GetClassClearances(self, p_nClassClearancesMask=3):
+	def GetClassClearances(self, p_nClassClearancesMask=3) -> IClassClearancesMutable:
 		'Returns the collection of all class clearances, filtered by EClassClearancesMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610743810, LCID, 2, (9, 0), ((3, 49),),p_nClassClearancesMask
 			)
@@ -6170,7 +6170,7 @@ class IPhysicalRules(DispatchBaseClass):
 
 	# Result is of type IGeneralClearancesMutable
 	# The method GetGeneralClearances is actually a property, but must be used as a method to correctly pass the arguments
-	def GetGeneralClearances(self, p_nClearanceMask=3):
+	def GetGeneralClearances(self, p_nClearanceMask=3) -> IGeneralClearancesMutable:
 		'Returns the collection of all general clearances, filtered by EClearanceMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610743811, LCID, 2, (9, 0), ((3, 49),),p_nClearanceMask
 			)
@@ -6180,7 +6180,7 @@ class IPhysicalRules(DispatchBaseClass):
 
 	# Result is of type IPackageClearancesMutable
 	# The method GetPackageClearances is actually a property, but must be used as a method to correctly pass the arguments
-	def GetPackageClearances(self, p_nClearancesMask=3):
+	def GetPackageClearances(self, p_nClearancesMask=3) -> IPackageClearancesMutable:
 		'Returns the collection of all package clearances, filtered by EClearanceMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610743812, LCID, 2, (9, 0), ((3, 49),),p_nClearancesMask
 			)
@@ -6223,7 +6223,7 @@ class IPin(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -6233,7 +6233,7 @@ class IPin(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -6309,7 +6309,7 @@ class IPinPair(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -6319,7 +6319,7 @@ class IPinPair(DispatchBaseClass):
 
 	# Result is of type IMatchGroups
 	# The method GetMatchGroups is actually a property, but must be used as a method to correctly pass the arguments
-	def GetMatchGroups(self, p_nMatchGroupMask=3):
+	def GetMatchGroups(self, p_nMatchGroupMask=3) -> IMatchGroups:
 		'Returns all match groups related to the pin pair.'
 		ret = self._oleobj_.InvokeTypes(1610874885, LCID, 2, (9, 0), ((3, 49),),p_nMatchGroupMask
 			)
@@ -6329,7 +6329,7 @@ class IPinPair(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -6406,7 +6406,7 @@ class IPinPairs(DispatchBaseClass):
 
 	# Result is of type IPinPair
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPinPair:
 		'Returns the pin pair of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6454,7 +6454,7 @@ class IPinPairsMutable(DispatchBaseClass):
 	coclass_clsid = IID('{31380624-17C9-4E40-8A0D-826E88AC4589}')
 
 	# Result is of type IPinPair
-	def Add(self, p_pPin1=defaultNamedNotOptArg, p_pPin2=defaultNamedNotOptArg):
+	def Add(self, p_pPin1=defaultNamedNotOptArg, p_pPin2=defaultNamedNotOptArg) -> IPinPair:
 		'Creates the pin pair and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((9, 1), (9, 1)),p_pPin1
 			, p_pPin2)
@@ -6474,7 +6474,7 @@ class IPinPairsMutable(DispatchBaseClass):
 
 	# Result is of type IPinPair
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPinPair:
 		'Returns the pin pair of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6528,7 +6528,7 @@ class IPinSet(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -6538,7 +6538,7 @@ class IPinSet(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -6608,7 +6608,7 @@ class IPinSets(DispatchBaseClass):
 
 	# Result is of type IPinSet
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPinSet:
 		'Returns the pin set of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6656,7 +6656,7 @@ class IPinSetsMutable(DispatchBaseClass):
 	coclass_clsid = IID('{EDCACA3C-AF91-401F-970F-CF31FC29E3AE}')
 
 	# Result is of type IPinSet
-	def Add(self, p_ePinSetType=defaultNamedNotOptArg, p_pPinsArray=defaultNamedNotOptArg):
+	def Add(self, p_ePinSetType=defaultNamedNotOptArg, p_pPinsArray=defaultNamedNotOptArg) -> IPinSet:
 		'Creates the pin set and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((3, 1), (16396, 1)),p_ePinSetType
 			, p_pPinsArray)
@@ -6671,7 +6671,7 @@ class IPinSetsMutable(DispatchBaseClass):
 
 	# Result is of type IPinSet
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPinSet:
 		'Returns the pin set of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6720,7 +6720,7 @@ class IPins(DispatchBaseClass):
 
 	# Result is of type IPin
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPin:
 		'Returns the pin of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6774,7 +6774,7 @@ class IPinsMutable(DispatchBaseClass):
 
 	# Result is of type IPin
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IPin:
 		'Returns the pin of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6828,7 +6828,7 @@ class IPowerNets(DispatchBaseClass):
 
 	# Result is of type INet
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> INet:
 		'Returns the power net of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6877,7 +6877,7 @@ class IPowerNetsMutable(DispatchBaseClass):
 
 	# Result is of type INet
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> INet:
 		'Returns the power net of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -6926,7 +6926,7 @@ class IRuleLayer(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -6936,7 +6936,7 @@ class IRuleLayer(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -6995,7 +6995,7 @@ class IRuleLayers(DispatchBaseClass):
 
 	# Result is of type IRuleLayer
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IRuleLayer:
 		'Returns the rule layer of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -7044,7 +7044,7 @@ class IScheme(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -7054,7 +7054,7 @@ class IScheme(DispatchBaseClass):
 
 	# Result is of type ISchemeNetClasses
 	# The method GetNetClasses is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNetClasses(self, p_nNetClassMask=2):
+	def GetNetClasses(self, p_nNetClassMask=2) -> ISchemeNetClasses:
 		'Returns the collection of all net classes.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 2, (9, 0), ((3, 49),),p_nNetClassMask
 			)
@@ -7064,7 +7064,7 @@ class IScheme(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -7137,7 +7137,7 @@ class ISchemeClearanceRule(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -7147,7 +7147,7 @@ class ISchemeClearanceRule(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -7209,7 +7209,7 @@ class ISchemeClearanceRules(DispatchBaseClass):
 
 	# Result is of type ISchemeClearanceRule
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> ISchemeClearanceRule:
 		'Returns the scheme clearance rule of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -7258,7 +7258,7 @@ class ISchemeNetClass(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -7268,7 +7268,7 @@ class ISchemeNetClass(DispatchBaseClass):
 
 	# Result is of type ISchemeNetClasses
 	# The method GetNetClasses is actually a property, but must be used as a method to correctly pass the arguments
-	def GetNetClasses(self, p_nNetClassMask=2):
+	def GetNetClasses(self, p_nNetClassMask=2) -> ISchemeNetClasses:
 		'Returns the collection of child net classes, filtered by EObjectMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610874881, LCID, 2, (9, 0), ((3, 49),),p_nNetClassMask
 			)
@@ -7278,7 +7278,7 @@ class ISchemeNetClass(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -7345,7 +7345,7 @@ class ISchemeNetClasses(DispatchBaseClass):
 
 	# Result is of type ISchemeNetClass
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> ISchemeNetClass:
 		'Returns the scheme net class of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -7394,7 +7394,7 @@ class ISchemes(DispatchBaseClass):
 
 	# Result is of type IScheme
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IScheme:
 		'Returns the scheme of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -7442,7 +7442,7 @@ class ISchemesMutable(DispatchBaseClass):
 	coclass_clsid = IID('{1855D335-FBB0-475E-B448-9F6C0D035807}')
 
 	# Result is of type IScheme
-	def Add(self, p_strName=defaultNamedNotOptArg):
+	def Add(self, p_strName=defaultNamedNotOptArg) -> IScheme:
 		'Creates the scheme of the given name and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1),),p_strName
 			)
@@ -7457,7 +7457,7 @@ class ISchemesMutable(DispatchBaseClass):
 
 	# Result is of type IScheme
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IScheme:
 		'Returns the scheme of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -7530,7 +7530,7 @@ class IStackup(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -7540,7 +7540,7 @@ class IStackup(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -7611,7 +7611,7 @@ class ITopology(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -7621,7 +7621,7 @@ class ITopology(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -7754,7 +7754,7 @@ class IVariable(DispatchBaseClass):
 
 	# Result is of type IConstraintsMutable
 	# The method GetConstraints is actually a property, but must be used as a method to correctly pass the arguments
-	def GetConstraints(self, p_nConstraintMask=7):
+	def GetConstraints(self, p_nConstraintMask=7) -> IConstraintsMutable:
 		'Returns the collection of constraints, filtered by EConstraintMask constant.'
 		ret = self._oleobj_.InvokeTypes(1610809345, LCID, 2, (9, 0), ((3, 49),),p_nConstraintMask
 			)
@@ -7764,7 +7764,7 @@ class IVariable(DispatchBaseClass):
 
 	# Result is of type IObjects
 	# The method GetObjects is actually a property, but must be used as a method to correctly pass the arguments
-	def GetObjects(self, p_eObjectType=0):
+	def GetObjects(self, p_eObjectType=0) -> IObjects:
 		'Returns the collection of child objects, filtered by EObjectType constant.'
 		ret = self._oleobj_.InvokeTypes(1610809347, LCID, 2, (9, 0), ((3, 49),),p_eObjectType
 			)
@@ -7828,7 +7828,7 @@ class IVariables(DispatchBaseClass):
 
 	# Result is of type IVariable
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IVariable:
 		'Returns the variable of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)
@@ -7876,7 +7876,7 @@ class IVariablesMutable(DispatchBaseClass):
 	coclass_clsid = IID('{43B955FB-3E8A-4B7F-92FC-821418613BF8}')
 
 	# Result is of type IVariable
-	def Add(self, p_strName=defaultNamedNotOptArg):
+	def Add(self, p_strName=defaultNamedNotOptArg) -> IVariable:
 		'Creates the variable of the given name and adds it to the collection.'
 		ret = self._oleobj_.InvokeTypes(1610874880, LCID, 1, (9, 0), ((8, 1),),p_strName
 			)
@@ -7891,7 +7891,7 @@ class IVariablesMutable(DispatchBaseClass):
 
 	# Result is of type IVariable
 	# The method Item is actually a property, but must be used as a method to correctly pass the arguments
-	def Item(self, p_vIndex=defaultNamedNotOptArg):
+	def Item(self, p_vIndex=defaultNamedNotOptArg) -> IVariable:
 		'Returns the variable of the given index or name.'
 		ret = self._oleobj_.InvokeTypes(0, LCID, 2, (9, 0), ((12, 1),),p_vIndex
 			)

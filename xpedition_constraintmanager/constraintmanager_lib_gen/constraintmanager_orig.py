@@ -2,7 +2,7 @@
 # Created by makepy.py version 0.5.01
 # By python version 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)]
 # From type library 'ConstraintsAuto70.dll'
-# On Sun Nov  3 23:01:02 2024
+# On Thu Nov 14 10:14:44 2024
 'Constraints Automation Type Library.'
 makepy_version = '0.5.01'
 python_version = 0x3090af0
