@@ -1,7 +1,7 @@
 # -*- coding: mbcs -*-
 # Created by makepy.py version 0.5.01
 # By python version 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)]
-# On Wed Nov 13 16:06:07 2024
+# On Thu Nov 14 09:43:47 2024
 'MGCPCB (AutoActive series) Type Library'
 makepy_version = '0.5.01'
 python_version = 0x3090af0
