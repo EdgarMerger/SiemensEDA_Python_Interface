@@ -16,6 +16,9 @@ The following illustrates the data flow of the toolbox
 The following illustrates the data flow of the toolbox
 ![Layout](xpedition_layout/images/flowchart.jpg)
 
+The following illustrates the data flow of the toolbox
+![Fablink](xpedition_fablink/images/flowchart.jpg)
+
 It works similarly with the other applications.
 
 ## License
