@@ -28,12 +28,6 @@ This is the tool to be used for Designer (when makepy.py from within mp.py is pa
 
 ![Designer](images/COM-Library-Xpedition-Designer.jpg)
 
-
-This is the tool to be used for Layout
-
-![Layout](images/COM-Library-Xpedition-Layout.jpg)
-
-
 Similarly it works for Fablink, Constraint Management, etc.
 
 File containing library COM ifc classes will be generated:
