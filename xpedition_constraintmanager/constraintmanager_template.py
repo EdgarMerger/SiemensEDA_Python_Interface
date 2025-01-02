@@ -15,17 +15,26 @@ def init():
     # print(result)
 
 def main():
+    # 1. Dispatch the Release Environment Server
+    env_server = win32.Dispatch("MGCPCBReleaseEnvironmentLib.MGCPCBReleaseEnvServer")
     
+    # 2. Set the desired environment (point to your SDD_HOME folder)
+    env_server.SetEnvironment(r"C:\MentorGraphics\EEVX.2.12\SDD_HOME")
+
     # this is a simple IntelliSense usage example
     # the following annotation establishes the classes and definitions from constraintmanager_ifc.py to the IDE (VScode, Pycharm, etc.) and thus enables autocompletion  
     objConstraintsAuto : IConstraintsAuto = None
 
+    # 3. Now create your ConstraintsAuto application
     objConstraintsAuto = win32.Dispatch('ConstraintsAuto', 'IConstraintsAuto')
 	
     # Validate a license for Constraints Automation
     oSeed = objConstraintsAuto.Validate(0)
     objConstraintsAuto.Validate(oSeed)
-    objConstraintsAuto.Design.
+
+    # 4. Use 'app' methods normally
+    objConstraintsAuto.OpenDatabase("some_design_file")
+
     # Here custom code can be entered
     objDesign = objConstraintsAuto.Settings
     objDesignParams = objDesign.CreateDesignParams()
